@@ -7,16 +7,17 @@ package Views;
 
 import java.awt.Color;
 
-/**
- *
- * @author GARFIELD
- */
-public class Login_page_view extends javax.swing.JFrame {
+import javax.swing.JOptionPane;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import Views.StudentMainView;
+
+public class LoginView extends javax.swing.JFrame {
 
     /**
      * Creates new form view
      */
-    public Login_page_view() {
+    public LoginView() {
         initComponents();
     }
 
@@ -32,16 +33,16 @@ public class Login_page_view extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        textUserId = new javax.swing.JTextField();
+        txtUserId = new javax.swing.JTextField();
         passwordloging = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
+        btnRegistration = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
+        btnMinimize = new javax.swing.JButton();
 
         jButton4.setText("jButton4");
 
@@ -55,23 +56,23 @@ public class Login_page_view extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
 
-        textUserId.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        textUserId.setForeground(new java.awt.Color(153, 153, 153));
-        textUserId.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        textUserId.setText("User ID");
-        textUserId.setToolTipText("");
-        textUserId.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        textUserId.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtUserId.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtUserId.setForeground(new java.awt.Color(153, 153, 153));
+        txtUserId.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtUserId.setText("User ID");
+        txtUserId.setToolTipText("");
+        txtUserId.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtUserId.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                textUserIdFocusGained(evt);
+                txtUserIdFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                textUserIdFocusLost(evt);
+                txtUserIdFocusLost(evt);
             }
         });
-        textUserId.addActionListener(new java.awt.event.ActionListener() {
+        txtUserId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textUserIdActionPerformed(evt);
+                txtUserIdActionPerformed(evt);
             }
         });
 
@@ -93,21 +94,21 @@ public class Login_page_view extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 204));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Log in");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setBackground(new java.awt.Color(0, 102, 204));
+        btnLogin.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("Log in");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 102, 255));
-        jButton2.setText("Registration Issues");
-        jButton2.setToolTipText("");
+        btnRegistration.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegistration.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnRegistration.setForeground(new java.awt.Color(51, 102, 255));
+        btnRegistration.setText("Registration Issues");
+        btnRegistration.setToolTipText("");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -121,18 +122,18 @@ public class Login_page_view extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(60, 60, 60));
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/exit icon 24.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnExit.setBackground(new java.awt.Color(102, 102, 102));
+        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/exit icon 24.png"))); // NOI18N
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnExitActionPerformed(evt);
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(102, 102, 102));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/minimize icon 24.png"))); // NOI18N
+        btnMinimize.setBackground(new java.awt.Color(102, 102, 102));
+        btnMinimize.setForeground(new java.awt.Color(255, 255, 255));
+        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/minimize icon 24.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -140,16 +141,16 @@ public class Login_page_view extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(5, 5, 5))
         );
 
@@ -169,16 +170,16 @@ public class Login_page_view extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textUserId, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(txtUserId, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addComponent(passwordloging)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8)))))
                 .addContainerGap(250, Short.MAX_VALUE))
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(300, 300, 300))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -191,15 +192,15 @@ public class Login_page_view extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(textUserId))
+                    .addComponent(txtUserId))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(passwordloging))
                 .addGap(20, 20, 20)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(36, Short.MAX_VALUE))
@@ -221,35 +222,49 @@ public class Login_page_view extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textUserIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUserIdActionPerformed
+    private void txtUserIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textUserIdActionPerformed
+    }//GEN-LAST:event_txtUserIdActionPerformed
 
     private void passwordlogingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordlogingActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordlogingActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void textUserIdFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textUserIdFocusGained
-        // TODO add your handling code here:
-        if(textUserId.getText().equals("User ID"))
-        {
-            textUserId.setText("");
-            textUserId.setForeground(new Color(0,0,0));
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        String password = passwordloging.getText();
+        String userID = txtUserId.getText();
+        
+        if (password.contains("modapusa") && (userID.contains("Admin123"))) {
+            txtUserId.setText(null);
+            passwordloging.setText(null);
+            systemExit();
+            
+            StudentMainView info = new StudentMainView();
+            info.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "You have entered your password or user id incorrectly.Please check your password and account name and try again.", "Login Error", JOptionPane.ERROR_MESSAGE);
+            passwordloging.setText(null);
+            txtUserId.setText(null);
         }
-    }//GEN-LAST:event_textUserIdFocusGained
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void textUserIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textUserIdFocusLost
+    private void txtUserIdFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserIdFocusGained
         // TODO add your handling code here:
-        if(textUserId.getText().equals(""))
+        if(txtUserId.getText().equals("User ID"))
         {
-            textUserId.setText("User ID");
-            textUserId.setForeground(new Color(153,153,153));
+            txtUserId.setText("");
+            txtUserId.setForeground(new Color(0,0,0));
         }
-    }//GEN-LAST:event_textUserIdFocusLost
+    }//GEN-LAST:event_txtUserIdFocusGained
+
+    private void txtUserIdFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserIdFocusLost
+        // TODO add your handling code here:
+        if(txtUserId.getText().equals(""))
+        {
+            txtUserId.setText("User ID");
+            txtUserId.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_txtUserIdFocusLost
 
     private void passwordlogingFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordlogingFocusGained
         // TODO add your handling code here:
@@ -269,9 +284,9 @@ public class Login_page_view extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passwordlogingFocusLost
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+       System.exit(0); //this is the code to exit from the login page
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,31 +305,33 @@ public class Login_page_view extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login_page_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login_page_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login_page_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login_page_view.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login_page_view().setVisible(true);
+                new LoginView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnMinimize;
+    private javax.swing.JButton btnRegistration;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -322,6 +339,20 @@ public class Login_page_view extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField passwordloging;
-    private javax.swing.JTextField textUserId;
+    private javax.swing.JTextField txtUserId;
     // End of variables declaration//GEN-END:variables
+
+
+
+
+    private void systemExit() {
+        
+        WindowEvent winCloseing = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+    }
+
+
+
+
+
+
 }
