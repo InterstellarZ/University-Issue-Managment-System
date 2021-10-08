@@ -43,6 +43,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btnExit = new javax.swing.JButton();
         btnMinimize = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         jButton4.setText("jButton4");
 
@@ -52,7 +53,7 @@ public class LoginView extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 60, 60), 5, true));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 60, 60), 1, true));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png"))); // NOI18N
 
@@ -122,8 +123,8 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(60, 60, 60));
 
-        btnExit.setBackground(new java.awt.Color(102, 102, 102));
-        btnExit.setForeground(new java.awt.Color(255, 255, 255));
+        btnExit.setBackground(new java.awt.Color(60, 60, 60));
+        btnExit.setForeground(new java.awt.Color(60, 60, 60));
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/exit icon 24.png"))); // NOI18N
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,16 +132,23 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        btnMinimize.setBackground(new java.awt.Color(102, 102, 102));
-        btnMinimize.setForeground(new java.awt.Color(255, 255, 255));
-        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/minimize icon 24.png"))); // NOI18N
+        btnMinimize.setBackground(new java.awt.Color(60, 60, 60));
+        btnMinimize.setForeground(new java.awt.Color(60, 60, 60));
+        btnMinimize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Minimize icon.png"))); // NOI18N
+
+        jLabel5.setBackground(new java.awt.Color(60, 60, 60));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Log in page");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -148,9 +156,11 @@ public class LoginView extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMinimize, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(5, 5, 5))
         );
 
@@ -170,12 +180,12 @@ public class LoginView extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUserId, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(passwordloging)
+                            .addComponent(txtUserId)
+                            .addComponent(passwordloging, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8)))))
-                .addContainerGap(250, Short.MAX_VALUE))
+                .addContainerGap(248, Short.MAX_VALUE))
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -220,6 +230,7 @@ public class LoginView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUserIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserIdActionPerformed
@@ -242,7 +253,7 @@ public class LoginView extends javax.swing.JFrame {
             StudentMainView info = new StudentMainView();
             info.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(null, "You have entered your password or user id incorrectly.Please check your password and account name and try again.", "Login Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "You have entered your password or user id incorrectly. Please check your password and account name and try again.", "Login Error", JOptionPane.ERROR_MESSAGE);
             passwordloging.setText(null);
             txtUserId.setText(null);
         }
@@ -336,6 +347,7 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField passwordloging;
