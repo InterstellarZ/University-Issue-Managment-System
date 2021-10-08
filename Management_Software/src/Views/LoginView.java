@@ -10,7 +10,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-
+import Views.StudentMainView;
 
 public class LoginView extends javax.swing.JFrame {
 
