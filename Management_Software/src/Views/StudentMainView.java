@@ -6,8 +6,10 @@
 package Views;
 
 import java.awt.Color;
+import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -20,7 +22,7 @@ public class StudentMainView extends javax.swing.JFrame {
      */
     public StudentMainView() {
         initComponents();
-        setSize(1240,800);
+        setSize(1250, 800);
         cboxDgreetyp.setSelectedItem(null);
         
     }
@@ -117,6 +119,43 @@ public class StudentMainView extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         cboxDgreetyp3 = new javax.swing.JComboBox<>();
         tab3 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        textEmail2 = new javax.swing.JTextField();
+        txtPhoneno2 = new javax.swing.JTextField();
+        cboxDgreetyp4 = new javax.swing.JComboBox<>();
+        cboxDgreename2 = new javax.swing.JComboBox<>();
+        cboxRegyear2 = new javax.swing.JComboBox<>();
+        cboxIntake2 = new javax.swing.JComboBox<>();
+        cboxYear2 = new javax.swing.JComboBox<>();
+        cboxSemester2 = new javax.swing.JComboBox<>();
+        cboxBatch2 = new javax.swing.JComboBox<>();
+        txtITno2 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtIssue2 = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        cboxDgreetyp5 = new javax.swing.JComboBox<>();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        cboxDgreetyp6 = new javax.swing.JComboBox<>();
+        cboxDgreetyp7 = new javax.swing.JComboBox<>();
+        jLabel41 = new javax.swing.JLabel();
+        txtName3 = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        cboxDgreetyp8 = new javax.swing.JComboBox<>();
+        jLabel43 = new javax.swing.JLabel();
+        cboxDgreetyp9 = new javax.swing.JComboBox<>();
+        cboxDgreetyp10 = new javax.swing.JComboBox<>();
+        cboxDgreetyp11 = new javax.swing.JComboBox<>();
+        cboxDgreetyp12 = new javax.swing.JComboBox<>();
+        txtfileuplord = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         tab4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         tab5 = new javax.swing.JPanel();
@@ -581,35 +620,6 @@ public class StudentMainView extends javax.swing.JFrame {
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tab1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPhoneno, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(cboxDgreetyp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(cboxDgreename, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel15)
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(cboxRegyear, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cboxIntake, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addComponent(txtITno, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -633,7 +643,35 @@ public class StudentMainView extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(cboxSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(cboxBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(cboxBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(tab1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(tab1Layout.createSequentialGroup()
+                                    .addComponent(textEmail)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtPhoneno, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tab1Layout.createSequentialGroup()
+                                    .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cboxDgreetyp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cboxDgreename, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(tab1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tab1Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tab1Layout.createSequentialGroup()
+                                .addComponent(cboxRegyear, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboxIntake, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab1Layout.setVerticalGroup(
@@ -641,20 +679,23 @@ public class StudentMainView extends javax.swing.JFrame {
             .addGroup(tab1Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPhoneno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(cboxDgreetyp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel12)
-                .addGap(5, 5, 5)
-                .addComponent(cboxDgreename, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(tab1Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreename, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab1Layout.createSequentialGroup()
+                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreetyp, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -662,7 +703,7 @@ public class StudentMainView extends javax.swing.JFrame {
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cboxRegyear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboxIntake, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -673,13 +714,13 @@ public class StudentMainView extends javax.swing.JFrame {
                     .addComponent(cboxYear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboxSemester, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboxBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                .addGap(14, 14, 14)
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtITno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tab1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(jLabel11)))
-                .addGap(11, 11, 11)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -781,7 +822,7 @@ public class StudentMainView extends javax.swing.JFrame {
         });
 
         txtITno1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtITno1.setText("IT number or ID number");
+        txtITno1.setText("IT number");
         txtITno1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtITno1FocusGained(evt);
@@ -867,28 +908,6 @@ public class StudentMainView extends javax.swing.JFrame {
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tab2Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(textEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPhoneno1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(cboxDgreetyp1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(cboxDgreename1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(txtITno1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(tab2Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(tab2Layout.createSequentialGroup()
                         .addGap(349, 349, 349)
@@ -926,7 +945,28 @@ public class StudentMainView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cboxDgreetyp3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cboxDgreetyp3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(tab2Layout.createSequentialGroup()
+                                .addComponent(textEmail1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtPhoneno1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, tab2Layout.createSequentialGroup()
+                                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxDgreetyp1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxDgreename1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtITno1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab2Layout.setVerticalGroup(
@@ -934,24 +974,27 @@ public class StudentMainView extends javax.swing.JFrame {
             .addGroup(tab2Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtITno1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPhoneno1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtITno1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(cboxDgreetyp1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jLabel23)
-                .addGap(5, 5, 5)
+                .addGap(17, 17, 17)
                 .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(tab2Layout.createSequentialGroup()
-                        .addComponent(cboxDgreename1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
+                        .addComponent(jLabel23)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreename1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreetyp1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(tab2Layout.createSequentialGroup()
                         .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -975,7 +1018,7 @@ public class StudentMainView extends javax.swing.JFrame {
                         .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)
                         .addComponent(cboxDgreetyp3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -987,15 +1030,424 @@ public class StudentMainView extends javax.swing.JFrame {
         tab3.setBackground(new java.awt.Color(255, 255, 255));
         tab3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel22.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Examination related inquirie Form");
+
+        textEmail2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textEmail2.setText("Email");
+        textEmail2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textEmail2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textEmail2FocusLost(evt);
+            }
+        });
+        textEmail2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textEmail2ActionPerformed(evt);
+            }
+        });
+
+        txtPhoneno2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPhoneno2.setText("Phone No");
+        txtPhoneno2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPhoneno2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPhoneno2FocusLost(evt);
+            }
+        });
+        txtPhoneno2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPhoneno2ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreetyp4.setEditable(true);
+        cboxDgreetyp4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Internal", "External" }));
+        cboxDgreetyp4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp4ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreename2.setEditable(true);
+        cboxDgreename2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        cboxRegyear2.setEditable(true);
+        cboxRegyear2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxRegyear2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2010", "2011", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
+
+        cboxIntake2.setEditable(true);
+        cboxIntake2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxIntake2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "June", "November" }));
+
+        cboxYear2.setEditable(true);
+        cboxYear2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxYear2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st year", "2nd year", "3rd year", "4th year" }));
+
+        cboxSemester2.setEditable(true);
+        cboxSemester2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxSemester2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st semester", "2nd semester" }));
+
+        cboxBatch2.setEditable(true);
+        cboxBatch2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxBatch2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Weekday", "Weekend" }));
+        cboxBatch2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxBatch2ActionPerformed(evt);
+            }
+        });
+
+        txtITno2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtITno2.setText("IT number");
+        txtITno2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtITno2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtITno2FocusLost(evt);
+            }
+        });
+        txtITno2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtITno2ActionPerformed(evt);
+            }
+        });
+
+        txtIssue2.setColumns(20);
+        txtIssue2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtIssue2.setRows(5);
+        txtIssue2.setText("Type your issue here");
+        txtIssue2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtIssue2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtIssue2FocusLost(evt);
+            }
+        });
+        jScrollPane3.setViewportView(txtIssue2);
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jButton3.setText("Submit");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel32.setText("Dgree name");
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel33.setText("Registerd year");
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel34.setText("Intake");
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel35.setText("Year");
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel36.setText("Semester");
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel37.setText("Batch");
+
+        jLabel38.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel38.setText("Dgree typ");
+
+        cboxDgreetyp5.setEditable(true);
+        cboxDgreetyp5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Meka", "weda", "karapn", "mage", "deiyoo" }));
+        cboxDgreetyp5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp5ActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel39.setText("Subject name");
+
+        jLabel40.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel40.setText("Exam");
+
+        cboxDgreetyp6.setEditable(true);
+        cboxDgreetyp6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mid exam", "Final exam" }));
+        cboxDgreetyp6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp6ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreetyp7.setEditable(true);
+        cboxDgreetyp7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Technical inquiries", "Medical inquiries", "Other Exam Related Issues", " ", " " }));
+        cboxDgreetyp7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp7ActionPerformed(evt);
+            }
+        });
+
+        jLabel41.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel41.setText("Issue Type");
+
+        txtName3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtName3.setText("Name");
+        txtName3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtName3FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtName3FocusLost(evt);
+            }
+        });
+        txtName3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtName3ActionPerformed(evt);
+            }
+        });
+
+        jLabel42.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel42.setText("Date ( Month / Date / Year )");
+
+        cboxDgreetyp8.setEditable(true);
+        cboxDgreetyp8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "1", "12", "13", "14", "15", "16", "17", "18", "19", "21", "22", "23" }));
+        cboxDgreetyp8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp8ActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel43.setText("Time");
+
+        cboxDgreetyp9.setEditable(true);
+        cboxDgreetyp9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60" }));
+        cboxDgreetyp9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp9ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreetyp10.setEditable(true);
+        cboxDgreetyp10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "May", "June", "July", "August", "Septembe", "October", "November", "December" }));
+        cboxDgreetyp10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp10ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreetyp11.setEditable(true);
+        cboxDgreetyp11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        cboxDgreetyp11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp11ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreetyp12.setEditable(true);
+        cboxDgreetyp12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2021", "2022", "2023", "2024" }));
+        cboxDgreetyp12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp12ActionPerformed(evt);
+            }
+        });
+
+        txtfileuplord.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtfileuplord.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton4.setText("Open File");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout tab3Layout = new javax.swing.GroupLayout(tab3);
         tab3.setLayout(tab3Layout);
         tab3Layout.setHorizontalGroup(
             tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGroup(tab3Layout.createSequentialGroup()
+                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tab3Layout.createSequentialGroup()
+                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addGap(349, 349, 349)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(tab3Layout.createSequentialGroup()
+                                        .addComponent(jLabel33)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(tab3Layout.createSequentialGroup()
+                                        .addComponent(cboxRegyear2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cboxIntake2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(tab3Layout.createSequentialGroup()
+                                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(tab3Layout.createSequentialGroup()
+                                        .addComponent(cboxYear2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cboxSemester2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cboxBatch2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxDgreetyp5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cboxDgreetyp6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(tab3Layout.createSequentialGroup()
+                                        .addComponent(cboxDgreetyp10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cboxDgreetyp11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cboxDgreetyp12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(26, 26, 26)
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(tab3Layout.createSequentialGroup()
+                                        .addComponent(cboxDgreetyp8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(2, 2, 2)
+                                        .addComponent(cboxDgreetyp9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxDgreetyp7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(tab3Layout.createSequentialGroup()
+                                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cboxDgreetyp4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cboxDgreename2, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab3Layout.createSequentialGroup()
+                                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(textEmail2)
+                                            .addComponent(txtName3))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtITno2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                            .addComponent(txtPhoneno2))))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(tab3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtfileuplord))
+                            .addComponent(jScrollPane3))))
+                .addContainerGap())
         );
         tab3Layout.setVerticalGroup(
             tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 742, Short.MAX_VALUE)
+            .addGroup(tab3Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(cboxDgreetyp7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtITno2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtName3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textEmail2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPhoneno2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(tab3Layout.createSequentialGroup()
+                        .addComponent(jLabel32)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreename2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab3Layout.createSequentialGroup()
+                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreetyp4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(tab3Layout.createSequentialGroup()
+                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(4, 4, 4)
+                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cboxBatch2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cboxIntake2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboxYear2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboxSemester2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboxRegyear2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(5, 5, 5)
+                                .addComponent(cboxDgreetyp5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tab3Layout.createSequentialGroup()
+                                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(5, 5, 5)
+                                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cboxDgreetyp8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboxDgreetyp9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(tab3Layout.createSequentialGroup()
+                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cboxDgreetyp6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxDgreetyp10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxDgreetyp11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxDgreetyp12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtfileuplord, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainpanel.add(tab3);
@@ -1106,9 +1558,9 @@ public class StudentMainView extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1500,77 +1952,187 @@ public class StudentMainView extends javax.swing.JFrame {
         this.setExtendedState(StudentMainView.ICONIFIED);
     }//GEN-LAST:event_jLabel13MouseClicked
 
-    private void cboxDgreetyp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp1ActionPerformed
+    private void textEmail1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmail1FocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_cboxDgreetyp1ActionPerformed
-
-    private void cboxDgreetyp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboxDgreetyp2ActionPerformed
-
-    private void textEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEmail1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textEmail1ActionPerformed
+    }//GEN-LAST:event_textEmail1FocusGained
 
     private void textEmail1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmail1FocusLost
         // TODO add your handling code here:
     }//GEN-LAST:event_textEmail1FocusLost
 
-    private void textEmail1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmail1FocusGained
+    private void textEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEmail1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textEmail1FocusGained
-
-    private void txtName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtName1ActionPerformed
-
-    private void txtName1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtName1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtName1FocusLost
+    }//GEN-LAST:event_textEmail1ActionPerformed
 
     private void txtName1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtName1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtName1FocusGained
 
-    private void cboxDgreetyp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp3ActionPerformed
+    private void txtName1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtName1FocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_cboxDgreetyp3ActionPerformed
+    }//GEN-LAST:event_txtName1FocusLost
 
-    private void txtPhoneno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneno1ActionPerformed
+    private void txtName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhoneno1ActionPerformed
-
-    private void txtPhoneno1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneno1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhoneno1FocusLost
+    }//GEN-LAST:event_txtName1ActionPerformed
 
     private void txtPhoneno1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneno1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPhoneno1FocusGained
 
+    private void txtPhoneno1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneno1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno1FocusLost
+
+    private void txtPhoneno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneno1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno1ActionPerformed
+
+    private void cboxDgreetyp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp1ActionPerformed
+
     private void cboxBatch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxBatch1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboxBatch1ActionPerformed
-
-    private void txtITno1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtITno1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtITno1FocusLost
 
     private void txtITno1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtITno1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtITno1FocusGained
 
-    private void txtIssue1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssue1FocusLost
+    private void txtITno1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtITno1FocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIssue1FocusLost
+    }//GEN-LAST:event_txtITno1FocusLost
 
     private void txtIssue1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssue1FocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIssue1FocusGained
 
+    private void txtIssue1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssue1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIssue1FocusLost
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void cboxDgreetyp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp2ActionPerformed
+
+    private void cboxDgreetyp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp3ActionPerformed
+
+    private void textEmail2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmail2FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textEmail2FocusGained
+
+    private void textEmail2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmail2FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textEmail2FocusLost
+
+    private void textEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEmail2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textEmail2ActionPerformed
+
+    private void txtPhoneno2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneno2FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno2FocusGained
+
+    private void txtPhoneno2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneno2FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno2FocusLost
+
+    private void txtPhoneno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneno2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno2ActionPerformed
+
+    private void cboxDgreetyp4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp4ActionPerformed
+
+    private void cboxBatch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxBatch2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxBatch2ActionPerformed
+
+    private void txtITno2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtITno2FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtITno2FocusGained
+
+    private void txtITno2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtITno2FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtITno2FocusLost
+
+    private void txtIssue2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssue2FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIssue2FocusGained
+
+    private void txtIssue2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssue2FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIssue2FocusLost
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void cboxDgreetyp5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp5ActionPerformed
+
+    private void cboxDgreetyp6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp6ActionPerformed
+
+    private void cboxDgreetyp7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp7ActionPerformed
+
+    private void txtName3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtName3FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtName3FocusGained
+
+    private void txtName3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtName3FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtName3FocusLost
+
+    private void txtName3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtName3ActionPerformed
+
+    private void cboxDgreetyp8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp8ActionPerformed
+
+    private void cboxDgreetyp9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp9ActionPerformed
+
+    private void cboxDgreetyp10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp10ActionPerformed
+
+    private void cboxDgreetyp11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp11ActionPerformed
+
+    private void cboxDgreetyp12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp12ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        txtfileuplord.setText(filename);
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void txtITno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtITno2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtITno2ActionPerformed
     
     //set and reset color
     void setColor(JPanel panel)
@@ -1633,20 +2195,35 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JLabel btn_notif;
     private javax.swing.JComboBox<String> cboxBatch;
     private javax.swing.JComboBox<String> cboxBatch1;
+    private javax.swing.JComboBox<String> cboxBatch2;
     private javax.swing.JComboBox<String> cboxDgreename;
     private javax.swing.JComboBox<String> cboxDgreename1;
+    private javax.swing.JComboBox<String> cboxDgreename2;
     private javax.swing.JComboBox<String> cboxDgreetyp;
     private javax.swing.JComboBox<String> cboxDgreetyp1;
+    private javax.swing.JComboBox<String> cboxDgreetyp10;
+    private javax.swing.JComboBox<String> cboxDgreetyp11;
+    private javax.swing.JComboBox<String> cboxDgreetyp12;
     private javax.swing.JComboBox<String> cboxDgreetyp2;
     private javax.swing.JComboBox<String> cboxDgreetyp3;
+    private javax.swing.JComboBox<String> cboxDgreetyp4;
+    private javax.swing.JComboBox<String> cboxDgreetyp5;
+    private javax.swing.JComboBox<String> cboxDgreetyp6;
+    private javax.swing.JComboBox<String> cboxDgreetyp7;
+    private javax.swing.JComboBox<String> cboxDgreetyp8;
+    private javax.swing.JComboBox<String> cboxDgreetyp9;
     private javax.swing.JComboBox<String> cboxIntake;
     private javax.swing.JComboBox<String> cboxIntake1;
+    private javax.swing.JComboBox<String> cboxIntake2;
     private javax.swing.JComboBox<String> cboxRegyear;
     private javax.swing.JComboBox<String> cboxRegyear1;
+    private javax.swing.JComboBox<String> cboxRegyear2;
     private javax.swing.JComboBox<String> cboxSemester;
     private javax.swing.JComboBox<String> cboxSemester1;
+    private javax.swing.JComboBox<String> cboxSemester2;
     private javax.swing.JComboBox<String> cboxYear;
     private javax.swing.JComboBox<String> cboxYear1;
+    private javax.swing.JComboBox<String> cboxYear2;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
@@ -1655,6 +2232,8 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JPanel ind_6;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1669,6 +2248,7 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -1678,6 +2258,18 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1689,6 +2281,7 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -1703,13 +2296,19 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JPanel tab6;
     private javax.swing.JTextField textEmail;
     private javax.swing.JTextField textEmail1;
+    private javax.swing.JTextField textEmail2;
     private javax.swing.JTextField txtITno;
     private javax.swing.JTextField txtITno1;
+    private javax.swing.JTextField txtITno2;
     private javax.swing.JTextArea txtIssue;
     private javax.swing.JTextArea txtIssue1;
+    private javax.swing.JTextArea txtIssue2;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtName1;
+    private javax.swing.JTextField txtName3;
     private javax.swing.JTextField txtPhoneno;
     private javax.swing.JTextField txtPhoneno1;
+    private javax.swing.JTextField txtPhoneno2;
+    private javax.swing.JTextField txtfileuplord;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,12 +5,8 @@
  */
 package Views;
 
-import java.awt.Color;
 
 import javax.swing.JOptionPane;
-import java.awt.Toolkit;
-import java.awt.event.WindowEvent;
-import Views.StudentMainView;
 
 public class LoginView extends javax.swing.JFrame {
 
@@ -178,12 +174,12 @@ public class LoginView extends javax.swing.JFrame {
         btnSignin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSignin.setText("Sign in");
         btnSignin.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 btnSigninAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         btnSignin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -228,7 +224,7 @@ public class LoginView extends javax.swing.JFrame {
         });
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/close button icon.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/close button icon White.png"))); // NOI18N
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
