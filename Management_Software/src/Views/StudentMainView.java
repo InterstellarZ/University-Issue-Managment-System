@@ -90,6 +90,32 @@ public class StudentMainView extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         tab2 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        textEmail1 = new javax.swing.JTextField();
+        txtName1 = new javax.swing.JTextField();
+        txtPhoneno1 = new javax.swing.JTextField();
+        cboxDgreetyp1 = new javax.swing.JComboBox<>();
+        cboxDgreename1 = new javax.swing.JComboBox<>();
+        cboxRegyear1 = new javax.swing.JComboBox<>();
+        cboxIntake1 = new javax.swing.JComboBox<>();
+        cboxYear1 = new javax.swing.JComboBox<>();
+        cboxSemester1 = new javax.swing.JComboBox<>();
+        cboxBatch1 = new javax.swing.JComboBox<>();
+        txtITno1 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtIssue1 = new javax.swing.JTextArea();
+        jButton2 = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        cboxDgreetyp2 = new javax.swing.JComboBox<>();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        cboxDgreetyp3 = new javax.swing.JComboBox<>();
         tab3 = new javax.swing.JPanel();
         tab4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -665,15 +691,295 @@ public class StudentMainView extends javax.swing.JFrame {
         tab2.setBackground(new java.awt.Color(255, 255, 255));
         tab2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel21.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("General Examination Issues Form");
+
+        textEmail1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textEmail1.setText("Email");
+        textEmail1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textEmail1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textEmail1FocusLost(evt);
+            }
+        });
+        textEmail1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textEmail1ActionPerformed(evt);
+            }
+        });
+
+        txtName1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtName1.setText("Name");
+        txtName1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtName1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtName1FocusLost(evt);
+            }
+        });
+        txtName1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtName1ActionPerformed(evt);
+            }
+        });
+
+        txtPhoneno1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPhoneno1.setText("Phone No");
+        txtPhoneno1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPhoneno1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPhoneno1FocusLost(evt);
+            }
+        });
+        txtPhoneno1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPhoneno1ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreetyp1.setEditable(true);
+        cboxDgreetyp1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Internal", "External" }));
+        cboxDgreetyp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp1ActionPerformed(evt);
+            }
+        });
+
+        cboxDgreename1.setEditable(true);
+        cboxDgreename1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        cboxRegyear1.setEditable(true);
+        cboxRegyear1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxRegyear1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2010", "2011", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021" }));
+
+        cboxIntake1.setEditable(true);
+        cboxIntake1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxIntake1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "June", "November" }));
+
+        cboxYear1.setEditable(true);
+        cboxYear1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxYear1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st year", "2nd year", "3rd year", "4th year" }));
+
+        cboxSemester1.setEditable(true);
+        cboxSemester1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxSemester1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st semester", "2nd semester" }));
+
+        cboxBatch1.setEditable(true);
+        cboxBatch1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxBatch1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Weekday", "Weekend" }));
+        cboxBatch1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxBatch1ActionPerformed(evt);
+            }
+        });
+
+        txtITno1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtITno1.setText("IT number or ID number");
+        txtITno1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtITno1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtITno1FocusLost(evt);
+            }
+        });
+
+        txtIssue1.setColumns(20);
+        txtIssue1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtIssue1.setRows(5);
+        txtIssue1.setText("Type your issue here");
+        txtIssue1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtIssue1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtIssue1FocusLost(evt);
+            }
+        });
+        jScrollPane2.setViewportView(txtIssue1);
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jButton2.setText("Submit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel23.setText("Dgree name");
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel24.setText("Registerd year");
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel25.setText("Intake");
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel26.setText("Year");
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel27.setText("Semester");
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel28.setText("Batch");
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel29.setText("Dgree typ");
+
+        cboxDgreetyp2.setEditable(true);
+        cboxDgreetyp2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Meka", "weda", "karapn", "mage", "deiyoo" }));
+        cboxDgreetyp2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp2ActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel30.setText("Subject name");
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel31.setText("Exam");
+
+        cboxDgreetyp3.setEditable(true);
+        cboxDgreetyp3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cboxDgreetyp3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mid exam", "Final exam" }));
+        cboxDgreetyp3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxDgreetyp3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout tab2Layout = new javax.swing.GroupLayout(tab2);
         tab2.setLayout(tab2Layout);
         tab2Layout.setHorizontalGroup(
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
+            .addGroup(tab2Layout.createSequentialGroup()
+                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(textEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtPhoneno1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(cboxDgreetyp1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(cboxDgreename1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(txtITno1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(349, 349, 349)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(tab2Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tab2Layout.createSequentialGroup()
+                                .addComponent(cboxRegyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboxIntake1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(tab2Layout.createSequentialGroup()
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tab2Layout.createSequentialGroup()
+                                .addComponent(cboxYear1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboxSemester1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cboxBatch1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxDgreetyp2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboxDgreetyp3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab2Layout.setVerticalGroup(
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 743, Short.MAX_VALUE)
+            .addGroup(tab2Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPhoneno1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtITno1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(cboxDgreetyp1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel23)
+                .addGap(5, 5, 5)
+                .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addComponent(cboxDgreename1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(4, 4, 4)
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cboxBatch1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(cboxIntake1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboxYear1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboxSemester1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboxRegyear1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreetyp2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(tab2Layout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(cboxDgreetyp3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         mainpanel.add(tab2);
@@ -814,7 +1120,7 @@ public class StudentMainView extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 798, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 798, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -822,7 +1128,7 @@ public class StudentMainView extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
-                .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(mainpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1193,6 +1499,78 @@ public class StudentMainView extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setExtendedState(StudentMainView.ICONIFIED);
     }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void cboxDgreetyp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp1ActionPerformed
+
+    private void cboxDgreetyp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp2ActionPerformed
+
+    private void textEmail1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEmail1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textEmail1ActionPerformed
+
+    private void textEmail1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmail1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textEmail1FocusLost
+
+    private void textEmail1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textEmail1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textEmail1FocusGained
+
+    private void txtName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtName1ActionPerformed
+
+    private void txtName1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtName1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtName1FocusLost
+
+    private void txtName1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtName1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtName1FocusGained
+
+    private void cboxDgreetyp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetyp3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxDgreetyp3ActionPerformed
+
+    private void txtPhoneno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneno1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno1ActionPerformed
+
+    private void txtPhoneno1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneno1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno1FocusLost
+
+    private void txtPhoneno1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhoneno1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneno1FocusGained
+
+    private void cboxBatch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxBatch1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxBatch1ActionPerformed
+
+    private void txtITno1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtITno1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtITno1FocusLost
+
+    private void txtITno1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtITno1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtITno1FocusGained
+
+    private void txtIssue1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssue1FocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIssue1FocusLost
+
+    private void txtIssue1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssue1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIssue1FocusGained
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     //set and reset color
     void setColor(JPanel panel)
@@ -1254,12 +1632,21 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JLabel btn_help;
     private javax.swing.JLabel btn_notif;
     private javax.swing.JComboBox<String> cboxBatch;
+    private javax.swing.JComboBox<String> cboxBatch1;
     private javax.swing.JComboBox<String> cboxDgreename;
+    private javax.swing.JComboBox<String> cboxDgreename1;
     private javax.swing.JComboBox<String> cboxDgreetyp;
+    private javax.swing.JComboBox<String> cboxDgreetyp1;
+    private javax.swing.JComboBox<String> cboxDgreetyp2;
+    private javax.swing.JComboBox<String> cboxDgreetyp3;
     private javax.swing.JComboBox<String> cboxIntake;
+    private javax.swing.JComboBox<String> cboxIntake1;
     private javax.swing.JComboBox<String> cboxRegyear;
+    private javax.swing.JComboBox<String> cboxRegyear1;
     private javax.swing.JComboBox<String> cboxSemester;
+    private javax.swing.JComboBox<String> cboxSemester1;
     private javax.swing.JComboBox<String> cboxYear;
+    private javax.swing.JComboBox<String> cboxYear1;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
     private javax.swing.JPanel ind_3;
@@ -1267,6 +1654,7 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JPanel ind_5;
     private javax.swing.JPanel ind_6;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1280,6 +1668,16 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1290,6 +1688,7 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -1303,9 +1702,14 @@ public class StudentMainView extends javax.swing.JFrame {
     private javax.swing.JPanel tab5;
     private javax.swing.JPanel tab6;
     private javax.swing.JTextField textEmail;
+    private javax.swing.JTextField textEmail1;
     private javax.swing.JTextField txtITno;
+    private javax.swing.JTextField txtITno1;
     private javax.swing.JTextArea txtIssue;
+    private javax.swing.JTextArea txtIssue1;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
     private javax.swing.JTextField txtPhoneno;
+    private javax.swing.JTextField txtPhoneno1;
     // End of variables declaration//GEN-END:variables
 }
