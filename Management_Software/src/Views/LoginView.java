@@ -68,11 +68,11 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("If you haven't a account or fought your password");
+        jLabel3.setText("If you don't have an account or forgot your password");
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("sing in as a guest");
+        jLabel7.setText("sign in as a guest");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -104,7 +104,7 @@ public class LoginView extends javax.swing.JFrame {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setText("Sign in or as a Guest");
+        jLabel4.setText("Sign in or Log in as a Guest");
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -135,7 +135,7 @@ public class LoginView extends javax.swing.JFrame {
         jCheckBox1.setBackground(new java.awt.Color(36, 47, 65));
         jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(204, 204, 204));
-        jCheckBox1.setText("I agree all terms of service");
+        jCheckBox1.setText("I agree to all terms of service");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
@@ -174,12 +174,12 @@ public class LoginView extends javax.swing.JFrame {
         btnSignin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSignin.setText("Sign in");
         btnSignin.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 btnSigninAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         btnSignin.addMouseListener(new java.awt.event.MouseAdapter() {
