@@ -196,6 +196,11 @@ public class StudentMainView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(60, 60, 60), 1, true));
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel1MousePressed(evt);
+            }
+        });
 
         jPanel6.setBackground(new java.awt.Color(36, 47, 65));
 
@@ -454,6 +459,11 @@ public class StudentMainView extends javax.swing.JFrame {
 
         tab1.setBackground(new java.awt.Color(255, 255, 255));
         tab1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tab1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                tab1MouseMoved(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1864,50 +1874,76 @@ public class StudentMainView extends javax.swing.JFrame {
     private void btn_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MouseClicked
         // TODO add your handling code here:
         tab1.setVisible(false);
+        tab1.setEnabled(false);
         tab2.setVisible(true);
+        tab2.setEnabled(true);
         tab3.setVisible(false);
+        tab3.setEnabled(false);
         tab4.setVisible(false);
+        tab4.setEnabled(false);
         tab6.setVisible(false);
+        tab6.setEnabled(false);
         
     }//GEN-LAST:event_btn_2MouseClicked
 
     private void btn_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseClicked
         // TODO add your handling code here:
         tab1.setVisible(false);
+        tab1.setEnabled(false);
         tab2.setVisible(false);
+        tab2.setEnabled(false);
         tab3.setVisible(true);
+        tab3.setEnabled(true);
         tab4.setVisible(false);
+        tab4.setEnabled(false);
         tab6.setVisible(false);
+        tab6.setEnabled(false);
+        
         
     }//GEN-LAST:event_btn_3MouseClicked
 
     private void btn_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseClicked
         // TODO add your handling code here:
         tab1.setVisible(false);
+        tab1.setEnabled(false);
         tab2.setVisible(false);
+        tab2.setEnabled(false);
         tab3.setVisible(false);
+        tab3.setEnabled(false);
         tab4.setVisible(true);
+        tab4.setEnabled(true);
         tab6.setVisible(false);
+        tab6.setEnabled(false);
         
     }//GEN-LAST:event_btn_4MouseClicked
 
     private void btn_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseClicked
         // TODO add your handling code here:
         tab1.setVisible(false);
+        tab1.setEnabled(false);
         tab2.setVisible(false);
+        tab2.setEnabled(false);
         tab3.setVisible(false);
+        tab3.setEnabled(false);
         tab4.setVisible(false);
+        tab4.setEnabled(false);
         tab6.setVisible(true);
+        tab6.setEnabled(true);
         
     }//GEN-LAST:event_btn_6MouseClicked
 
     private void btn_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MouseClicked
         // TODO add your handling code here:
         tab1.setVisible(true);
+        tab1.setEnabled(true);
         tab2.setVisible(false);
+        tab2.setEnabled(false);
         tab3.setVisible(false);
+        tab3.setEnabled(false);
         tab4.setVisible(false);
+        tab4.setEnabled(false);
         tab6.setVisible(false);
+        tab6.setEnabled(false);
     }//GEN-LAST:event_btn_1MouseClicked
 
     private void btn_1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MousePressed
@@ -2289,6 +2325,26 @@ public class StudentMainView extends javax.swing.JFrame {
     private void txtITno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtITno2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtITno2ActionPerformed
+
+    private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jPanel1MousePressed
+
+    private void tab1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseMoved
+        // TODO add your handling code here:
+        tab1.setVisible(true);
+        tab1.setEnabled(true);
+        tab2.setVisible(false);
+        tab2.setEnabled(false);
+        tab3.setVisible(false);
+        tab3.setEnabled(false);
+        tab4.setVisible(false);
+        tab4.setEnabled(false);
+        tab6.setVisible(false);
+        tab6.setEnabled(false);
+
+    }//GEN-LAST:event_tab1MouseMoved
     
     //set and reset color
     void setColor(JPanel panel)

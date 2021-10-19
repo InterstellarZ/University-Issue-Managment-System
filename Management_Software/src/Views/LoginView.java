@@ -358,6 +358,15 @@ public class LoginView extends javax.swing.JFrame {
             StudentMainView info = new StudentMainView();
             info.setVisible(true);
         }
+        else if (password.contains("employer123") && (userID.contains("Employer")))
+        {
+            txtLoginid.setText(null);
+            txtPasswordlogin.setText(null);
+            dispose();
+            
+            EmployerMainView info = new EmployerMainView();
+            info.setVisible(true);
+        }
         else
         {
             JOptionPane.showMessageDialog(null,"You have entered your password or user id incorrectly. Please check your password and account name and try again","Sign in Error", JOptionPane.ERROR_MESSAGE);
