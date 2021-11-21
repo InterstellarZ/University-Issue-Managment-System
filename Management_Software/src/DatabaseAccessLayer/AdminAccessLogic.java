@@ -21,7 +21,7 @@ public class AdminAccessLogic {
         try {
 
             String query = "insert into addusers values('" + objAdmin.getusertype() + "','" + objAdmin.getuserid() + "','" + objAdmin.getname() + "','" + objAdmin.getphoneNo() + "','"
-                    + objAdmin.getaddress() + "','" + objAdmin.getpassword()+ "','"  +objAdmin.getreenterpassword()+"','"+objAdmin.getemail()+ "');";
+                    + objAdmin.getaddress() + "','" + objAdmin.getpassword() + "','" + objAdmin.getreenterpassword() + "','" + objAdmin.getemail() + "');";
             boolean result = singleConn.ExecuteQuery(query);
             return result;
         } catch (Exception ex) {
@@ -48,8 +48,7 @@ public class AdminAccessLogic {
                         result.getString("reenterpassword"),
                         result.getString("email")
                 );
-          
-                
+
                 adduser.add(adm);
             }
 
@@ -60,7 +59,42 @@ public class AdminAccessLogic {
         }
 
     }
-/*
+
+    public boolean updateAdduserTODB(Admin.Adduser objAdmin) {
+        try {
+
+            String query = "update addusers set type = '" + objAdmin.getusertype()
+                    + "',name = '" + objAdmin.getname()
+                    + "',email = '" + objAdmin.getemail()
+                    + "',password = '" + objAdmin.getpassword()
+                    + "',phone = '" + objAdmin.getphoneNo()
+                    + "',reenterpassword = '" + objAdmin.getreenterpassword()
+                    + "',address = '" + objAdmin.getaddress()
+                    + "'where ID = '" + objAdmin.getuserid()
+                    + "';";
+
+            //type, name, id, email, password1, phone, password2, address
+            boolean result = singleConn.ExecuteQuery(query);
+            return result;
+        } catch (Exception ex) {
+            return false;
+        }
+
+    }
+
+    public boolean deleteAdduserTODB(Admin.Adduser objAdmin) {
+        try {
+
+            String query = "delete from addusers where ID = '" + objAdmin.getuserid() + "'";
+            boolean result = singleConn.ExecuteQuery(query);
+            return result;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+    
+
+    /*
     public boolean addAllissuesAdminTODB(Admin.AllissuesAdmin objAdmin) {
         try {
 
@@ -95,5 +129,5 @@ public class AdminAccessLogic {
     }
 
 
-*/
+     */
 }

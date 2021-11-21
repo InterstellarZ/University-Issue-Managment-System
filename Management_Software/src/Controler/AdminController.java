@@ -15,11 +15,10 @@ public class AdminController {
     Admin.ManagecoursesAdmin objManagecoursesAdmin;
     Admin.MonthlyHistoryOfIssuesAdmin objMonthlyHistoryOfIssuesAdmin;
     Admin.HelpAdmin objHelpAdmin;
-    
+
     AdminAccessLogic deshan;
-    
-    public AdminController()
-    {
+
+    public AdminController() {
         deshan = new AdminAccessLogic();
     }
 
@@ -28,38 +27,34 @@ public class AdminController {
         return objAdmin;
     }
 
-    public  Admin.Adduser addAdduser(String usertype,String name,String userid,String email,String password,String phoneNo,String reenterpassword,String address) {
-       objAdduser = objAdmin.new Adduser(usertype, name, userid, email, password, phoneNo, reenterpassword, address);
+    public Admin.Adduser addAdduser(String usertype, String name, String userid, String email, String password, String phoneNo, String reenterpassword, String address) {
+        objAdduser = objAdmin.new Adduser(usertype, name, userid, email, password, phoneNo, reenterpassword, address);
         return objAdduser;
-    
+
     }
-     public boolean insertAdminToDB(Admin.Adduser objAdminAdduser)
-    {
-      boolean result =deshan.addAdduserTODB(objAdminAdduser);
-      return result;
-    }
-     
-     
-     
-       public List<Admin.Adduser> GetAddUsers(String searchText)
-    {
-        List<Admin.Adduser> result= deshan.GetAddUsser(searchText);
-        
+
+    public boolean insertAdminToDB(Admin.Adduser objAdminAdduser) {
+        boolean result = deshan.addAdduserTODB(objAdminAdduser);
         return result;
     }
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-   /*  
+
+    public List<Admin.Adduser> GetAddUsers(String searchText) {
+        List<Admin.Adduser> result = deshan.GetAddUsser(searchText);
+
+        return result;
+    }
+
+    public boolean updateAdminToDB(Admin.Adduser objAdminAdduser) {
+        boolean result = deshan.updateAdduserTODB(objAdminAdduser);
+        return result;
+    }
+
+    public boolean deleteAdminToDB(Admin.Adduser objAdminAdduser) {
+        boolean result = deshan.deleteAdduserTODB(objAdminAdduser);
+        return result;
+    }
+
+    /*  
    
 
     public Admin.AllissuesAdmin addAllissuesAdmin(String email, String phone, String degree, String registerdyear, String year, String batch, String semester,
@@ -92,5 +87,5 @@ public class AdminController {
     public Admin.HelpAdmin addHelpAdmin() {
         return null;
     }
-*/
+     */
 }

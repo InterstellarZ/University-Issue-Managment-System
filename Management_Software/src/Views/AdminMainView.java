@@ -17,7 +17,9 @@ import Models.Admin.AllissuesAdmin;
 import Models.Admin.ManagecoursesAdmin;
 import Controler.AdminController;
 import java.util.List;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -54,11 +56,13 @@ public class AdminMainView extends javax.swing.JFrame {
 
         PopulateAdduserList();
     }
-    
+
     private void PopulateAdduserList() {
         // load data from database
         list = objAdminController.GetAddUsers("");
-System.out.println("Result" + list);
+
+        System.out.println("Result" + list);
+
         // bind data into JTable
         DefaultTableModel model = new DefaultTableModel();
 
@@ -71,8 +75,8 @@ System.out.println("Result" + list);
         model.addColumn("Email");
         model.addColumn("Address");
 
-        System.out.println("Result" + list);
-      /*  for (int i = 0; i < list.size(); i++) {
+        System.out.println(list);
+        for (int i = 0; i < list.size(); i++) {
 
             // Create the first row
             Object[] rowData = new Object[]{
@@ -89,8 +93,6 @@ System.out.println("Result" + list);
 
             model.insertRow(0, rowData);
         }
-        
-        */
 
         tableUsers.setModel(model);
 
@@ -2577,6 +2579,8 @@ System.out.println("Result" + list);
 
             boolean result = objAdminController.insertAdminToDB(objAdduser);
 
+            PopulateAdduserList(); //this is the method to call the table details
+
             arrayAdduser[index] = objAdduser;
 
             index++;
@@ -2591,6 +2595,30 @@ System.out.println("Result" + list);
     }//GEN-LAST:event_btnAdduserActionPerformed
 
     private void BtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnUpdateActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to Update this User ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (response == 0) {
+
+            String type = (String) CobUsertype.getSelectedItem();
+            String name = txtName.getText();
+            String email = txtEmail.getText();
+            String phone = txtPhoneNumber.getText();
+            String id = txtUserId.getText();
+            String password1 = txtPassword1.getText();
+            String password2 = txtPassword2.getText();
+            String address = txtAddress.getText();
+
+            objAdmin = objAdminController.addAdmin();
+
+            arrayAdmins[index] = objAdmin;
+            objAdduser = objAdminController.addAdduser(type, name, id, email, password1, phone, password2, address);
+
+            boolean result = objAdminController.updateAdminToDB(objAdduser);
+
+            PopulateAdduserList(); //this is the method to call the table details
+        }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnUpdateActionPerformed
 
@@ -2788,10 +2816,42 @@ System.out.println("Result" + list);
 
     private void tableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableUsersMouseClicked
 
+        /*  int i  = tableUsers.getSelectedRow();
+   TableModel model =tableUsers.getModel();
+   txtName.setText(model.)
+     
+         */
+        int row = tableUsers.getSelectedRow();
+        String tc = tableUsers.getModel().getValueAt(row, 0).toString();
+        try {
+
+            System.out.println(tc);
+
+            String searchText = tc;
+            boolean isFound = false;
+            for (Admin.Adduser r : list) {
+                if (r.getuserid().contains(searchText)) {
+                    isFound = true;
+
+                    txtName.setText(r.getname());
+                    txtAddress.setText(r.getaddress());
+                    txtEmail.setText(r.getemail());
+                    txtPassword1.setText(r.getpassword());
+                    txtPassword2.setText(r.getreenterpassword());
+                    txtUserId.setText(r.getuserid());
+                    txtPhoneNumber.setText(r.getphoneNo());
+                    CobUsertype.setSelectedItem(r.getusertype());
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+
     }//GEN-LAST:event_tableUsersMouseClicked
 
     private void BtnUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnUpdateMouseClicked
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to Update this User ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
 
     }//GEN-LAST:event_BtnUpdateMouseClicked
@@ -2799,6 +2859,13 @@ System.out.println("Result" + list);
     private void BtdeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtdeleteMouseClicked
         int response = JOptionPane.showConfirmDialog(this, "Do you want to Delete this User ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
+        if (response == 0) {
+           
+
+            boolean result = objAdminController.deleteAdminToDB(objAdduser);
+
+            PopulateAdduserList(); //this is the method to call the table details
+        }
     }//GEN-LAST:event_BtdeleteMouseClicked
 
     private void txtsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsearchKeyReleased
@@ -2806,6 +2873,30 @@ System.out.println("Result" + list);
     }//GEN-LAST:event_txtsearchKeyReleased
 
     private void BtsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtsearchActionPerformed
+
+        String searchText = txtsearch.getText();
+        boolean isFound = false;
+        for (Admin.Adduser r : list) {
+            if (r.getuserid().contains(searchText)) {
+                isFound = true;
+
+                txtName.setText(r.getname());
+                txtAddress.setText(r.getaddress());
+                txtEmail.setText(r.getemail());
+                txtPassword1.setText(r.getpassword());
+                txtPassword2.setText(r.getreenterpassword());
+                txtUserId.setText(r.getuserid());
+                txtPhoneNumber.setText(r.getphoneNo());
+                CobUsertype.setSelectedItem(r.getusertype());
+
+                // JOptionPane.showMessageDialog(rootPane, r.getname() + " " + r.getaddress() + " " + r.getusertype(), "Info", 1);
+                break;
+            }
+        }
+        if (isFound == false) {
+            JOptionPane.showMessageDialog(rootPane, "User Not Found", "404 Not Found", 1);
+        }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_BtsearchActionPerformed
 

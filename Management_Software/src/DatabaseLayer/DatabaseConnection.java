@@ -2,6 +2,7 @@ package DatabaseLayer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -59,8 +60,22 @@ public class DatabaseConnection {
             return false;
         }
     }
+    
+    public ResultSet ExecuteQueryResultSet(String sqlQ) {
+        try {
+            
+            Statement st = con.createStatement();
+            ResultSet result = st.executeQuery(sqlQ); 
+            
+            return result  ;
+            
+        } catch (SQLException ex) {
+            System.out.println("Sql error" + ex.getMessage());
+            return null;
+        }
+    }
 
-    public ResultSet ExecuteQueryResultSet(String query) {
+    public PreparedStatement PreparedStatement(String sql) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
