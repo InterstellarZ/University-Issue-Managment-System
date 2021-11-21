@@ -3,70 +3,28 @@ package Controler;
 import Models.Users;
 import Views.LoginView;
 import java.util.ArrayList;
+import java.util.List;
+import DatabaseAccessLayer.LoginAccessLayer;
 
 public class LoginController {
 
-    ArrayList<Users> userList;
+    Users objEmployee;
+    LoginAccessLayer bal;
 
     public LoginController() {
-        userList = new ArrayList<>();
-        addUsers();
+        bal = new LoginAccessLayer();
     }
 
-    public void addUsers() {
-        userList.add(new Users("Kasun", "123", "Admin"));
-        userList.add(new Users("Deshan", "456", "Employee"));
-        userList.add(new Users("KC", "789", "Student"));
-
+    public Users addEmployee(String type, String ID, String password) {
+        objEmployee = new Users(type, ID, password);
+        return objEmployee;
     }
 
-    public Users x(String userText) {
-        boolean isfound = false;
-        Users foundUser = null;
 
-        for (Users tmp : userList) {
-            if (tmp.getUserID().contains(userText)) {
-                foundUser = tmp;
-                isfound = true;
-                break;
-            }
-        }
-        if (isfound == false) {
-            return null;
-        } else {
-            return foundUser;
-        }
-    }
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    public List<Users> GetEmployees(String searchpassword, String searchID) {
+        List<Users> result = bal.GetUsers(searchpassword, searchID);
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginView().setVisible(true);
-            }
-        });
+        return result;
     }
 }

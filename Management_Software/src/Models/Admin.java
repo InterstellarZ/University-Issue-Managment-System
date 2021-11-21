@@ -19,7 +19,7 @@ public  class Admin {
         String address;
    
 
-        public Adduser(String usertype,String name,String userid,String email,String password,String phoneNo,String reenterpassword,String address) {
+        public Adduser(String usertype,String userid,String name,String phoneNo,String address,String password,String reenterpassword,String email) {
             this.usertype = usertype;
             this.name = name;
             this.userid = userid;
@@ -94,9 +94,33 @@ public  class Admin {
         public void setaddress(String address) {
             this.address = address;
         }
+
+        public String getsearch() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
         
            
     }
+    //--------------------------------------------------------------------------------------------
+    
+//    public class searchAdmin {
+//        
+//        String search;
+//        
+//         public searchAdmin(String search){
+//         this.search = search;
+//         
+//         }
+//         
+//         public String getsearch() {
+//            return search;
+//        }
+//
+//        public void setsearch(String search) {
+//            this.search = search;
+//        }
+//        
+//    }
 
     //--------------------------------------------------------------------------------------------
     
@@ -247,11 +271,10 @@ public  class Admin {
         String programmeschedule;
         String intake;
         String coursefee;
-        String dean;
         
 
         public ManagecoursesAdmin(String degreetype, String uniname, String cuntry, String degreename, String degreeid, String faculty,
-                String entryreqirements,String programmeduration,String programmeschedule,String intake,String coursefee,String dean) {
+                String entryreqirements,String programmeduration,String programmeschedule,String intake,String coursefee) {
 
             this.degreetype = degreetype;
             this.uniname = uniname;
@@ -264,7 +287,6 @@ public  class Admin {
             this.programmeschedule = programmeschedule;
             this.intake = intake;
             this.coursefee = coursefee;
-            this.dean = dean;
 
         }
         
@@ -356,12 +378,8 @@ public  class Admin {
             this.coursefee = coursefee;
         }
         
-        public String getdean() {
-            return dean;
-        }
-
-        public void setdean(String dean) {
-            this.dean = dean;
+        public String getsearch() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
 
     }

@@ -4,17 +4,32 @@ import Controler.LoginController;
 import Models.Users; //import user class in oder to get password and user name
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class LoginView extends javax.swing.JFrame {
 
     LoginController controllerobj;
+    List<Users> list;
+    AdminMainView objAdminMainView;
+    EmployerMainView objEmployerMainView;
+    StudentMainView objStudentMainView;
+    LoginView objLoginView;
+    GuestView objGuestView;
 
     public LoginView() {
         initComponents();
         icon();
         controllerobj = new LoginController();
 
+        objAdminMainView = new AdminMainView();
+        //  objLoginView =new LoginView();
+        objEmployerMainView = new EmployerMainView();
+        objStudentMainView = new StudentMainView();
+        objGuestView = new GuestView();
+
+        //   objforloginaccess =new LoginAccessLayer();
     }
 
     private void icon() {
@@ -426,26 +441,54 @@ public class LoginView extends javax.swing.JFrame {
         char[] passarray = txtPasswordlogin.getPassword();
         String passText = new String(passarray);
 
-        Users found = controllerobj.x(userText);
-        if (found != null && userText.equals(found.getUserID())
-                && passText.equals(found.getPassword())) {
-            if (found.getType().equals("Admin")) {
-                AdminMainView ui = new AdminMainView();
-                ui.setVisible(true);
-                this.setVisible(false);
-            } else if (found.getType().equals("Student")) {
-                StudentMainView ui = new StudentMainView();
-                ui.setVisible(true);
-                this.setVisible(false);
-            } else if (found.getType().equals("Employee")) {
-                EmployerMainView ui = new EmployerMainView();
-                ui.setVisible(true);
-                this.setVisible(false);
+        list = controllerobj.GetEmployees(userText, passText);
+
+        if (list.size() == 1) {
+
+            DefaultTableModel model = new DefaultTableModel();
+
+            model.addColumn("ID");
+            model.addColumn("Password");
+            model.addColumn("Type");
+
+            for (int i = 0; i < list.size(); i++) {
+                Object[] rowData = new Object[]{
+                    list.get(i).getUserID(),
+                    list.get(i).getPassword(),
+                    list.get(i).getType(),};
+
+                System.out.println(list.get(i).getUserID());
+                String type = list.get(i).getUserID();
+
+                model.insertRow(0, rowData);
+
+                if (type.equals("Admin") || type.equals("Employer") || type.equals("Student")) {
+                    if (type.equals("Admin")) {
+
+                        objAdminMainView.setVisible(true);
+                        dispose();
+
+                    } else if (type.equals("Employer")) {
+
+                        objEmployerMainView.setVisible(true);
+                        dispose();
+
+                    } else {
+                        objStudentMainView.setVisible(true);
+                        dispose();
+
+                    }
+
+                } else {
+                    System.out.println("this is not valid");
+                }
+
             }
 
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Invalid User name and Password", "Error", 1);
+            JOptionPane.showMessageDialog(rootPane, "Invalid User name or Password", "Error", 1);
         }
+
         //current window will close
     }//GEN-LAST:event_btnloginMouseClicked
 

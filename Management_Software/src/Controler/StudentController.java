@@ -8,6 +8,8 @@ import Models.Student.Course;
 import Models.Student.HelpStudent;
 
 import DatabaseAccessLayer.StudentAccessLogic;
+import Models.Users;
+import java.util.List;
 
 public class StudentController {
 
@@ -17,11 +19,10 @@ public class StudentController {
     Student.ExamInquiries objExamInquiries;
     Student.Course objCourse;
     Student.HelpStudent objHelpStudent;
-    
+
     StudentAccessLogic kasun;
-    
-    public StudentController()
-    {
+
+    public StudentController() {
         kasun = new StudentAccessLogic();
     }
 
@@ -36,14 +37,29 @@ public class StudentController {
         objRegistration = objStudent.new StudentRegisration(name, ID, email, phone, degreeType, degreeName, registerYear,
                 intake, year, semester, batch, studentIssue);
         return objRegistration;
+
+    }
+
+    public boolean insertStudentToDB(Student.StudentRegisration objStudentRegistration) {
+        boolean result = kasun.addStudentregistrationTODB(objRegistration);
+        return result;
+    }
+
+    public List<Student.StudentRegisration> updattecombox(String searchpassword) {
+        List<Student.StudentRegisration> result = kasun.updatacombox(searchpassword);
+
+        return result;
+    }
+
+   /* public List<Student.StudentRegisration> updattecombox2(String searchpassword) {
+        List<Student.StudentRegisration> result = kasun.updatacombox2(searchpassword);
+
+        return result;
+    }
     
-    }
-     public boolean insertStudentToDB(Student.StudentRegisration objStudentRegistration)
-    {
-      boolean result =kasun.addStudentregistrationTODB(objRegistration);
-      return result;
-    }
-   
+    */
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public Student.GeneralExamIssue addGereralIssue(String name, String ID, String email, String phone, String degreeType, String degreeName,
             String registerYear, String intake, String year, String semester, String batch, String subjectName, String Examtype,

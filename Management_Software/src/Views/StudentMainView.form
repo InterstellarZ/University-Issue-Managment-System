@@ -675,7 +675,7 @@
                                                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="jLabel16" min="-2" pref="112" max="-2" attributes="0"/>
-                                                      <Group type="102" attributes="0">
+                                                      <Group type="102" alignment="0" attributes="0">
                                                           <Component id="cboxIntakeStudent" min="-2" pref="121" max="-2" attributes="0"/>
                                                           <EmptySpace max="-2" attributes="0"/>
                                                           <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
@@ -862,6 +862,7 @@
                     </Property>
                   </Properties>
                   <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cboxDgreetypeStudentItemStateChanged"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxDgreetypeStudentActionPerformed"/>
                   </Events>
                   <AuxValues>

@@ -13,9 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.JFileChooser;
 
 import Models.Student;
+import Models.Student.StudentRegisration;
 import Models.Student.GeneralExamIssue;
 import Models.Student.ExamInquiries;
 import Controler.StudentController;
+import Models.Users;
+import static java.util.Collections.list;
+import java.util.List;
 
 /**
  *
@@ -36,6 +40,7 @@ public class StudentMainView extends javax.swing.JFrame {
     int index;
 
     StudentController objStudentController;
+    List<StudentRegisration> list;
 
     /**
      * Creates new form Student_main_page_view
@@ -43,13 +48,29 @@ public class StudentMainView extends javax.swing.JFrame {
     public StudentMainView() {
         initComponents();
         setSize(1250, 800);
-        cboxDgreetypeStudent.setSelectedItem(null);
+        //  cboxDgreetypeStudent.setSelectedItem(null);
         icon();
         arrayStudent = new Student[1000];
         arrayRegistration = new Student.StudentRegisration[1000];
         arrayExamInquiries = new Student.ExamInquiries[1000];
         arrayGeneralExamIssue = new Student.GeneralExamIssue[1000];
+
         objStudentController = new StudentController();
+        // PopulateEmployeeList();
+    }
+
+    public void PopulateEmployeeList() {
+
+        list = objStudentController.updattecombox("");
+
+        //  System.out.println(list.size());
+        for (int i = 0; i < list.size(); i++) {
+
+            cboxDgreenameStudnet.addItem(list.get(i).getDegreeType());
+            //  combox1.addItem(list.get(i).getType());
+            //   System.out.println(list.get(i).getDegreeType());
+        }
+
     }
 
     private void icon() {
@@ -609,6 +630,11 @@ public class StudentMainView extends javax.swing.JFrame {
         cboxDgreetypeStudent.setEditable(true);
         cboxDgreetypeStudent.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         cboxDgreetypeStudent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Internal", "External" }));
+        cboxDgreetypeStudent.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboxDgreetypeStudentItemStateChanged(evt);
+            }
+        });
         cboxDgreetypeStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboxDgreetypeStudentActionPerformed(evt);
@@ -2491,17 +2517,9 @@ public class StudentMainView extends javax.swing.JFrame {
         ind_6.setOpaque(false);
     }//GEN-LAST:event_btn_1MousePressed
 
-    private void txtEmailStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailStudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailStudentActionPerformed
-
     private void txtNameStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameStudentActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameStudentActionPerformed
-
-    private void txtPhonenoStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhonenoStudentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPhonenoStudentActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
@@ -2519,26 +2537,21 @@ public class StudentMainView extends javax.swing.JFrame {
             String studentIssue = txtIssueStudent.getText();
 
             objStudent = objStudentController.addStudent();
-            
-           
-            
+
             arrayStudent[index] = objStudent;
             objRegistration = objStudentController.addRegistration(name, id, email, phone, type, dName, registerdYear, intake, year, semester, batch, studentIssue);
-            
-             boolean result= objStudentController.insertStudentToDB(objRegistration);
-            
+
+            boolean result = objStudentController.insertStudentToDB(objRegistration);
+
             arrayRegistration[index] = objRegistration;
             lblname.setText(objRegistration.getName());
             txtIssueStudent.setText(objRegistration.getEmail() + " " + objRegistration.getStudentIssue());
             index++;
-           if(result)
-            {
-            JOptionPane.showMessageDialog(rootPane, "Student registration details have been added to database succesful " + index, "Output", 1);
+            if (result) {
+                JOptionPane.showMessageDialog(rootPane, "Student registration details have been added to database succesful " + index, "Output", 1);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Student registration details have not been added to database succesful " + index, "Output", 1);
             }
-            else
-            {
-                JOptionPane.showMessageDialog(rootPane, "Student registration details have not been added to database succesful " + index, "Output", 1); 
-            }  
         } catch (Throwable ex) {
             System.out.println(ex.getMessage());
         }
@@ -2556,25 +2569,27 @@ public class StudentMainView extends javax.swing.JFrame {
 
     private void cboxDgreetypeStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetypeStudentActionPerformed
         // TODO add your handling code here:
+
+        String type = (String) cboxDgreetypeStudent.getSelectedItem();
+        System.out.println(type);
+
         try {
-            if (cboxDgreetypeStudent.getSelectedItem().equals("Internal")) {
-                cboxDgreenameStudnet.removeAllItems();
-                cboxDgreenameStudnet.addItem("weda");
-                cboxDgreenameStudnet.addItem("karapan");
-                cboxDgreenameStudnet.addItem("magul");
-                cboxDgreenameStudnet.addItem("labba");
-                cboxDgreenameStudnet.setSelectedItem(null);
-            } else if (cboxDgreetypeStudent.getSelectedItem().equals("External")) {
-                cboxDgreenameStudnet.removeAllItems();
-                cboxDgreenameStudnet.addItem("deiyane");
-                cboxDgreenameStudnet.addItem("meka");
-                cboxDgreenameStudnet.addItem("hari");
-                cboxDgreenameStudnet.addItem("yaman");
-                cboxDgreenameStudnet.setSelectedItem(null);
+            list = objStudentController.updattecombox(type);
+
+            cboxDgreenameStudnet.removeAllItems();
+
+            for (int i = 0; i < list.size(); i++) {
+
+                cboxDgreenameStudnet.addItem(list.get(i).getEmail());
+
+
+
             }
+
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
+
 
     }//GEN-LAST:event_cboxDgreetypeStudentActionPerformed
 
@@ -2593,38 +2608,6 @@ public class StudentMainView extends javax.swing.JFrame {
             txtNameStudent.setForeground(new Color(153, 153, 153));
         }
     }//GEN-LAST:event_txtNameStudentFocusLost
-
-    private void txtEmailStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailStudentFocusGained
-        // TODO add your handling code here:
-        if (txtEmailStudent.getText().equals("Email")) {
-            txtEmailStudent.setText("");
-            txtEmailStudent.setForeground(new Color(0, 0, 0));
-        }
-    }//GEN-LAST:event_txtEmailStudentFocusGained
-
-    private void txtEmailStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailStudentFocusLost
-        // TODO add your handling code here:
-        if (txtEmailStudent.getText().equals("")) {
-            txtEmailStudent.setText("Email");
-            txtEmailStudent.setForeground(new Color(153, 153, 153));
-        }
-    }//GEN-LAST:event_txtEmailStudentFocusLost
-
-    private void txtPhonenoStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhonenoStudentFocusGained
-        // TODO add your handling code here:
-        if (txtPhonenoStudent.getText().equals("Phone No")) {
-            txtPhonenoStudent.setText("");
-            txtPhonenoStudent.setForeground(new Color(0, 0, 0));
-        }
-    }//GEN-LAST:event_txtPhonenoStudentFocusGained
-
-    private void txtPhonenoStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhonenoStudentFocusLost
-        // TODO add your handling code here:
-        if (txtPhonenoStudent.getText().equals("")) {
-            txtPhonenoStudent.setText("Phone No");
-            txtPhonenoStudent.setForeground(new Color(153, 153, 153));
-        }
-    }//GEN-LAST:event_txtPhonenoStudentFocusLost
 
     private void txtIDStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIDStudentFocusGained
         // TODO add your handling code here:
@@ -2976,6 +2959,52 @@ public class StudentMainView extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void cboxDgreetypeStudentItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxDgreetypeStudentItemStateChanged
+        // TODO add your handling code here:
+
+
+    }//GEN-LAST:event_cboxDgreetypeStudentItemStateChanged
+
+    private void txtPhonenoStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhonenoStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhonenoStudentActionPerformed
+
+    private void txtPhonenoStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhonenoStudentFocusLost
+        // TODO add your handling code here:
+        if (txtPhonenoStudent.getText().equals("")) {
+            txtPhonenoStudent.setText("Phone No");
+            txtPhonenoStudent.setForeground(new Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_txtPhonenoStudentFocusLost
+
+    private void txtPhonenoStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhonenoStudentFocusGained
+        // TODO add your handling code here:
+        if (txtPhonenoStudent.getText().equals("Phone No")) {
+            txtPhonenoStudent.setText("");
+            txtPhonenoStudent.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_txtPhonenoStudentFocusGained
+
+    private void txtEmailStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailStudentActionPerformed
+
+    private void txtEmailStudentFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailStudentFocusLost
+        // TODO add your handling code here:
+        if (txtEmailStudent.getText().equals("")) {
+            txtEmailStudent.setText("Email");
+            txtEmailStudent.setForeground(new Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_txtEmailStudentFocusLost
+
+    private void txtEmailStudentFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailStudentFocusGained
+        // TODO add your handling code here:
+        if (txtEmailStudent.getText().equals("Email")) {
+            txtEmailStudent.setText("");
+            txtEmailStudent.setForeground(new Color(0, 0, 0));
+        }
+    }//GEN-LAST:event_txtEmailStudentFocusGained
 
     //set and reset color
     void setColor(JPanel panel) {
