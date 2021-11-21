@@ -3129,6 +3129,17 @@ public class AdminMainView extends javax.swing.JFrame {
         tab_3_2.setVisible(false);
         tab_3_2.setEnabled(false);
         jPanel6.setEnabled(false);
+        
+        txtuniname.setText("");
+        txtcuntry.setText("");
+        txtdgreename.setText("");
+        txtdgreeid.setText("");
+        txtfaculty.setText("");
+        txtentryrequirements.setText("");
+        txtprogrammeduration.setText("");
+        txtprogrammeschedule.setText("");
+        txtintakes.setText("");
+        txtcoursefee.setText("");
     }//GEN-LAST:event_jButton15MouseClicked
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
