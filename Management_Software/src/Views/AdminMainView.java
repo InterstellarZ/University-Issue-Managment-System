@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 
 import Models.Admin;
 import Controler.AdminController;
+import Models.UserContext;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,6 +26,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class AdminMainView extends javax.swing.JFrame {
 
+    UserContext userContext ; 
+    
     Admin objAdmin;
     Admin[] arrayAdmins;
 
@@ -47,7 +50,8 @@ public class AdminMainView extends javax.swing.JFrame {
     PreparedStatement pst = null;
     ResultSet rs = null;
 
-    public AdminMainView() {
+    public AdminMainView(UserContext userContext) {
+        
         initComponents();
         icon();
         setSize(1258, 800);
@@ -58,7 +62,19 @@ public class AdminMainView extends javax.swing.JFrame {
 
         PopulateAdduserList();
         PopulateManagecoursesAdminList();
+        
+        
+        userContext =userContext ; 
+        
+        objAdminController.setUserContext(userContext);
+        objAdminController.GetIDDDDDDD();
+        
+        jLabel44.setText(userContext.getName());
+        jLabel10.setText(userContext.getID());
+        //
+    
     }
+     
 
     private void PopulateAdduserList() {
         // load data from database
@@ -2938,56 +2954,7 @@ public class AdminMainView extends javax.swing.JFrame {
     void resetColor(JPanel panel) {
         panel.setBackground(new Color(36, 47, 65));
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminMainView.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminMainView.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminMainView.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminMainView.class
-                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminMainView().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btdelete;

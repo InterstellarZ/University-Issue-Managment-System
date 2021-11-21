@@ -1,17 +1,19 @@
 package Views;
 
 import Controler.LoginController;
-import DatabaseAccessLayer.EmployerAccessLogic;
+import Models.UserContext;
 import Models.Users; //import user class in oder to get password and user name
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class LoginView extends javax.swing.JFrame {
-
+    
+    UserContext userContext ;
+    
     LoginController controllerobj;
     List<Users> list;
     AdminMainView objAdminMainView;
@@ -19,18 +21,18 @@ public class LoginView extends javax.swing.JFrame {
     StudentMainView objStudentMainView;
     LoginView objLoginView;
     GuestView objGuestView;
-    
 
     public LoginView() {
         initComponents();
         icon();
+        userContext = new UserContext();
+        
         controllerobj = new LoginController();
 
-        objAdminMainView = new AdminMainView();
         // objLoginView =new LoginView();
-        objEmployerMainView = new EmployerMainView();
-        objStudentMainView = new StudentMainView();
-        objGuestView = new GuestView();
+//        objEmployerMainView = new EmployerMainView();
+//        objStudentMainView = new StudentMainView();
+//        objGuestView = new GuestView();
 
         //   objforloginaccess =new LoginAccessLayer();
     }
@@ -438,13 +440,14 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
         jLabel11.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_jLabel11MouseExited
-
+ 
     private void btnloginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnloginMouseClicked
         String userText = txtLoginid.getText();
         char[] passarray = txtPasswordlogin.getPassword();
         String passText = new String(passarray);
 
         list = controllerobj.GetEmployees(userText, passText);
+        
 
         if (list.size() == 1) {
 
@@ -453,29 +456,38 @@ public class LoginView extends javax.swing.JFrame {
             model.addColumn("ID");
             model.addColumn("Password");
             model.addColumn("Type");
+            model.addColumn("Name");
 
             for (int i = 0; i < list.size(); i++) {
                 Object[] rowData = new Object[]{
                     list.get(i).getUserID(),
-                    list.get(i).getPassword(),
-                    list.get(i).getType(),};
+                    list.get(i).getPassword(),                    
+                    list.get(i).getType(),
+                    list.get(i).getName(),};
 
                 System.out.println(list.get(i).getUserID());
-                String type = list.get(i).getUserID();
+                String type = list.get(i).getType();
+                
+                userContext.setName(list.get(i).getName());
+                userContext.setID(list.get(i).getUserID());
+                
+                controllerobj.setUserContext(userContext);
+                
 
                 model.insertRow(0, rowData);
 
                 if (type.equals("Admin") || type.equals("Employer") || type.equals("Student")) {
                     if (type.equals("Admin")) {
 
+                        objAdminMainView = new AdminMainView(userContext);
                         objAdminMainView.setVisible(true);
                         dispose();
 
                     } else if (type.equals("Employer")) {
-                        EmployerMainView employerMainView = new EmployerMainView(userText);
+                        
+                        objEmployerMainView = new EmployerMainView(userContext);
                         objEmployerMainView.setVisible(true);
                         dispose();
-                        
 
                     } else {
                         objStudentMainView.setVisible(true);
@@ -483,8 +495,8 @@ public class LoginView extends javax.swing.JFrame {
                         dispose();
 
                     }
-
                 } else {
+                    showMessageDialog(null, "This is even shorter");
                     System.out.println("this is not valid");
                 }
 
@@ -493,8 +505,6 @@ public class LoginView extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Invalid User name or Password", "Error", 1);
         }
-        
-
 
         //current window will close
     }//GEN-LAST:event_btnloginMouseClicked
@@ -537,7 +547,6 @@ public class LoginView extends javax.swing.JFrame {
         });
 
     }
-    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

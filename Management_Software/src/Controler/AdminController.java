@@ -7,7 +7,9 @@ import Models.Admin.ManagecoursesAdmin;
 import DatabaseAccessLayer.AdminAccessLogic;
 import java.util.List;
 
-public class AdminController {
+
+ 
+public class AdminController extends BaseController {
 
     Admin objAdmin;
     Admin.Adduser objAdduser;
@@ -32,7 +34,11 @@ public class AdminController {
         return objAdduser;
 
     }
-
+    public boolean GetIDDDDDDD( ) {
+        boolean result = true;   
+        String  zz=userContext.getID();  
+        return result;
+    }
     public boolean insertAdminToDB(Admin.Adduser objAdminAdduser) {
         boolean result = deshan.addAdduserTODB(objAdminAdduser);
         return result;

@@ -8,13 +8,13 @@ import DatabaseAccessLayer.EmployerAccessLogic;
 import Models.Admin;
 import java.util.List;
 
-public class EmployerController {
+public class EmployerController extends BaseController {
 
     Employer objEmployer;
     Employer.Myissues objMyissues;
     Employer.AllissuesEmployer objAllissuesEmployer;
     Employer.ManagecoursesEmployer objManagecoursesEmployer;
-//    Employer.MonthlyHistoryOfIssuesEmployer objMonthlyHistoryOfIssuesEmployer;
+    Employer.MonthlyHistoryOfIssuesEmployer objMonthlyHistoryOfIssuesEmployer;
     Employer.HelpEmployer objHelpEmployer;
     
     EmployerAccessLogic deshan;
@@ -22,11 +22,18 @@ public class EmployerController {
     public EmployerController()
     {
         deshan = new EmployerAccessLogic();
+         
     }
 
     public Employer addEmployer() {
         objEmployer = new Employer();
         return objEmployer;
+    }
+    
+    public String GetID() {
+        boolean result = true; 
+        String  zz=userContext.getID(); 
+        return zz;
     }
     
     
@@ -85,7 +92,6 @@ public class EmployerController {
 
         return result;
     }
-    
     
 
 

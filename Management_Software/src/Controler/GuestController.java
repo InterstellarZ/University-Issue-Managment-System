@@ -8,7 +8,7 @@ import Models.Guest.HelpGuest;
 import DatabaseAccessLayer.GuestAccessLogic;
 import java.util.List;
 
-public class GuestController {
+public class GuestController extends BaseController  {
 
     Guest objGuest;
     Guest.StudentRegisrationGuest objRegistrationGuest;

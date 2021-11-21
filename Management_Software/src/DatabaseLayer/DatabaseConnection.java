@@ -12,10 +12,11 @@ import java.sql.Statement;
  * @author ruvin
  */
 public class DatabaseConnection {
-
-    private final String URL = "jdbc:mysql://localhost:3306/studentapp";
+    
+    private final String URL ="jdbc:mysql://localhost:3306/studentapp";
     private final String Uname = "root";
     private final String Password = "";
+
 
     private static DatabaseConnection instance; //create an object for the class of DatabaseConnection
     private Connection con;

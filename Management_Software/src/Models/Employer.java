@@ -509,22 +509,8 @@ public class Employer {
     }
 
     //-----------------------------------------------------------------------
-    public class EmployerID {         //for the course details
-         String employerID;
-         
-         public EmployerID(String employerID) {
+    public class MonthlyHistoryOfIssuesEmployer {         //for the course details
 
-            this.employerID = employerID;
-
-        }
-        
-        public String getemployerID() {
-            return employerID;
-        }
-
-        public void setemployerID(String employerID) {
-            this.employerID = employerID;
-        }
     }
 
     //------------------------------------------------------------------

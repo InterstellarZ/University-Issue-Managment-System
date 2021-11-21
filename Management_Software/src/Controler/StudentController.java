@@ -11,7 +11,7 @@ import DatabaseAccessLayer.StudentAccessLogic;
 import Models.Users;
 import java.util.List;
 
-public class StudentController {
+public class StudentController  extends BaseController {
 
     Student objStudent;
     Student.StudentRegisration objRegistration;

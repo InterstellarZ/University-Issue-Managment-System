@@ -1,33 +1,25 @@
 
 package DatabaseAccessLayer;
+import Controler.EmployerController;
 import DatabaseLayer.DatabaseConnection;
+import Models.Admin;
 import Models.Employer;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import Views.EmployerMainView;
-import Views.LoginView;
-
-
 public class EmployerAccessLogic {
  
 
 
     private final DatabaseConnection singleConn;
     Employer objamployer;
-    Views.EmployerMainView objEamployerView;
-    Views.LoginView objLoginView;
-    String userid;
-    
-     
 
     public EmployerAccessLogic() {
         singleConn = DatabaseConnection.getSingleInstace();
         objamployer = new Employer();
     }
     
-    
+     EmployerController objEmployerController;
     
     
     public boolean addManagecoursesEmployerTODB(Employer.ManagecoursesEmployer objEmployer) {
@@ -113,8 +105,7 @@ public class EmployerAccessLogic {
 
             List<Employer.ManagecoursesEmployer> managecoursesEmployer = new ArrayList<Employer.ManagecoursesEmployer>();
 
-            String query = " SELECT degreetype,uniname,cuntry,degreename,degreeid,faculty,entryreqirements,programmeduration,programmeschedule,"
-                    + "intake,coursefee  FROM coursedetails where degreename ='" + searchText + "' or  degreeid ='" + searchText + "'";
+            String query = " SELECT degreetype,uniname,cuntry,degreename,degreeid,faculty,entryreqirements,programmeduration,programmeschedule,intake,coursefee  FROM coursedetails where degreename ='" + searchText + "' or  degreeid ='" + searchText + "'";
 
             ResultSet result = singleConn.ExecuteQueryResultSet(query);
 
@@ -146,54 +137,6 @@ public class EmployerAccessLogic {
     
     
     //-----------------------------------------------------------------------------------------------------------
-    
-        public List<Employer.AllissuesEmployer> GetmyAllissuesEmployer(String searchText) {
-        try {
-
-            List<Employer.AllissuesEmployer> AllissuesEmployer = new ArrayList<Employer.AllissuesEmployer>();
-
-            String query = " SELECT  ncallissuesid,issuetype,inquiry_type,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,"
-                    + "semester,batch,subjectname,exam,date,time,comment,allexinquirydetails,Employee_ID FROM notcomplitedallissues where Employee_ID = '" +searchText+ "'";
-            ResultSet result = singleConn.ExecuteQueryResultSet(query);
-
-            while (result.next()) {
-                Employer.AllissuesEmployer emp = objamployer.new AllissuesEmployer(
-                        result.getString("ncallissuesid"),
-                        result.getString("issuetype"),
-                        result.getString("inquiry_type"),
-                        result.getString("stname"),
-                        result.getString("itnumber"),
-                        result.getString("email"),
-                        result.getString("phoneNo"),
-                        result.getString("degree_type"),
-                        result.getString("degreename"),
-                        result.getString("registerdyear"),
-                        result.getString("intake"),
-                        result.getString("year"),
-                        result.getString("semester"),
-                        result.getString("batch"),
-                        result.getString("subjectname"),
-                        result.getString("exam"),
-                        result.getString("date"),
-                        result.getString("time"),
-                        result.getString("comment"),
-                        result.getString("allexinquirydetails"),
-                        result.getString("Employee_ID")
-                        
-                           
-                        
-                );
-
-                AllissuesEmployer.add(emp);
-            }
-
-            return AllissuesEmployer;
-
-        } catch (Exception ex) {
-            return null;
-        }
-
-    }
     
      public List<Employer.AllissuesEmployer> GetAllissuesEmployer(String searchText) {
         try {
@@ -288,39 +231,58 @@ public class EmployerAccessLogic {
 
     }
      
-     
-    
-    
-    
-    
-    
-    
+     public List<Employer.AllissuesEmployer> GetmyAllissuesEmployer( String employee_ID ) {
+        try {
 
-//    public boolean addMyissuesTODB(Employer.Myissues objEmployer) {
-//        try {
-//
-//            String query = "insert into studentregistration values;";
-//            boolean result = singleConn.ExecuteQuery(query);
-//            return result;
-//        } catch (Exception ex) {
-//            return false;
-//        }
-//    }
-//        
-//    public boolean addManagecoursesEmployerTODB(Employer.ManagecoursesEmployer objEmployer) {
-//        try {
-//
-//            String query = "insert into studentregistration values;";
-//            boolean result = singleConn.ExecuteQuery(query);
-//            return result;
-//        } catch (Exception ex) {
-//            return false;
-//        }
-//    }
+            List<Employer.AllissuesEmployer> AllissuesEmployer = new ArrayList<Employer.AllissuesEmployer>();
 
-    private void initComponents() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+            
+          String query = " SELECT  ncallissuesid,issuetype,inquiry_type,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,"
+                    + "semester,batch,subjectname,exam,date,time,comment,allexinquirydetails,Employee_ID FROM notcomplitedallissues where Employee_ID = '" + employee_ID + "'";
+            ResultSet result = singleConn.ExecuteQueryResultSet(query);
+
+            while (result.next()) {
+                Employer.AllissuesEmployer emp = objamployer.new AllissuesEmployer(
+                        result.getString("ncallissuesid"),
+                        result.getString("issuetype"),
+                        result.getString("inquiry_type"),
+                        result.getString("stname"),
+                        result.getString("itnumber"),
+                        result.getString("email"),
+                        result.getString("phoneNo"),
+                        result.getString("degree_type"),
+                        result.getString("degreename"),
+                        result.getString("registerdyear"),
+                        result.getString("intake"),
+                        result.getString("year"),
+                        result.getString("semester"),
+                        result.getString("batch"),
+                        result.getString("subjectname"),
+                        result.getString("exam"),
+                        result.getString("date"),
+                        result.getString("time"),
+                        result.getString("comment"),
+                        result.getString("allexinquirydetails"),
+                        result.getString("Employee_ID")
+                        
+                           
+                        
+                );
+
+                AllissuesEmployer.add(emp);
+            }
+
+            return AllissuesEmployer;
+
+        } catch (Exception ex) {
+            return null;
+        }
+    
+    
+    
+     }
 }
+    
+
 
 

@@ -5,6 +5,7 @@ public class Users {
     private String userID;      
     private String password;
     private String type;
+    private String name;
 
     
     //constructor of Users class
@@ -14,7 +15,13 @@ public class Users {
         this.password = password;
         this.type = type;
     }
-
+    
+    public Users(String userID, String password, String type,String name) {      
+        this.userID = userID;
+        this.password = password;
+        this.type = type;
+        this.name = name;
+    }
     
     //getter and setter of the above variables
     
@@ -41,5 +48,11 @@ public class Users {
     public void setType(String type) {
         this.type = type;
     }
+   public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

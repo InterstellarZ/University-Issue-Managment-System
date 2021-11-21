@@ -21,7 +21,7 @@ public class LoginUnitTest {
 
     @Before
     public void SetValues() {
-        actual = c.x("KC");
+       // actual = c.x("KC");
 
     }
 

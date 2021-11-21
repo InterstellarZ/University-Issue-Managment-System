@@ -38,11 +38,11 @@ public class LoginAccessLayer {
     public LoginAccessLayer() {
         singleConn = DatabaseConnection.getSingleInstace();
 
-        objAdminMainView = new AdminMainView();
+       /* objAdminMainView = new AdminMainView();
       //  objLoginView =new LoginView();
         objEmployerMainView = new EmployerMainView();
         objStudentMainView = new StudentMainView();
-        objGuestView= new GuestView();
+        objGuestView= new GuestView(); */
 
     }
 
@@ -57,9 +57,10 @@ public class LoginAccessLayer {
 
             while (result.next()) {
                 Users emp = new Users(
-                        result.getString("type"),
                         result.getString("ID"),
-                        result.getString("password")
+                        result.getString("password"),
+                        result.getString("type"),
+                        result.getString("name")
                 );
 
            
