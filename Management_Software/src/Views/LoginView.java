@@ -349,7 +349,7 @@ public class LoginView extends javax.swing.JFrame {
         String userID = txtLoginid.getText();
         String password = txtPasswordlogin.getText();
         
-        if (password.contains("admin123") && (userID.contains("Admin")))
+        if (password.contains("student123") && (userID.contains("Student")))
         {
             txtLoginid.setText(null);
             txtPasswordlogin.setText(null);
@@ -365,6 +365,15 @@ public class LoginView extends javax.swing.JFrame {
             dispose();
             
             EmployerMainView info = new EmployerMainView();
+            info.setVisible(true);
+        }
+        else if (password.contains("admin123") && (userID.contains("Admin")))
+        {
+            txtLoginid.setText(null);
+            txtPasswordlogin.setText(null);
+            dispose();
+            
+            AdminMainView info = new AdminMainView();
             info.setVisible(true);
         }
         else
