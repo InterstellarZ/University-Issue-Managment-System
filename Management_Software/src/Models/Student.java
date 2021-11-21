@@ -307,14 +307,13 @@ public class Student {
         String InquirieType;
         String subjectName;
         String examType;
-        String yearSubject;
-        String monthSubject;
-        String daySubject;
-        String hourSubject;
-        String minuiteSubject;
+        String date;
+        String time;
         String otherIssue;
 
-        public ExamInquiries(String name, String ID, String email, String phone, String degreeType, String degreeName, String registerYear, String intake, String year, String semester, String batch, String InquirieType, String subjectName, String examType, String yearSubject, String monthSubject, String daySubject, String hourSubject, String minuiteSubject, String otherIssue) {
+        public ExamInquiries(String name, String ID, String email, String phone, String degreeType, String degreeName, String registerYear, String intake, String year, String semester,
+                             String batch, String InquirieType, String subjectName, String examType, String date
+                             , String time,String otherIssue) {
             this.name = name;
             this.ID = ID;
             this.email = email;
@@ -329,11 +328,8 @@ public class Student {
             this.InquirieType = InquirieType;
             this.subjectName = subjectName;
             this.examType = examType;
-            this.yearSubject = yearSubject;
-            this.monthSubject = monthSubject;
-            this.daySubject = daySubject;
-            this.hourSubject = hourSubject;
-            this.minuiteSubject = minuiteSubject;
+            this.date = date;
+            this.time = time;
             this.otherIssue = otherIssue;
         }
 
@@ -449,44 +445,20 @@ public class Student {
             this.examType = examType;
         }
 
-        public String getYearSubject() {
-            return yearSubject;
+        public String getdate() {
+            return date;
         }
 
-        public void setYearSubject(String yearSubject) {
-            this.yearSubject = yearSubject;
+        public void setdate(String date) {
+            this.date = date;
         }
 
-        public String getMonthSubject() {
-            return monthSubject;
+        public String gettime() {
+            return time;
         }
 
-        public void setMonthSubject(String monthSubject) {
-            this.monthSubject = monthSubject;
-        }
-
-        public String getDaySubject() {
-            return daySubject;
-        }
-
-        public void setDaySubject(String daySubject) {
-            this.daySubject = daySubject;
-        }
-
-        public String getHourSubject() {
-            return hourSubject;
-        }
-
-        public void setHourSubject(String hourSubject) {
-            this.hourSubject = hourSubject;
-        }
-
-        public String getMinuiteSubject() {
-            return minuiteSubject;
-        }
-
-        public void setMinuiteSubject(String minuiteSubject) {
-            this.minuiteSubject = minuiteSubject;
+        public void settime(String time) {
+            this.time = time;
         }
 
         public String getOtherIssue() {
@@ -502,7 +474,126 @@ public class Student {
     //-----------------------------------------------------------------------
     public class Course {         //for the course details
 
+        String degreeType;
+        String degreeName;
+        String country;
+        String faculty;
+        String entityRequirnment;
+        String ProgrammDuration;
+        String Schedule;
+        String degreeid;
+        String intake;
+        String fee;
+        String Universityname;
+
+        public Course(String degreeType, String degreeName, String country, String faculty, String entityRequirnment, String ProgrammDuration, String Schedule, String degreeid, String intake, String fee,String Universityname) {
+            this.degreeType = degreeType;
+            this.degreeName = degreeName;
+            this.country = country;
+            this.faculty = faculty;
+            this.entityRequirnment = entityRequirnment;
+            this.ProgrammDuration = ProgrammDuration;
+            this.Schedule = Schedule;
+            this.degreeid = degreeid;
+            this.intake = intake;
+            this.fee = fee;
+            this.Universityname=Universityname;
+        }
+
+        public String getUniversityname() {
+            return Universityname;
+        }
+
+        public void setUniversityname(String Universityname) {
+            this.Universityname = Universityname;
+        }
+
+        public String getDegreeType() {
+            return degreeType;
+        }
+
+        public void setDegreeType(String degreeType) {
+            this.degreeType = degreeType;
+        }
+
+        public String getDegreeName() {
+            return degreeName;
+        }
+
+        public void setDegreeName(String degreeName) {
+            this.degreeName = degreeName;
+        }
+
+        public String getCountry() {
+            return country;
+        }
+
+        public void setCountry(String country) {
+            this.country = country;
+        }
+
+        public String getFaculty() {
+            return faculty;
+        }
+
+        public void setFaculty(String faculty) {
+            this.faculty = faculty;
+        }
+
+        public String getEntityRequirnment() {
+            return entityRequirnment;
+        }
+
+        public void setEntityRequirnment(String entityRequirnment) {
+            this.entityRequirnment = entityRequirnment;
+        }
+
+        public String getProgrammDuration() {
+            return ProgrammDuration;
+        }
+
+        public void setProgrammDuration(String ProgrammDuration) {
+            this.ProgrammDuration = ProgrammDuration;
+        }
+
+        public String getSchedule() {
+            return Schedule;
+        }
+
+        public void setSchedule(String Schedule) {
+            this.Schedule = Schedule;
+        }
+
+        public String getdegreeid() {
+            return degreeid;
+        }
+
+        public void setdegreeid(String Registration) {
+            this.degreeid = Registration;
+        }
+
+        public String getIntake() {
+            return intake;
+        }
+
+        public void setIntake(String intake) {
+            this.intake = intake;
+        }
+
+        public String getFee() {
+            return fee;
+        }
+
+        public void setFee(String fee) {
+            this.fee = fee;
+        }
+
+ 
+        
+        
+        
     }
+
 
     //------------------------------------------------------------------
     public class HelpStudent {

@@ -17,15 +17,17 @@ import Models.Employer.ManagecoursesEmployer;
 import Controler.EmployerController;
 import Models.Admin;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author GARFIELD
  */
 public class EmployerMainView extends javax.swing.JFrame {
-    
+
     Employer objEmployer;
     Employer[] arrayEmployer;
-    
+
     Employer.Myissues objMyissues;
     Employer.Myissues[] arrayMyissues;
 
@@ -37,8 +39,11 @@ public class EmployerMainView extends javax.swing.JFrame {
     int index;
 
     EmployerController objEmployerController;
-    
+
     List<Employer.ManagecoursesEmployer> list2;
+    List<Employer.AllissuesEmployer> list3;
+    List<Employer.AllissuesEmployer> list4;
+
     /**
      * Creates new form Student_main_page_view
      */
@@ -51,9 +56,195 @@ public class EmployerMainView extends javax.swing.JFrame {
         arrayManagecoursesEmployer = new Employer.ManagecoursesEmployer[1000];
         arrayManagecoursesEmployer = new Employer.ManagecoursesEmployer[1000];
         objEmployerController = new EmployerController();
-        
+
+        PopulateManagecoursesEmployerList();
+        PopulateAllissuesEmployerList();
+        PopulateCompletedAllissuesEmployerList();
+
     }
-    private void icon(){
+
+    private void PopulateManagecoursesEmployerList() {
+        // load data from database
+        list2 = objEmployerController.GetManagecoursesEmployer("");
+
+        System.out.println(list2);
+
+        // bind data into JTable
+        DefaultTableModel model = new DefaultTableModel();
+
+        model.addColumn("Degree Type");
+        model.addColumn("Uni Name");
+        model.addColumn("Cuntry");
+        model.addColumn("Degree Name");
+        model.addColumn("Degree ID");
+        model.addColumn("Faculty");
+        model.addColumn("Entry Reqirements");
+        model.addColumn("Programme Duration");
+        model.addColumn("Programme Shedule");
+        model.addColumn("Inake");
+        model.addColumn("Course Fee");
+
+//        System.out.println(list2);
+        for (int i = 0; i < list2.size(); i++) {
+
+            // Create the first row
+            Object[] rowData = new Object[]{
+                list2.get(i).getdegreetype(),
+                list2.get(i).getuniname(),
+                list2.get(i).getcuntry(),
+                list2.get(i).getdegreename(),
+                list2.get(i).getdegreeid(),
+                list2.get(i).getfaculty(),
+                list2.get(i).getentryreqirements(),
+                list2.get(i).getprogrammeduration(),
+                list2.get(i).getprogrammeschedule(),
+                list2.get(i).getintake(),
+                list2.get(i).getcoursefee()
+
+            };
+
+            model.insertRow(0, rowData);
+        }
+
+        tabalemanagecourses.setModel(model);
+
+    }
+    
+    private void PopulateAllissuesEmployerList() {
+        // load data from database
+        list3 = objEmployerController.GetAllissuesEmployer("");
+
+        System.out.println(list3);
+
+        // bind data into JTable
+        DefaultTableModel model = new DefaultTableModel();
+
+        model.addColumn("Issue ID");
+        model.addColumn("Issue Type");
+        model.addColumn("Inquiry Type");
+        model.addColumn("Student Name");
+        model.addColumn("Student ID");
+        model.addColumn("Email");
+        model.addColumn("Phone No");
+        model.addColumn("Degree Type");
+        model.addColumn("Degree Name");
+        model.addColumn("Registerd Year");
+        model.addColumn("Intake");
+        model.addColumn("Year");
+        model.addColumn("Semester");
+        model.addColumn("Batch");
+        model.addColumn("Suubject Name");
+        model.addColumn("Exam");
+        model.addColumn("Date");
+        model.addColumn("Time");
+        model.addColumn("Comment");
+        model.addColumn("Details");
+        model.addColumn("Employer ID");
+
+//        System.out.println(list2);
+        for (int i = 0; i < list3.size(); i++) {
+
+            // Create the first row
+            Object[] rowData = new Object[]{
+                list3.get(i).getissueid(),
+                list3.get(i).getissuetype(),
+                list3.get(i).getinquirytype(),
+                list3.get(i).getname(),
+                list3.get(i).getitnumber(),
+                list3.get(i).getemail(),
+                list3.get(i).getphone(),
+                list3.get(i).getdegreetype(),
+                list3.get(i).getdegree(),
+                list3.get(i).getregisterdyear(),
+                list3.get(i).getintake(),
+                list3.get(i).getyear(),
+                list3.get(i).getsemester(),
+                list3.get(i).getbatch(),
+                list3.get(i).getsubject(),
+                list3.get(i).getexam(),
+                list3.get(i).getdate(),
+                list3.get(i).gettime(),
+                list3.get(i).getcomment(),
+                list3.get(i).getdetails(),
+                list3.get(i).getemployerID()
+
+            };
+
+            model.insertRow(0, rowData);
+        }
+
+        TBallissuesEM.setModel(model);
+
+    }
+    
+    private void PopulateCompletedAllissuesEmployerList() {
+        // load data from database
+        list4 = objEmployerController.GetCompletedAllissuesEmployer("");
+
+        System.out.println(list4);
+
+        // bind data into JTable
+        DefaultTableModel model = new DefaultTableModel();
+
+        model.addColumn("Issue ID");
+        model.addColumn("Issue Type");
+        model.addColumn("Inquiry Type");
+        model.addColumn("Student Name");
+        model.addColumn("Student ID");
+        model.addColumn("Email");
+        model.addColumn("Phone No");
+        model.addColumn("Degree Type");
+        model.addColumn("Degree Name");
+        model.addColumn("Registerd Year");
+        model.addColumn("Intake");
+        model.addColumn("Year");
+        model.addColumn("Semester");
+        model.addColumn("Batch");
+        model.addColumn("Suubject Name");
+        model.addColumn("Exam");
+        model.addColumn("Date");
+        model.addColumn("Time");
+        model.addColumn("Comment");
+        model.addColumn("Details");
+        model.addColumn("Employer ID");
+
+//        System.out.println(list2);
+        for (int i = 0; i < list4.size(); i++) {
+
+            // Create the first row
+            Object[] rowData = new Object[]{
+                list4.get(i).getissueid(),
+                list4.get(i).getissuetype(),
+                list4.get(i).getinquirytype(),
+                list4.get(i).getname(),
+                list4.get(i).getitnumber(),
+                list4.get(i).getemail(),
+                list4.get(i).getphone(),
+                list4.get(i).getdegreetype(),
+                list4.get(i).getdegree(),
+                list4.get(i).getregisterdyear(),
+                list4.get(i).getintake(),
+                list4.get(i).getyear(),
+                list4.get(i).getsemester(),
+                list4.get(i).getbatch(),
+                list4.get(i).getsubject(),
+                list4.get(i).getexam(),
+                list4.get(i).getdate(),
+                list4.get(i).gettime(),
+                list4.get(i).getcomment(),
+                list4.get(i).getdetails(),
+                list4.get(i).getemployerID()
+
+            };
+
+            model.insertRow(0, rowData);
+        }
+
+        TBComAllIssuesEM.setModel(model);
+
+    }
+
+    private void icon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Image/Tutora logo.png")));
     }
 
@@ -119,20 +310,37 @@ public class EmployerMainView extends javax.swing.JFrame {
         tab2 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        TBallissuesEM = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         allemail = new javax.swing.JLabel();
-        allphone = new javax.swing.JLabel();
-        allregisterdyear = new javax.swing.JLabel();
         allyear = new javax.swing.JLabel();
-        alldegree = new javax.swing.JLabel();
-        allbatch = new javax.swing.JLabel();
-        allexam = new javax.swing.JLabel();
-        alldate = new javax.swing.JLabel();
-        alltime = new javax.swing.JLabel();
-        allsemester = new javax.swing.JLabel();
         alldetails = new javax.swing.JLabel();
-        allsubject = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        txtDetails = new javax.swing.JTextArea();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        txtComment = new javax.swing.JTextArea();
+        alldetails1 = new javax.swing.JLabel();
+        txtissueID = new javax.swing.JLabel();
+        allemail2 = new javax.swing.JLabel();
+        txtissuetype = new javax.swing.JLabel();
+        txtStudentID = new javax.swing.JLabel();
+        allemail5 = new javax.swing.JLabel();
+        allemail6 = new javax.swing.JLabel();
+        txtEmployerID = new javax.swing.JLabel();
+        allemail1 = new javax.swing.JLabel();
+        allemail3 = new javax.swing.JLabel();
+        allemail4 = new javax.swing.JLabel();
+        allemail7 = new javax.swing.JLabel();
+        tab_3_2 = new javax.swing.JPanel();
+        searchMCtxt = new javax.swing.JTextField();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tabalemanagecourses = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
         tab3 = new javax.swing.JPanel();
         txtfaculty = new javax.swing.JTextField();
         txtuniname = new javax.swing.JTextField();
@@ -164,20 +372,10 @@ public class EmployerMainView extends javax.swing.JFrame {
         jLabel73 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         txtintakes = new javax.swing.JTextArea();
-        tab_3_2 = new javax.swing.JPanel();
-        searchMCtxt = new javax.swing.JTextField();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jLabel36 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        tabalemanagecourses = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
         tab4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TBComAllIssuesEM = new javax.swing.JTable();
         tab6 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
@@ -716,8 +914,8 @@ public class EmployerMainView extends javax.swing.JFrame {
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        jTable3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        TBallissuesEM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        TBallissuesEM.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -747,51 +945,86 @@ public class EmployerMainView extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        jTable3.setRowHeight(30);
-        jScrollPane2.setViewportView(jTable3);
+        TBallissuesEM.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        TBallissuesEM.setRowHeight(30);
+        TBallissuesEM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TBallissuesEMMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(TBallissuesEM);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         allemail.setBackground(new java.awt.Color(255, 255, 255));
-        allemail.setText("E-mail");
-
-        allphone.setBackground(new java.awt.Color(255, 255, 255));
-        allphone.setText("Phone Number");
-
-        allregisterdyear.setBackground(new java.awt.Color(255, 255, 255));
-        allregisterdyear.setText("Registerd year");
+        allemail.setText("Issue ID");
 
         allyear.setBackground(new java.awt.Color(255, 255, 255));
         allyear.setText("Year");
 
-        alldegree.setBackground(new java.awt.Color(255, 255, 255));
-        alldegree.setText("Degree name");
-
-        allbatch.setBackground(new java.awt.Color(255, 255, 255));
-        allbatch.setText("Batch ");
-
-        allexam.setBackground(new java.awt.Color(255, 255, 255));
-        allexam.setText("Exam");
-
-        alldate.setBackground(new java.awt.Color(255, 255, 255));
-        alldate.setText("Date");
-
-        alltime.setBackground(new java.awt.Color(255, 255, 255));
-        alltime.setText("Time");
-
-        allsemester.setBackground(new java.awt.Color(255, 255, 255));
-        allsemester.setText("Semester");
-
         alldetails.setBackground(new java.awt.Color(255, 255, 255));
-        alldetails.setText("Details");
+        alldetails.setText("Details -");
 
-        allsubject.setText("Subject");
+        txtDetails.setColumns(20);
+        txtDetails.setRows(5);
+        jScrollPane11.setViewportView(txtDetails);
+
+        txtComment.setColumns(20);
+        txtComment.setRows(5);
+        jScrollPane12.setViewportView(txtComment);
+
+        alldetails1.setBackground(new java.awt.Color(255, 255, 255));
+        alldetails1.setText("Comment -");
+
+        txtissueID.setBackground(new java.awt.Color(255, 255, 255));
+        txtissueID.setText(" ");
+
+        allemail2.setBackground(new java.awt.Color(255, 255, 255));
+        allemail2.setText("Issue Type");
+
+        txtissuetype.setBackground(new java.awt.Color(255, 255, 255));
+        txtissuetype.setText(" ");
+
+        txtStudentID.setBackground(new java.awt.Color(255, 255, 255));
+        txtStudentID.setText(" ");
+
+        allemail5.setBackground(new java.awt.Color(255, 255, 255));
+        allemail5.setText("Student ID");
+
+        allemail6.setBackground(new java.awt.Color(255, 255, 255));
+        allemail6.setText("Employer ID");
+
+        txtEmployerID.setBackground(new java.awt.Color(255, 255, 255));
+        txtEmployerID.setText(" ");
+
+        allemail1.setBackground(new java.awt.Color(255, 255, 255));
+        allemail1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail1.setText("-");
+
+        allemail3.setBackground(new java.awt.Color(255, 255, 255));
+        allemail3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail3.setText("-");
+
+        allemail4.setBackground(new java.awt.Color(255, 255, 255));
+        allemail4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail4.setText("-");
+
+        allemail7.setBackground(new java.awt.Color(255, 255, 255));
+        allemail7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail7.setText("-");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -800,59 +1033,86 @@ public class EmployerMainView extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(alldetails, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(allemail)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(allemail1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(allemail2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(allemail7, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(allemail3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(txtissuetype, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(544, 544, 544))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(txtissueID, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(529, 529, 529)))
+                        .addComponent(allyear, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(allemail, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(allbatch, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(alldetails)
+                                    .addComponent(alldetails1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(allsemester, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(allsubject, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(allexam, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(alldate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane11)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(allphone, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(alldegree, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(allemail5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(allemail4, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(allregisterdyear, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(allyear, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(alltime, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(allemail6)
+                                .addGap(19, 19, 19)
+                                .addComponent(txtEmployerID, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(allemail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(allphone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alldegree, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(allregisterdyear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(allyear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(allsubject, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(allbatch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(allexam, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(alldate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(alltime, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(allsemester, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(allyear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(allemail2)
+                            .addComponent(txtissuetype)
+                            .addComponent(allemail3)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(allemail)
+                            .addComponent(txtissueID)
+                            .addComponent(allemail1))))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allemail5)
+                    .addComponent(txtStudentID, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(allemail4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(alldetails, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allemail6)
+                    .addComponent(txtEmployerID)
+                    .addComponent(allemail7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(alldetails)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(alldetails1)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6))
         );
 
         javax.swing.GroupLayout tab2Layout = new javax.swing.GroupLayout(tab2);
@@ -861,15 +1121,13 @@ public class EmployerMainView extends javax.swing.JFrame {
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab2Layout.createSequentialGroup()
                 .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tab2Layout.createSequentialGroup()
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(tab2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                        .addGroup(tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 868, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab2Layout.setVerticalGroup(
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -884,6 +1142,174 @@ public class EmployerMainView extends javax.swing.JFrame {
         );
 
         mainpanel.add(tab2);
+
+        tab_3_2.setBackground(new java.awt.Color(255, 255, 255));
+        tab_3_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tab_3_2.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tab_3_2AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        jButton13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton13.setText("Remove");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton14.setText("Update");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton15.setText("Add New");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("Manage Coureses");
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Next page");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        tabalemanagecourses.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Degree name", "Degree Type", "Univercity", "Cuntry"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabalemanagecourses.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tabalemanagecourses.setRowHeight(30);
+        tabalemanagecourses.setSelectionBackground(new java.awt.Color(204, 204, 255));
+        tabalemanagecourses.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabalemanagecoursesMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(tabalemanagecourses);
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setText("Search");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tab_3_2Layout = new javax.swing.GroupLayout(tab_3_2);
+        tab_3_2.setLayout(tab_3_2Layout);
+        tab_3_2Layout.setHorizontalGroup(
+            tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab_3_2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab_3_2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab_3_2Layout.createSequentialGroup()
+                                .addComponent(searchMCtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab_3_2Layout.createSequentialGroup()
+                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(106, 106, 106))
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+            .addGroup(tab_3_2Layout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        tab_3_2Layout.setVerticalGroup(
+            tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tab_3_2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(searchMCtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        mainpanel.add(tab_3_2);
 
         tab3.setBackground(new java.awt.Color(255, 255, 255));
         tab3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1139,173 +1565,6 @@ public class EmployerMainView extends javax.swing.JFrame {
 
         mainpanel.add(tab3);
 
-        tab_3_2.setBackground(new java.awt.Color(255, 255, 255));
-        tab_3_2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        tab_3_2.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tab_3_2AncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-
-        jButton13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton13.setText("Remove");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-
-        jButton14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton14.setText("Update");
-        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton14MouseClicked(evt);
-            }
-        });
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        jButton15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton15.setText("Add New");
-        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton15MouseClicked(evt);
-            }
-        });
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-
-        jLabel36.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("Manage Coureses");
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Next page");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        tabalemanagecourses.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Degree name", "Degree Type", "Univercity", "Cuntry"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        tabalemanagecourses.setRowHeight(30);
-        tabalemanagecourses.setSelectionBackground(new java.awt.Color(204, 204, 255));
-        tabalemanagecourses.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabalemanagecoursesMouseClicked(evt);
-            }
-        });
-        jScrollPane8.setViewportView(tabalemanagecourses);
-
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setText("Search");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout tab_3_2Layout = new javax.swing.GroupLayout(tab_3_2);
-        tab_3_2.setLayout(tab_3_2Layout);
-        tab_3_2Layout.setHorizontalGroup(
-            tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab_3_2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 860, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab_3_2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab_3_2Layout.createSequentialGroup()
-                                .addComponent(searchMCtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab_3_2Layout.createSequentialGroup()
-                                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 656, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(106, 106, 106))
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-            .addGroup(tab_3_2Layout.createSequentialGroup()
-                .addGap(232, 232, 232)
-                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        tab_3_2Layout.setVerticalGroup(
-            tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab_3_2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(searchMCtxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(tab_3_2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(1, 1, 1)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        mainpanel.add(tab_3_2);
-
         tab4.setBackground(new java.awt.Color(255, 255, 255));
         tab4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -1313,8 +1572,8 @@ public class EmployerMainView extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Monthly histry of Issue");
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TBComAllIssuesEM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        TBComAllIssuesEM.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -1359,8 +1618,9 @@ public class EmployerMainView extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setRowHeight(30);
-        jScrollPane4.setViewportView(jTable1);
+        TBComAllIssuesEM.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        TBComAllIssuesEM.setRowHeight(30);
+        jScrollPane4.setViewportView(TBComAllIssuesEM);
 
         javax.swing.GroupLayout tab4Layout = new javax.swing.GroupLayout(tab4);
         tab4.setLayout(tab4Layout);
@@ -1534,7 +1794,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     private void btn_2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_2MousePressed
         // TODO add your handling code here:
-        
+
         setColor(btn_2);
         resetColor(btn_1);
         resetColor(btn_3);
@@ -1549,7 +1809,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     private void btn_3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MousePressed
         // TODO add your handling code here:
-        
+
         setColor(btn_3);
         resetColor(btn_1);
         resetColor(btn_2);
@@ -1564,7 +1824,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     private void btn_4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MousePressed
         // TODO add your handling code here:
-        
+
         setColor(btn_4);
         resetColor(btn_1);
         resetColor(btn_2);
@@ -1579,7 +1839,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     private void btn_6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MousePressed
         // TODO add your handling code here:
-        
+
         setColor(btn_6);
         resetColor(btn_1);
         resetColor(btn_2);
@@ -1610,7 +1870,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         tab6.setEnabled(false);
         tab_3_2.setVisible(false);
         tab_3_2.setEnabled(false);
-        
+
     }//GEN-LAST:event_btn_2MouseClicked
 
     private void btn_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_3MouseClicked
@@ -1627,7 +1887,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         tab6.setEnabled(false);
         tab_3_2.setVisible(true);
         tab_3_2.setEnabled(true);
-        
+
     }//GEN-LAST:event_btn_3MouseClicked
 
     private void btn_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_4MouseClicked
@@ -1644,7 +1904,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         tab6.setEnabled(false);
         tab_3_2.setVisible(false);
         tab_3_2.setEnabled(false);
-        
+
     }//GEN-LAST:event_btn_4MouseClicked
 
     private void btn_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_6MouseClicked
@@ -1661,7 +1921,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         tab6.setEnabled(true);
         tab_3_2.setVisible(false);
         tab_3_2.setEnabled(false);
-        
+
     }//GEN-LAST:event_btn_6MouseClicked
 
     private void btn_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_1MouseClicked
@@ -1704,32 +1964,32 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-       int response = JOptionPane.showConfirmDialog(this, "Do you want to sign out ?","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
-       if(response==JOptionPane.YES_OPTION){
-       dispose();
-       LoginView info = new LoginView();
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to sign out ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.YES_OPTION) {
+            dispose();
+            LoginView info = new LoginView();
             info.setVisible(true);
-       }else if(response==JOptionPane.NO_OPTION){
-       
-       }else if(response==JOptionPane.CLOSED_OPTION){
-       
-       }
+        } else if (response == JOptionPane.NO_OPTION) {
+
+        } else if (response == JOptionPane.CLOSED_OPTION) {
+
+        }
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-       int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
-       if(response==JOptionPane.YES_OPTION){
-       System.exit(0);
-       }else if(response==JOptionPane.NO_OPTION){
-       
-       }else if(response==JOptionPane.CLOSED_OPTION){
-       
-       }
-        
-        
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        } else if (response == JOptionPane.NO_OPTION) {
+
+        } else if (response == JOptionPane.CLOSED_OPTION) {
+
+        }
+
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
@@ -1755,7 +2015,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     private void mainpanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainpanelMousePressed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_mainpanelMousePressed
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
@@ -1792,7 +2052,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jPanel1MouseMoved
 
     private void mainpanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainpanelMouseMoved
@@ -1835,23 +2095,59 @@ public class EmployerMainView extends javax.swing.JFrame {
     private void tab_3_2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tab_3_2AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_tab_3_2AncestorAdded
-    private int xMouse,yMouse;
+    private int xMouse, yMouse;
     private void jPanel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MousePressed
         // TODO add your handling code here:
-        xMouse=evt.getX();
-        yMouse=evt.getY();
-        
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+
     }//GEN-LAST:event_jPanel5MousePressed
 
     private void jPanel5MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseDragged
         // TODO add your handling code here:
-       int x=evt.getXOnScreen();
-       int y=evt.getYOnScreen();
-       setLocation(x-xMouse,y-yMouse);
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jPanel5MouseDragged
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to Delete this Course ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == 0) {
 
+            String degreetype = (String) Cboxdgreetype.getSelectedItem();
+            String uniname = txtuniname.getText();
+            String cuntry = txtcuntry.getText();
+            String degreename = txtdgreename.getText();
+            String degreeid = txtdgreeid.getText();
+            String faculty = txtfaculty.getText();
+            String entryreqirements = txtentryrequirements.getText();
+            String programmeduration = txtprogrammeduration.getText();
+            String programmeschedule = txtprogrammeschedule.getText();
+            String intake = txtintakes.getText();
+            String coursefee = txtcoursefee.getText();
+
+            objEmployer = objEmployerController.addEmployer();
+
+            arrayEmployer[index] = objEmployer;
+            objManagecoursesEmployer = objEmployerController.addManagecoursesEmployer(degreetype, uniname, cuntry, degreename, degreeid, faculty, entryreqirements, programmeduration, programmeschedule, intake, coursefee);
+
+            boolean result = objEmployerController.deleteManagecoursesEmployerToDB(objManagecoursesEmployer);
+
+            System.out.println(result);
+
+            txtuniname.setText("");
+            txtcuntry.setText("");
+            txtdgreename.setText("");
+            txtdgreeid.setText("");
+            txtfaculty.setText("");
+            txtentryrequirements.setText("");
+            txtprogrammeduration.setText("");
+            txtprogrammeschedule.setText("");
+            txtintakes.setText("");
+            txtcoursefee.setText("");
+
+            PopulateManagecoursesEmployerList(); //this is the method to call the table details
+        }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
@@ -1906,6 +2202,17 @@ public class EmployerMainView extends javax.swing.JFrame {
         tab6.setEnabled(false);
         tab_3_2.setVisible(false);
         tab_3_2.setEnabled(false);
+
+        txtuniname.setText("");
+        txtcuntry.setText("");
+        txtdgreename.setText("");
+        txtdgreeid.setText("");
+        txtfaculty.setText("");
+        txtentryrequirements.setText("");
+        txtprogrammeduration.setText("");
+        txtprogrammeschedule.setText("");
+        txtintakes.setText("");
+        txtcoursefee.setText("");
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1913,10 +2220,132 @@ public class EmployerMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tabalemanagecoursesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabalemanagecoursesMouseClicked
+        int row = tabalemanagecourses.getSelectedRow();
+        String tc = tabalemanagecourses.getModel().getValueAt(row, 4).toString();
 
+        try {
+
+            System.out.println(tc);
+
+            String searchText = tc;
+            boolean isFound = false;
+            for (Employer.ManagecoursesEmployer r : list2) {
+                if (r.getdegreeid().contains(searchText)) {
+                    isFound = true;
+
+                    Cboxdgreetype.setSelectedItem(r.getdegreetype());
+                    txtuniname.setText(r.getuniname());
+                    txtcuntry.setText(r.getcuntry());
+                    txtdgreename.setText(r.getdegreename());
+                    txtdgreeid.setText(r.getdegreeid());
+                    txtfaculty.setText(r.getfaculty());
+                    txtentryrequirements.setText(r.getentryreqirements());
+                    txtprogrammeduration.setText(r.getprogrammeduration());
+                    txtprogrammeschedule.setText(r.getprogrammeschedule());
+                    txtintakes.setText(r.getintake());
+                    txtcoursefee.setText(r.getcoursefee());
+
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_tabalemanagecoursesMouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String name = searchMCtxt.getText();
+
+        if (name.equals("")) {
+
+            list2 = objEmployerController.GetManagecoursesEmployer("");
+
+            System.out.println(list2);
+
+            // bind data into JTable
+            DefaultTableModel model = new DefaultTableModel();
+
+            model.addColumn("Degree Type");
+            model.addColumn("Uni Name");
+            model.addColumn("Cuntry");
+            model.addColumn("Degree Name");
+            model.addColumn("Degree ID");
+            model.addColumn("Faculty");
+            model.addColumn("Entry Reqirements");
+            model.addColumn("Programme Duration");
+            model.addColumn("Programme Shedule");
+            model.addColumn("Inake");
+            model.addColumn("Course Fee");
+
+//        System.out.println(list);
+            for (int i = 0; i < list2.size(); i++) {
+
+                // Create the first row
+                Object[] rowData = new Object[]{
+                    list2.get(i).getdegreetype(),
+                    list2.get(i).getuniname(),
+                    list2.get(i).getcuntry(),
+                    list2.get(i).getdegreename(),
+                    list2.get(i).getdegreeid(),
+                    list2.get(i).getfaculty(),
+                    list2.get(i).getentryreqirements(),
+                    list2.get(i).getprogrammeduration(),
+                    list2.get(i).getprogrammeschedule(),
+                    list2.get(i).getintake(),
+                    list2.get(i).getcoursefee()
+
+                };
+
+                model.insertRow(0, rowData);
+            }
+
+            tabalemanagecourses.setModel(model);
+
+        } else {
+            list2 = objEmployerController.searchManagecoursesEmployer(name);
+
+            System.out.println(list2);
+
+            // bind data into JTable
+            DefaultTableModel model = new DefaultTableModel();
+
+            model.addColumn("Degree Type");
+            model.addColumn("Uni Name");
+            model.addColumn("Cuntry");
+            model.addColumn("Degree Name");
+            model.addColumn("Degree ID");
+            model.addColumn("Faculty");
+            model.addColumn("Entry Reqirements");
+            model.addColumn("Programme Duration");
+            model.addColumn("Programme Shedule");
+            model.addColumn("Inake");
+            model.addColumn("Course Fee");
+
+//        System.out.println(list);
+            for (int i = 0; i < list2.size(); i++) {
+
+                // Create the first row
+                Object[] rowData = new Object[]{
+                    list2.get(i).getdegreetype(),
+                    list2.get(i).getuniname(),
+                    list2.get(i).getcuntry(),
+                    list2.get(i).getdegreename(),
+                    list2.get(i).getdegreeid(),
+                    list2.get(i).getfaculty(),
+                    list2.get(i).getentryreqirements(),
+                    list2.get(i).getprogrammeduration(),
+                    list2.get(i).getprogrammeschedule(),
+                    list2.get(i).getintake(),
+                    list2.get(i).getcoursefee()
+
+                };
+
+                model.insertRow(0, rowData);
+            }
+
+            tabalemanagecourses.setModel(model);
+        }
+
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -1946,6 +2375,17 @@ public class EmployerMainView extends javax.swing.JFrame {
         tab6.setEnabled(false);
         tab_3_2.setVisible(true);
         tab_3_2.setEnabled(true);
+
+        txtuniname.setText("");
+        txtcuntry.setText("");
+        txtdgreename.setText("");
+        txtdgreeid.setText("");
+        txtfaculty.setText("");
+        txtentryrequirements.setText("");
+        txtprogrammeduration.setText("");
+        txtprogrammeschedule.setText("");
+        txtintakes.setText("");
+        txtcoursefee.setText("");
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -1969,27 +2409,145 @@ public class EmployerMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        if (txtuniname.getText().length() <= 0 || txtcuntry.getText().length() <= 0 || txtdgreename.getText().length() <= 0 || txtdgreeid.getText().length() <= 0 || txtfaculty.getText().length() <= 0
+                || txtentryrequirements.getText().length() <= 0 || txtprogrammeduration.getText().length() <= 0 || txtcoursefee.getText().length() <= 0) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Empty Text Field, Please fill all");
+        } else {
+            try {
+                String degreetype = (String) Cboxdgreetype.getSelectedItem();
+                String uniname = txtuniname.getText();
+                String cuntry = txtcuntry.getText();
+                String degreename = txtdgreename.getText();
+                String degreeid = txtdgreeid.getText();
+                String faculty = txtfaculty.getText();
+                String entryreqirements = txtentryrequirements.getText();
+                String programmeduration = txtprogrammeduration.getText();
+                String programmeschedule = txtprogrammeschedule.getText();
+                String intake = txtintakes.getText();
+                String coursefee = txtcoursefee.getText();
 
+                objEmployer = objEmployerController.addEmployer();
+
+                arrayEmployer[index] = objEmployer;
+                objManagecoursesEmployer = objEmployerController.addManagecoursesEmployer(degreetype, uniname, cuntry, degreename, degreeid, faculty, entryreqirements, programmeduration, programmeschedule, intake, coursefee);
+
+                boolean result = objEmployerController.insertManagecoursesEmployerToDB(objManagecoursesEmployer);
+
+                arrayManagecoursesEmployer[index] = objManagecoursesEmployer;
+
+                index++;
+                if (result) {
+                    JOptionPane.showMessageDialog(rootPane, "Coursee details have been added to database succesful " + index, "Output", 1);
+                    txtuniname.setText("");
+                    txtcuntry.setText("");
+                    txtdgreename.setText("");
+                    txtdgreeid.setText("");
+                    txtfaculty.setText("");
+                    txtentryrequirements.setText("");
+                    txtprogrammeduration.setText("");
+                    txtprogrammeschedule.setText("");
+                    txtintakes.setText("");
+                    txtcoursefee.setText("");
+
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Coursee details have not been added to database succesful " + index, "Output", 1);
+                }
+            } catch (Throwable ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        PopulateManagecoursesEmployerList();
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to Update this Course ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
+        if (response == 0) {
+
+            String degreetype = (String) Cboxdgreetype.getSelectedItem();
+            String uniname = txtuniname.getText();
+            String cuntry = txtcuntry.getText();
+            String degreename = txtdgreename.getText();
+            String degreeid = txtdgreeid.getText();
+            String faculty = txtfaculty.getText();
+            String entryreqirements = txtentryrequirements.getText();
+            String programmeduration = txtprogrammeduration.getText();
+            String programmeschedule = txtprogrammeschedule.getText();
+            String intake = txtintakes.getText();
+            String coursefee = txtcoursefee.getText();
+
+            objEmployer = objEmployerController.addEmployer();
+
+            arrayEmployer[index] = objEmployer;
+            objManagecoursesEmployer = objEmployerController.addManagecoursesEmployer(degreetype, uniname, cuntry, degreename, degreeid, faculty, entryreqirements, programmeduration, programmeschedule, intake, coursefee);
+
+            boolean result = objEmployerController.updateManagecoursesEmployerToDB(objManagecoursesEmployer);
+            System.out.println(result);
+
+            index++;
+            if (result) {
+                JOptionPane.showMessageDialog(rootPane, "Coursee details have been updated to database succesful " + index, "Output", 1);
+                txtuniname.setText("");
+                txtcuntry.setText("");
+                txtdgreename.setText("");
+                txtdgreeid.setText("");
+                txtfaculty.setText("");
+                txtentryrequirements.setText("");
+                txtprogrammeduration.setText("");
+                txtprogrammeschedule.setText("");
+                txtintakes.setText("");
+                txtcoursefee.setText("");
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Coursee details have not been updated to database succesful " + index, "Output", 1);
+            }
+
+            PopulateManagecoursesEmployerList(); //this is the method to call the table details
+        }
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void txtdgreeidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdgreeidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdgreeidActionPerformed
-    
+
+    private void TBallissuesEMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TBallissuesEMMouseClicked
+        int row = TBallissuesEM.getSelectedRow();
+        String tc = TBallissuesEM.getModel().getValueAt(row, 0).toString();
+
+        try {
+
+            System.out.println(tc);
+
+            String searchText = tc;
+            boolean isFound = false;
+            for (Employer.AllissuesEmployer r : list3) {
+                if (r.getissueid().contains(searchText)) {
+                    isFound = true;
+
+                    txtissueID.setText(r.getissueid());
+                    txtissuetype.setText(r.getissuetype());
+                    txtStudentID.setText(r.getname());
+                    txtEmployerID.setText(r.getitnumber());
+                    txtDetails.setText(r.getdetails());
+                    txtComment.setText(r.getcomment());
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_TBallissuesEMMouseClicked
+
     //set and reset color
-    void setColor(JPanel panel)
-    {
-        panel.setBackground(new Color(58,70,90));
+    void setColor(JPanel panel) {
+        panel.setBackground(new Color(58, 70, 90));
     }
-    
-    void resetColor(JPanel panel)
-    {
-        panel.setBackground(new Color(36,47,65));
+
+    void resetColor(JPanel panel) {
+        panel.setBackground(new Color(36, 47, 65));
     }
+
     /**
      * @param args the command line arguments
      */
@@ -2030,17 +2588,18 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Cboxdgreetype;
-    private javax.swing.JLabel allbatch;
-    private javax.swing.JLabel alldate;
-    private javax.swing.JLabel alldegree;
+    private javax.swing.JTable TBComAllIssuesEM;
+    private javax.swing.JTable TBallissuesEM;
     private javax.swing.JLabel alldetails;
+    private javax.swing.JLabel alldetails1;
     private javax.swing.JLabel allemail;
-    private javax.swing.JLabel allexam;
-    private javax.swing.JLabel allphone;
-    private javax.swing.JLabel allregisterdyear;
-    private javax.swing.JLabel allsemester;
-    private javax.swing.JLabel allsubject;
-    private javax.swing.JLabel alltime;
+    private javax.swing.JLabel allemail1;
+    private javax.swing.JLabel allemail2;
+    private javax.swing.JLabel allemail3;
+    private javax.swing.JLabel allemail4;
+    private javax.swing.JLabel allemail5;
+    private javax.swing.JLabel allemail6;
+    private javax.swing.JLabel allemail7;
     private javax.swing.JLabel allyear;
     private javax.swing.JLabel batch;
     private javax.swing.JPanel btn_1;
@@ -2108,6 +2667,8 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2120,9 +2681,7 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
     private javax.swing.JPanel mainpanel;
     private javax.swing.JLabel phone;
     private javax.swing.JLabel registerdyear;
@@ -2137,6 +2696,10 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JPanel tab_3_2;
     private javax.swing.JTable tabalemanagecourses;
     private javax.swing.JLabel time;
+    private javax.swing.JTextArea txtComment;
+    private javax.swing.JTextArea txtDetails;
+    private javax.swing.JLabel txtEmployerID;
+    private javax.swing.JLabel txtStudentID;
     private javax.swing.JTextField txtcoursefee;
     private javax.swing.JTextField txtcuntry;
     private javax.swing.JTextField txtdgreeid;
@@ -2144,6 +2707,8 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JTextArea txtentryrequirements;
     private javax.swing.JTextField txtfaculty;
     private javax.swing.JTextArea txtintakes;
+    private javax.swing.JLabel txtissueID;
+    private javax.swing.JLabel txtissuetype;
     private javax.swing.JTextArea txtprogrammeduration;
     private javax.swing.JTextArea txtprogrammeschedule;
     private javax.swing.JTextField txtuniname;

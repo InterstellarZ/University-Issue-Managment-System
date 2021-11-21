@@ -24,7 +24,7 @@ public class LoginView extends javax.swing.JFrame {
         controllerobj = new LoginController();
 
         objAdminMainView = new AdminMainView();
-        //  objLoginView =new LoginView();
+        // objLoginView =new LoginView();
         objEmployerMainView = new EmployerMainView();
         objStudentMainView = new StudentMainView();
         objGuestView = new GuestView();
@@ -475,6 +475,7 @@ public class LoginView extends javax.swing.JFrame {
 
                     } else {
                         objStudentMainView.setVisible(true);
+                     
                         dispose();
 
                     }

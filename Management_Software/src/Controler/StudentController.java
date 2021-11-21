@@ -51,16 +51,14 @@ public class StudentController {
         return result;
     }
 
-   /* public List<Student.StudentRegisration> updattecombox2(String searchpassword) {
+    /* public List<Student.StudentRegisration> updattecombox2(String searchpassword) {
         List<Student.StudentRegisration> result = kasun.updatacombox2(searchpassword);
 
         return result;
     }
     
-    */
-    
+     */
     ///////////////////////////////////////////////////////////////////////////////////////////////////////
-
     public Student.GeneralExamIssue addGereralIssue(String name, String ID, String email, String phone, String degreeType, String degreeName,
             String registerYear, String intake, String year, String semester, String batch, String subjectName, String Examtype,
             String examinationIssue_general) {
@@ -70,20 +68,64 @@ public class StudentController {
         return objGeneralIssue;
     }
 
+    public boolean insertGeneralEToDB(Student.GeneralExamIssue objgeneralexamissue) {
+        boolean result = kasun.addGeneralExamIssueTODB(objgeneralexamissue);
+        return result;
+    }
+
+    public List<Student.GeneralExamIssue> updattecomboxOFgeneralissue(String searchpassword) {
+        List<Student.GeneralExamIssue> result = kasun.updatecomboxOFgeneralissue(searchpassword);
+
+        return result;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public Student.ExamInquiries addExamInquiries(String name, String ID, String email,
             String phone, String degreeType, String degreeName, String registerYear, String intake,
             String year, String semester, String batch, String issueType, String subjectName, String examType,
-            String yearSubject, String monthSubject, String daySubject, String hourSubject, String minuiteSubject, String otherIssue) {
+            String date, String time, String otherIssue) {
 
         objExamInquiries = objStudent.new ExamInquiries(name, ID, email, phone, degreeType, degreeName,
-                registerYear, intake, year, semester, batch, issueType, subjectName, examType, yearSubject,
-                monthSubject, daySubject, hourSubject, minuiteSubject, otherIssue);
+                registerYear, intake, year, semester, batch, issueType, subjectName, examType, date, time, otherIssue);
 
         return objExamInquiries;
     }
 
-    public Student.Course addCourse() {
-        return null;
+    public boolean insertExamInquiryToDB(Student.ExamInquiries objgeneralexamissue) {
+        boolean result = kasun.addExamInquiryTODB(objgeneralexamissue);
+        return result;
     }
+
+    public List<Student.ExamInquiries> updattecomboxOFExamInquiry(String searchpassword) {
+        List<Student.ExamInquiries> result = kasun.updatecomboxOFExaminquiry(searchpassword);
+
+        return result;
+    }
+
+    public Student.Course CourseDetails(String degreeType, String degreeName, String country, String faculty, String entityRequirnment, String ProgrammDuration, String Schedule, String Registration, String intake, String fee, String degreeid) {
+        objCourse = objStudent.new Course(degreeType, degreeName, country, faculty, entityRequirnment, ProgrammDuration, Schedule, Registration, intake, fee, degreeid);
+        return objCourse;
+
+    }
+
+    //           public boolean insertCourseDetailToDB(Student.Course objgeneralexamissue) {
+    //      boolean result = kasun.ShowCouseDetails(objgeneralexamissue);
+    //     return result;
+    //  }
+    public List<Student.Course> UpdateCoseDetailsfromDatabase(String searchpassword) {
+        List<Student.Course> result = kasun.ShowCouseDetails(searchpassword);
+
+        return result;
+    }
+
+    public List<Student.Course> UpdateCoseDetailsfromDatabasefor2ndbox(String searchpassword) {
+        List<Student.Course> result = kasun.ShowCouseDetails2ndBox(searchpassword);
+
+        return result;
+    }
+
+    /////////////////////////////////////////////////////////
+    
+
 
 }
