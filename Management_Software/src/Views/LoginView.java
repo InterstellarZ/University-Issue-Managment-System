@@ -401,7 +401,10 @@ public class LoginView extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-
+        dispose();
+            
+            GuestView info = new GuestView();
+            info.setVisible(true);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     /**
