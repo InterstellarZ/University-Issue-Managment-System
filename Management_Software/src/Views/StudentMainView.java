@@ -2580,7 +2580,7 @@ public class StudentMainView extends javax.swing.JFrame {
 
             for (int i = 0; i < list.size(); i++) {
 
-                cboxDgreenameStudnet.addItem(list.get(i).getEmail());
+                cboxDgreenameStudnet.addItem(list.get(i).getPhone());
 
 
 

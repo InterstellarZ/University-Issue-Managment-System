@@ -22,9 +22,9 @@ public class StudentAccessLogic {
     public boolean addStudentregistrationTODB(Student.StudentRegisration objstudent) {
         try {
 
-            String query = "insert into studentregistration values('" + objstudent.getName() + "','" + objstudent.getID() + "','" + objstudent.getEmail() + "','" + objstudent.getPhone() + "','"
+            String query = "insert into notcomplitedallissues values('" + 0 + "','" + "Student Registration Issues" + "','" + null+ "','" + objstudent.getName() + "','" + objstudent.getID() + "','" + objstudent.getEmail() + "','" + objstudent.getPhone() + "','"
                     + objstudent.getDegreeType() + "','" + objstudent.getDegreeName() + "','" + objstudent.getRegisterYear() + "','" + objstudent.getIntake() + "','" + objstudent.getYear() + "','"
-                    + objstudent.getSemester() + "','" + objstudent.getBatch() + "','" + objstudent.getStudentIssue() + "');";
+                    + objstudent.getSemester() + "','" + objstudent.getBatch() + "','" + null+ "','" + null+ "','" + null+ "','" + null+ "','" + null+ "','" + objstudent.getStudentIssue() + "');";
             boolean result = singleConn.ExecuteQuery(query);
             return result;
         } catch (Exception ex) {
@@ -47,6 +47,7 @@ public class StudentAccessLogic {
                 Student.StudentRegisration adm = objStudent.new StudentRegisration(
                         result.getString("degreetype"),
                         result.getString("uniname"),
+                        result.getString("cuntry"),
                         result.getString("degreename"),
                         result.getString("degreeid"),
                         result.getString("faculty"),
@@ -54,7 +55,6 @@ public class StudentAccessLogic {
                         result.getString("programmeduration"),
                         result.getString("programmeschedule"),
                         result.getString("intake"),
-                        result.getString("coursefee"),
                         result.getString("coursefee"),
                         result.getString("coursefee")
                 );
