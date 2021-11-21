@@ -1499,6 +1499,7 @@ public class AdminMainView extends javax.swing.JFrame {
         jScrollPane8.setViewportView(tabalemanagecourses);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Search icon 15.png"))); // NOI18N
         jButton3.setText("Search");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
