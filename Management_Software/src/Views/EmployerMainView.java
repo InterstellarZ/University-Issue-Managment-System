@@ -38,7 +38,6 @@ public class EmployerMainView extends javax.swing.JFrame {
     Employer.ManagecoursesEmployer[] arrayManagecoursesEmployer;
        
     int index;
-    String userid;
     
     
     
@@ -58,8 +57,8 @@ public class EmployerMainView extends javax.swing.JFrame {
 //    
     public EmployerMainView(String userText){
         initComponents();
-        userid = userText; 
-        System.out.println(userid);
+        this.txtEMPID.setText(userText);
+        System.out.println(userText);
      }
      
      
@@ -84,10 +83,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         
         
 
-    }
-    
-    String a = txtEMPID.getText();
-    
+    } 
     
 
     private void PopulateManagecoursesEmployerList() {
@@ -273,9 +269,8 @@ public class EmployerMainView extends javax.swing.JFrame {
     
       private void PopulatemyAllissuesEmployerList() {
           
-         String id = userid;
         // load data from database
-        list5 = objEmployerController.GetmyAllissuesEmployer(id);
+        list5 = objEmployerController.GetmyAllissuesEmployer("");
 
 //        System.out.println("wedada  "+list5);
 
@@ -363,7 +358,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        txtEMPID = new javax.swing.JTextField();
+        txtEMPID = new javax.swing.JLabel();
         btn_1 = new javax.swing.JPanel();
         ind_1 = new javax.swing.JPanel();
         btn_EXIG1 = new javax.swing.JLabel();
@@ -537,7 +532,11 @@ public class EmployerMainView extends javax.swing.JFrame {
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("KC Rathnayaka");
 
-        txtEMPID.setText("jTextField1");
+        txtEMPID.setBackground(new java.awt.Color(255, 255, 255));
+        txtEMPID.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
+        txtEMPID.setForeground(new java.awt.Color(255, 255, 255));
+        txtEMPID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtEMPID.setText("IT Number");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -546,10 +545,7 @@ public class EmployerMainView extends javax.swing.JFrame {
             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addComponent(txtEMPID, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(txtEMPID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -561,8 +557,8 @@ public class EmployerMainView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtEMPID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(txtEMPID)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btn_1.setBackground(new java.awt.Color(36, 47, 65));
@@ -2646,7 +2642,7 @@ public class EmployerMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_TBallissuesEMMouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        System.out.println(a);
+        System.out.println();
     }//GEN-LAST:event_jButton5MouseClicked
 
     //set and reset color
@@ -2809,7 +2805,7 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JLabel time;
     private javax.swing.JTextArea txtComment;
     private javax.swing.JTextArea txtDetails;
-    private javax.swing.JTextField txtEMPID;
+    private javax.swing.JLabel txtEMPID;
     private javax.swing.JLabel txtEmployerID;
     private javax.swing.JLabel txtStudentID;
     private javax.swing.JTextField txtcoursefee;

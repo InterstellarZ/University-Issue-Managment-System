@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/desha/Music/final/Management_Software%2057/Management_Software/src/Views/EmployerMainView.java</file>
-            <file>file:/C:/Users/desha/Music/final/Management_Software%2057/Management_Software/src/DatabaseAccessLayer/EmployerAccessLogic.java</file>
-            <file>file:/C:/Users/desha/Music/final/Management_Software%2057/Management_Software/src/Controler/EmployerController.java</file>
-            <file>file:/C:/Users/desha/Music/final/Management_Software%2057/Management_Software/src/Views/AdminMainView.java</file>
-            <file>file:/C:/Users/desha/Music/final/Management_Software%2057/Management_Software/src/Models/Employer.java</file>
+            <file>file:/C:/Users/desha/Music/final/Management_Software/src/DatabaseAccessLayer/EmployerAccessLogic.java</file>
+            <file>file:/C:/Users/desha/Music/final/Management_Software/src/Controler/EmployerController.java</file>
+            <file>file:/C:/Users/desha/Music/final/Management_Software/src/Views/EmployerMainView.java</file>
+            <file>file:/C:/Users/desha/Music/final/Management_Software/src/Views/LoginView.java</file>
         </group>
     </open-files>
 </project-private>

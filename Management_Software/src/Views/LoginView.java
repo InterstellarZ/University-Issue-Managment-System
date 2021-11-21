@@ -472,10 +472,10 @@ public class LoginView extends javax.swing.JFrame {
                         dispose();
 
                     } else if (type.equals("Employer")) {
-                        
+                        EmployerMainView employerMainView = new EmployerMainView(userText);
                         objEmployerMainView.setVisible(true);
                         dispose();
-                        new EmployerMainView(userText);
+                        
 
                     } else {
                         objStudentMainView.setVisible(true);
