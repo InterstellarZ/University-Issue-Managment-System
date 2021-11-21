@@ -1400,6 +1400,8 @@ public class GuestView extends javax.swing.JFrame {
             objRegistrationGuest = objGuestController.addRegistrationGuest(name, id, email, phone, type, dName, registerdYear, intake, year, semester, batch, studentIssue);
 
             boolean result = objGuestController.insertGuestToDB(objRegistrationGuest);
+            
+            objIssueNotification.StudentRegnotification(email, name, id);
 
             arrayRegistrationGuest[index] = objRegistrationGuest;
             txtIssueStudent.setText(objRegistrationGuest.getEmail() + " " + objRegistrationGuest.getStudentIssue());
