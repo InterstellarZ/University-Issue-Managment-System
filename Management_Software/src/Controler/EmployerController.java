@@ -1,7 +1,7 @@
 package Controler;
 
 import Models.Employer;
-import Models.Employer.Myissues;
+import Models.Employer.myissuesEmployer;
 import Models.Employer.AllissuesEmployer;
 import Models.Employer.ManagecoursesEmployer;
 import DatabaseAccessLayer.EmployerAccessLogic;
@@ -11,7 +11,7 @@ import java.util.List;
 public class EmployerController extends BaseController {
 
     Employer objEmployer;
-    Employer.Myissues objMyissues;
+    Employer.myissuesEmployer objmyissuesEmployer;
     Employer.AllissuesEmployer objAllissuesEmployer;
     Employer.ManagecoursesEmployer objManagecoursesEmployer;
     Employer.MonthlyHistoryOfIssuesEmployer objMonthlyHistoryOfIssuesEmployer;
@@ -87,11 +87,32 @@ public class EmployerController extends BaseController {
         return result;
     }
     
-    public List<Employer.AllissuesEmployer> GetmyAllissuesEmployer(String searchText) {
-        List<Employer.AllissuesEmployer> result = deshan.GetmyAllissuesEmployer(searchText);
+  //------------------------------------------------------------------------------------------------------------------
+    
+    public Employer.myissuesEmployer addmyissueEmployer(String comment,int issueid1) {
+
+        objmyissuesEmployer = objEmployer.new myissuesEmployer(comment,issueid1);
+
+        return objmyissuesEmployer;
+    }
+    
+    public List<Employer.myissuesEmployer> GetmyissuesEmployer(String searchText) {
+        List<Employer.myissuesEmployer> result = deshan.GetmyissuesEmployer(searchText);
 
         return result;
     }
+    
+    public boolean updatemyissueEmployer(Employer.myissuesEmployer objMyissues) {
+        boolean result = deshan.updatmyAllissuesEmployerTODB(objMyissues);
+        return result;
+    }
+    
+    
+
+
+
+
+
     
 
 

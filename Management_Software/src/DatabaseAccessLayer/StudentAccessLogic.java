@@ -35,18 +35,7 @@ public class StudentAccessLogic {
         }
     }
 
-//    public boolean addStudentregistrationTODB(Student.StudentRegisration objstudent) {
-//        try {
-//
-//            String query = "insert into notcomplitedallissues() values('" + 0 + "','" + "Student Registration Issues" + "','" + null+ "','" + objstudent.getName() + "','" + objstudent.getID() + "','" + objstudent.getEmail() + "','" + objstudent.getPhone() + "','"
-//                    + objstudent.getDegreeType() + "','" + objstudent.getDegreeName() + "','" + objstudent.getRegisterYear() + "','" + objstudent.getIntake() + "','" + objstudent.getYear() + "','"
-//                    + objstudent.getSemester() + "','" + objstudent.getBatch() + "','" + null+ "','" + null+ "','" + null+ "','" + null+ "','" + null+ "','" + objstudent.getStudentIssue() + "');";
-//            boolean result = singleConn.ExecuteQuery(query);
-//            return result;
-//        } catch (Exception ex) {
-//            return false;
-//        }
-//    }
+
 //getting data from database to load for a combox
     //update combox
     public List<Student.StudentRegisration> updatacombox(String searchID) {
@@ -134,9 +123,9 @@ public class StudentAccessLogic {
     public boolean addGeneralExamIssueTODB(Student.GeneralExamIssue objstudent) {
         try {
 
-            String query = "insert into notcomplitedallissues (ncallissuesid,issuetype,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,semester,batch,subjectname,exam,allexinquirydetails) values('" + 0 + "','" + "General Exam Issue" + "','" + objstudent.getName() + "','" + objstudent.getID() + "','" + objstudent.getEmail() + "','" + objstudent.getPhone() + "','"
+            String query = "insert into notcomplitedallissues (ncallissuesid,issuetype,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,semester,batch,subjectname,exam,allexinquirydetails,Employee_ID) values('" + 0 + "','" + "General Exam Issue" + "','" + objstudent.getName() + "','" + objstudent.getID() + "','" + objstudent.getEmail() + "','" + objstudent.getPhone() + "','"
                     + objstudent.getDegreeType() + "','" + objstudent.getDegreeName() + "','" + objstudent.getRegisterYear() + "','" + objstudent.getIntake() + "','" + objstudent.getYear() + "','"
-                    + objstudent.getSemester() + "','" + objstudent.getBatch() + "','" + objstudent.getSubjectName() + "','" + objstudent.getExamtype() + "','" + objstudent.getExaminationIssue_general() + "');";
+                    + objstudent.getSemester() + "','" + objstudent.getBatch() + "','" + objstudent.getSubjectName() + "','" + objstudent.getExamtype() + "','" + objstudent.getExaminationIssue_general() + "','" + objseconddatabase.GetRandomEmployer() + "');";
             boolean result = singleConn.ExecuteQuery(query);
             return result;
         } catch (Exception ex) {
@@ -190,9 +179,9 @@ public class StudentAccessLogic {
     public boolean addExamInquiryTODB(Student.ExamInquiries objstudent) {
         try {
 
-            String query = "insert into notcomplitedallissues (ncallissuesid,issuetype,inquiry_type,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,semester,batch,subjectname,exam,date,time,allexinquirydetails) values('" + 0 + "','" + "Examination Inquiry" + "','" + objstudent.getInquirieType() + "','" + objstudent.getName() + "','" + objstudent.getID() + "','" + objstudent.getEmail() + "','" + objstudent.getPhone() + "','"
+            String query = "insert into notcomplitedallissues (ncallissuesid,issuetype,inquiry_type,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,semester,batch,subjectname,exam,date,time,allexinquirydetails,Employee_ID) values('" + 0 + "','" + "Examination Inquiry" + "','" + objstudent.getInquirieType() + "','" + objstudent.getName() + "','" + objstudent.getID() + "','" + objstudent.getEmail() + "','" + objstudent.getPhone() + "','"
                     + objstudent.getDegreeType() + "','" + objstudent.getDegreeName() + "','" + objstudent.getRegisterYear() + "','" + objstudent.getIntake() + "','" + objstudent.getYear() + "','"
-                    + objstudent.getSemester() + "','" + objstudent.getBatch() + "','" + objstudent.getSubjectName() + "','" + objstudent.getExamType() + "','" + objstudent.getdate() + "','" + objstudent.gettime() + "','" + objstudent.getOtherIssue() + "');";
+                    + objstudent.getSemester() + "','" + objstudent.getBatch() + "','" + objstudent.getSubjectName() + "','" + objstudent.getExamType() + "','" + objstudent.getdate() + "','" + objstudent.gettime() + "','" + objstudent.getOtherIssue() + "','" + objseconddatabase.GetRandomEmployer() + "');";
             boolean result = singleConn.ExecuteQuery(query);
             return result;
         } catch (Exception ex) {

@@ -8,52 +8,105 @@ package Models;
 public class Employer {
 
  
-    public class Myissues {  //for the student registration panal
-
-        String typecomment;
+    public class myissuesEmployer {   //for the general examination issues
+        
+        String issueid;
+        String issuetype;
+        String inquirytype;
+        String name;
+        String itnumber;
         String email;
         String phone;
+        String degreetype;
         String degree;
         String registerdyear;
         String year;
-        String batch;
+        String intake;
         String semester;
+        String batch;
         String subject;
         String exam;
         String date;
         String time;
-        String details;
         String comment;
+        String details;
+        String employerID;
+        int issueid1;
         
 
-        public Myissues(String typecomment, String email, String phone, String degree, String registerdyear, String year, String batch, String semester,
-                String subject,String exam,String date,String time,String details, String comment) {
-            this.typecomment = typecomment;
+        public myissuesEmployer(String issueid,String issuetype,String inquirytype,String name,String itnumber,String email,String phone,String degreetype,String degree,String registerdyear,String year,String intake,String semester,String batch,String subject,String exam,String date,String time,String comment,String details,String employerID) {
+
+            this.issueid = issueid;
+            this.issuetype = issuetype;
+            this.inquirytype = inquirytype;
+            this.name = name;
+            this.itnumber = itnumber;
             this.email = email;
             this.phone = phone;
+            this.degreetype = degreetype;
             this.degree = degree;
             this.registerdyear = registerdyear;
+            this.intake = intake;
             this.year = year;
-            this.batch = batch;
             this.semester = semester;
+            this.batch = batch;
             this.subject = subject;
             this.exam = exam;
             this.date = date;
             this.time = time;
+            this.comment = comment;
             this.details = details;
-            this.comment = comment;     
-            
-        }
+            this.employerID = employerID;
 
-        public String getTypecomment() {
-            return typecomment;
-        }
-
-        public void setTypecomment(String typecomment) {
-            this.typecomment = typecomment;
         }
         
-        public String getEmail() {
+           public myissuesEmployer(String comment,int issueid1)
+        {
+            this.comment=comment;
+            this.issueid1=issueid1;
+        }
+        
+        public String getissueid() {
+            return issueid;
+        }
+
+        public void setissueid(String issueid) {
+            this.issueid = issueid;
+        }
+        
+        public String getissuetype() {
+            return issuetype;
+        }
+
+        public void setissuetype(String issuetype) {
+            this.issuetype = issuetype;
+        }
+        
+        public String getinquirytype() {
+            return inquirytype;
+        }
+
+        public void setinquirytype(String inquirytype) {
+            this.inquirytype = inquirytype;
+        }
+        
+        public String getname() {
+            return name;
+        }
+        
+        public void setname(String name) {
+            this.name = name;
+        }
+        
+        public String getitnumber() {
+            return itnumber;
+        }
+        
+        public void setitnumber(String itnumber) {
+            this.itnumber = itnumber;
+        }
+        
+        public String getemail() {
             return email;
         }
 
@@ -67,6 +120,14 @@ public class Employer {
 
         public void setphone(String phone) {
             this.phone = phone;
+        }
+        
+        public String getdegreetype() {
+            return degreetype;
+        }
+
+        public void setdegreetype(String degreetype) {
+            this.degreetype = degreetype;
         }
         
         public String getdegree() {
@@ -91,6 +152,14 @@ public class Employer {
 
         public void setyear(String year) {
             this.year = year;
+        }
+        
+        public String getintake() {
+            return intake;
+        }
+
+        public void setintake(String intake) {
+            this.intake = intake;
         }
         
         public String getbatch() {
@@ -141,6 +210,14 @@ public class Employer {
             this.time = time;
         }
         
+        public String getcomment() {
+            return comment;
+        }
+
+        public void setcomment(String comment) {
+            this.comment = comment;
+        }
+        
         public String getdetails() {
             return details;
         }
@@ -149,14 +226,23 @@ public class Employer {
             this.details = details;
         }
         
-        public String getcomment() {
-            return comment;
+        public String getemployerID() {
+            return employerID;
         }
 
-        public void setcomment(String comment) {
-            this.comment = comment;
+        public void setemployerID(String employerID) {
+            this.employerID = employerID;
         }
-           
+        
+        public int getissueid1() {
+            return issueid1;
+        }
+
+        public void setissueid1(int issueid1) {
+            this.issueid1 = issueid1;
+        }
+        
+        
     }
 
     //--------------------------------------------------------------------------------------------
@@ -185,9 +271,9 @@ public class Employer {
         String details;
         String employerID;
         
-
+        
         public AllissuesEmployer(String issueid,String issuetype,String inquirytype,String name,String itnumber,String email,String phone,String degreetype,String degree,String registerdyear,String year,String intake,String semester,String batch,String subject,String exam,String date,String time,String comment,String details,String employerID) {
-
+            
             this.issueid = issueid;
             this.issuetype = issuetype;
             this.inquirytype = inquirytype;
@@ -212,6 +298,11 @@ public class Employer {
 
         }
         
+        //second constructor to pass the comment
+        
+        
+        
+     
         public String getissueid() {
             return issueid;
         }

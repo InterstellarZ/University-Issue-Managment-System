@@ -11,11 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import Models.Employer;
-import Models.Employer.Myissues;
-import Models.Employer.AllissuesEmployer;
-import Models.Employer.ManagecoursesEmployer;
 import Controler.EmployerController;
-import Models.Admin;
 import Models.UserContext;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -26,11 +22,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class EmployerMainView extends javax.swing.JFrame {
 
+    UserContext userContext ; 
+    
     Employer objEmployer;
     Employer[] arrayEmployer;
 
-    Employer.Myissues objMyissues;
-    Employer.Myissues[] arrayMyissues;
+    Employer.myissuesEmployer objmyissuesEmployer;
+    Employer.myissuesEmployer[] arraymyissuesEmployer;
 
     Employer.AllissuesEmployer objAllissuesEmployer;
     Employer.AllissuesEmployer[] arrayAllissuesEmployer;
@@ -44,7 +42,7 @@ public class EmployerMainView extends javax.swing.JFrame {
     List<Employer.ManagecoursesEmployer> list2;
     List<Employer.AllissuesEmployer> list3;
     List<Employer.AllissuesEmployer> list4;
-    List<Employer.AllissuesEmployer> list5;
+    List<Employer.myissuesEmployer> list5;
 
     /**
      * Creates new form Student_main_page_view
@@ -54,15 +52,12 @@ public class EmployerMainView extends javax.swing.JFrame {
         setSize(1250, 800);
         icon();
         arrayEmployer = new Employer[1000];
-        arrayMyissues = new Employer.Myissues[1000];
+        arraymyissuesEmployer = new Employer.myissuesEmployer[1000];
         arrayManagecoursesEmployer = new Employer.ManagecoursesEmployer[1000];
         arrayManagecoursesEmployer = new Employer.ManagecoursesEmployer[1000];
         objEmployerController = new EmployerController();
 
-        PopulateManagecoursesEmployerList();
-        PopulateAllissuesEmployerList();
-        PopulateCompletedAllissuesEmployerList();
-        PopulatemyAllissuesEmployerList();
+               
         
         userContext =userContext ; 
         
@@ -71,6 +66,15 @@ public class EmployerMainView extends javax.swing.JFrame {
         
         lblEMname.setText(userContext.getName());
         lblEMID.setText(userContext.getID());
+        
+        
+        
+        PopulateManagecoursesEmployerList();
+        PopulateAllissuesEmployerList();
+        PopulateCompletedAllissuesEmployerList();
+        PopulatemyAllissuesEmployerList(userContext.getID());
+        
+        
 
     }
 
@@ -259,9 +263,9 @@ public class EmployerMainView extends javax.swing.JFrame {
 
     }
     
-    private void PopulatemyAllissuesEmployerList() {
+    private void PopulatemyAllissuesEmployerList(String Id) {
         // load data from database
-        list5 = objEmployerController.GetmyAllissuesEmployer("");
+        list5 = objEmployerController.GetmyissuesEmployer(Id);
 
 //        System.out.println("wedada  "+list5);
 
@@ -371,19 +375,29 @@ public class EmployerMainView extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         tblEMMyissues = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        email = new javax.swing.JLabel();
-        phone = new javax.swing.JLabel();
-        degree = new javax.swing.JLabel();
-        registerdyear = new javax.swing.JLabel();
-        year = new javax.swing.JLabel();
-        batch = new javax.swing.JLabel();
-        exam = new javax.swing.JLabel();
-        date = new javax.swing.JLabel();
-        time = new javax.swing.JLabel();
-        details = new javax.swing.JLabel();
-        comments = new javax.swing.JLabel();
-        semester = new javax.swing.JLabel();
-        subject = new javax.swing.JLabel();
+        allemail8 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        txtComment1 = new javax.swing.JTextArea();
+        allemail9 = new javax.swing.JLabel();
+        allemail10 = new javax.swing.JLabel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        txtDetails1 = new javax.swing.JTextArea();
+        alldetails2 = new javax.swing.JLabel();
+        allemail12 = new javax.swing.JLabel();
+        allemail13 = new javax.swing.JLabel();
+        txtStudentID1 = new javax.swing.JLabel();
+        txtissuetype1 = new javax.swing.JLabel();
+        allemail14 = new javax.swing.JLabel();
+        txtissueID1 = new javax.swing.JLabel();
+        alldetails3 = new javax.swing.JLabel();
+        allemail16 = new javax.swing.JLabel();
+        txtStudentemail1 = new javax.swing.JLabel();
+        allemail17 = new javax.swing.JLabel();
+        allemail18 = new javax.swing.JLabel();
+        allemail19 = new javax.swing.JLabel();
+        allemail20 = new javax.swing.JLabel();
+        allemail21 = new javax.swing.JLabel();
+        txtStudentname1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -811,99 +825,188 @@ public class EmployerMainView extends javax.swing.JFrame {
         tblEMMyissues.setRowHeight(30);
         tblEMMyissues.setSelectionBackground(new java.awt.Color(153, 204, 255));
         tblEMMyissues.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        tblEMMyissues.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblEMMyissuesMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(tblEMMyissues);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        email.setText(" E-mail");
+        allemail8.setBackground(new java.awt.Color(255, 255, 255));
+        allemail8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail8.setText("-");
 
-        phone.setText("Phone Number");
+        txtComment1.setColumns(20);
+        txtComment1.setRows(5);
+        jScrollPane13.setViewportView(txtComment1);
 
-        degree.setText("Degree Name");
+        allemail9.setBackground(new java.awt.Color(255, 255, 255));
+        allemail9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail9.setText("-");
 
-        registerdyear.setText("Registered Year");
+        allemail10.setBackground(new java.awt.Color(255, 255, 255));
+        allemail10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail10.setText("-");
 
-        year.setText("Year");
+        txtDetails1.setColumns(20);
+        txtDetails1.setRows(5);
+        jScrollPane14.setViewportView(txtDetails1);
 
-        batch.setText("Batch");
+        alldetails2.setBackground(new java.awt.Color(255, 255, 255));
+        alldetails2.setText("Details");
 
-        exam.setText("Exam");
+        allemail12.setBackground(new java.awt.Color(255, 255, 255));
+        allemail12.setText("Student ID");
 
-        date.setText("Date");
+        allemail13.setBackground(new java.awt.Color(255, 255, 255));
+        allemail13.setText("Issue ID");
 
-        time.setText("Time");
+        txtStudentID1.setBackground(new java.awt.Color(255, 255, 255));
+        txtStudentID1.setText(" ");
 
-        details.setText("Details");
+        txtissuetype1.setBackground(new java.awt.Color(255, 255, 255));
+        txtissuetype1.setText(" ");
 
-        comments.setText("Comments");
+        allemail14.setBackground(new java.awt.Color(255, 255, 255));
+        allemail14.setText("Issue Type");
 
-        semester.setText("Semseter");
+        txtissueID1.setBackground(new java.awt.Color(255, 255, 255));
+        txtissueID1.setText(" ");
 
-        subject.setText("Subject");
+        alldetails3.setBackground(new java.awt.Color(255, 255, 255));
+        alldetails3.setText("Comment");
+
+        allemail16.setBackground(new java.awt.Color(255, 255, 255));
+        allemail16.setText("Student Mail");
+
+        txtStudentemail1.setBackground(new java.awt.Color(255, 255, 255));
+        txtStudentemail1.setText(" ");
+
+        allemail17.setBackground(new java.awt.Color(255, 255, 255));
+        allemail17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail17.setText("-");
+
+        allemail18.setBackground(new java.awt.Color(255, 255, 255));
+        allemail18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail18.setText("-");
+
+        allemail19.setBackground(new java.awt.Color(255, 255, 255));
+        allemail19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail19.setText("-");
+
+        allemail20.setBackground(new java.awt.Color(255, 255, 255));
+        allemail20.setText("Student Name");
+
+        allemail21.setBackground(new java.awt.Color(255, 255, 255));
+        allemail21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        allemail21.setText("-");
+
+        txtStudentname1.setBackground(new java.awt.Color(255, 255, 255));
+        txtStudentname1.setText(" ");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(details, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(allemail14)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(allemail9, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtissuetype1, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(allemail12)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(allemail8, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtStudentID1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(allemail13)
+                            .addGap(19, 19, 19)
+                            .addComponent(allemail10, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtissueID1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(degree, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
+                                .addComponent(allemail20)
+                                .addGap(19, 19, 19)
+                                .addComponent(allemail21, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(batch, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(semester, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(subject, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(exam, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(8, 8, 8)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(allemail18, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(allemail16)
+                                    .addComponent(allemail19, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(allemail17, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(registerdyear, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(comments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtStudentemail1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtStudentname1, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(5, 5, 5)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(alldetails2)
+                        .addComponent(alldetails3))
+                    .addGap(26, 26, 26)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(8, 8, 8)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(phone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(degree, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registerdyear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(allemail13)
+                    .addComponent(txtissueID1)
+                    .addComponent(allemail10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(batch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(exam, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(semester, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(subject, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addComponent(details, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(allemail14)
+                    .addComponent(txtissuetype1)
+                    .addComponent(allemail9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allemail12)
+                    .addComponent(txtStudentID1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(allemail8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allemail20)
+                    .addComponent(txtStudentname1)
+                    .addComponent(allemail21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(allemail16)
+                    .addComponent(allemail17)
+                    .addComponent(txtStudentemail1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(comments, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(allemail18)
+                .addGap(64, 64, 64)
+                .addComponent(allemail19)
+                .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(121, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(alldetails2)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(alldetails3)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(9, 9, 9)))
         );
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -963,7 +1066,7 @@ public class EmployerMainView extends javax.swing.JFrame {
             tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab1Layout.createSequentialGroup()
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 15, Short.MAX_VALUE))
             .addGroup(tab1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2086,7 +2189,35 @@ public class EmployerMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to Comment this Issue ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (response == 0) {
+
+            String comment = typecomment.getText();
+            int issueid1 = Integer.parseInt(txtissueID1.getText());
+
+            objEmployer = objEmployerController.addEmployer();
+
+            arrayEmployer[index] = objEmployer;
+            objmyissuesEmployer = objEmployerController.addmyissueEmployer(comment,issueid1);
+         //   objManagecoursesEmployer = objEmployerController.addManagecoursesEmployer(degreetype, uniname, cuntry, degreename, degreeid, faculty, entryreqirements, programmeduration, programmeschedule, intake, coursefee);
+
+
+            boolean result = objEmployerController.updatemyissueEmployer(objmyissuesEmployer);
+            System.out.println(result);
+
+            index++;
+            if (result) {
+                JOptionPane.showMessageDialog(rootPane, "Comment have been updated to database succesful " + index, "Output", 1);
+                typecomment.setText("");
+           
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Coursee details have not been updated to database succesful " + index, "Output", 1);
+            }
+
+//            PopulatemyAllissuesEmployerList(userContext.getID()); //this is the method to call the table details
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
@@ -2623,6 +2754,35 @@ public class EmployerMainView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TBallissuesEMMouseClicked
 
+    private void tblEMMyissuesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEMMyissuesMouseClicked
+        int row = tblEMMyissues.getSelectedRow();
+        String tc = tblEMMyissues.getModel().getValueAt(row, 0).toString();
+
+        try {
+
+            System.out.println(tc);
+
+            String searchText = tc;
+            boolean isFound = false;
+            for (Employer.myissuesEmployer r : list5) {
+                if (r.getissueid().contains(searchText)) {
+                    isFound = true;
+
+                    txtissueID1.setText(r.getissueid());
+                    txtissuetype1.setText(r.getissuetype());
+                    txtStudentID1.setText(r.getitnumber());
+                    txtStudentname1.setText(r.getname());
+                    txtStudentemail1.setText(r.getemail());
+                    txtDetails1.setText(r.getdetails());
+                    txtComment1.setText(r.getcomment());
+                }
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_tblEMMyissuesMouseClicked
+
     //set and reset color
     void setColor(JPanel panel) {
         panel.setBackground(new Color(58, 70, 90));
@@ -2643,16 +2803,29 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JTable TBallissuesEM;
     private javax.swing.JLabel alldetails;
     private javax.swing.JLabel alldetails1;
+    private javax.swing.JLabel alldetails2;
+    private javax.swing.JLabel alldetails3;
     private javax.swing.JLabel allemail;
     private javax.swing.JLabel allemail1;
+    private javax.swing.JLabel allemail10;
+    private javax.swing.JLabel allemail12;
+    private javax.swing.JLabel allemail13;
+    private javax.swing.JLabel allemail14;
+    private javax.swing.JLabel allemail16;
+    private javax.swing.JLabel allemail17;
+    private javax.swing.JLabel allemail18;
+    private javax.swing.JLabel allemail19;
     private javax.swing.JLabel allemail2;
+    private javax.swing.JLabel allemail20;
+    private javax.swing.JLabel allemail21;
     private javax.swing.JLabel allemail3;
     private javax.swing.JLabel allemail4;
     private javax.swing.JLabel allemail5;
     private javax.swing.JLabel allemail6;
     private javax.swing.JLabel allemail7;
+    private javax.swing.JLabel allemail8;
+    private javax.swing.JLabel allemail9;
     private javax.swing.JLabel allyear;
-    private javax.swing.JLabel batch;
     private javax.swing.JPanel btn_1;
     private javax.swing.JPanel btn_2;
     private javax.swing.JPanel btn_3;
@@ -2663,12 +2836,6 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JLabel btn_EXIG;
     private javax.swing.JLabel btn_EXIG1;
     private javax.swing.JLabel btn_help;
-    private javax.swing.JLabel comments;
-    private javax.swing.JLabel date;
-    private javax.swing.JLabel degree;
-    private javax.swing.JLabel details;
-    private javax.swing.JLabel email;
-    private javax.swing.JLabel exam;
     private javax.swing.JTextArea helptEmployer;
     private javax.swing.JPanel ind_1;
     private javax.swing.JPanel ind_2;
@@ -2718,6 +2885,8 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2733,11 +2902,7 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JLabel lblEMID;
     private javax.swing.JLabel lblEMname;
     private javax.swing.JPanel mainpanel;
-    private javax.swing.JLabel phone;
-    private javax.swing.JLabel registerdyear;
     private javax.swing.JTextField searchMCtxt;
-    private javax.swing.JLabel semester;
-    private javax.swing.JLabel subject;
     private javax.swing.JPanel tab1;
     private javax.swing.JPanel tab2;
     private javax.swing.JPanel tab3;
@@ -2746,11 +2911,15 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JPanel tab_3_2;
     private javax.swing.JTable tabalemanagecourses;
     private javax.swing.JTable tblEMMyissues;
-    private javax.swing.JLabel time;
     private javax.swing.JTextArea txtComment;
+    private javax.swing.JTextArea txtComment1;
     private javax.swing.JTextArea txtDetails;
+    private javax.swing.JTextArea txtDetails1;
     private javax.swing.JLabel txtEmployerID;
     private javax.swing.JLabel txtStudentID;
+    private javax.swing.JLabel txtStudentID1;
+    private javax.swing.JLabel txtStudentemail1;
+    private javax.swing.JLabel txtStudentname1;
     private javax.swing.JTextField txtcoursefee;
     private javax.swing.JTextField txtcuntry;
     private javax.swing.JTextField txtdgreeid;
@@ -2759,11 +2928,12 @@ public class EmployerMainView extends javax.swing.JFrame {
     private javax.swing.JTextField txtfaculty;
     private javax.swing.JTextArea txtintakes;
     private javax.swing.JLabel txtissueID;
+    private javax.swing.JLabel txtissueID1;
     private javax.swing.JLabel txtissuetype;
+    private javax.swing.JLabel txtissuetype1;
     private javax.swing.JTextArea txtprogrammeduration;
     private javax.swing.JTextArea txtprogrammeschedule;
     private javax.swing.JTextField txtuniname;
     private javax.swing.JTextArea typecomment;
-    private javax.swing.JLabel year;
     // End of variables declaration//GEN-END:variables
 }

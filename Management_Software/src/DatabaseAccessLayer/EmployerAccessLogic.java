@@ -230,11 +230,11 @@ public class EmployerAccessLogic {
         }
 
     }
-     
-     public List<Employer.AllissuesEmployer> GetmyAllissuesEmployer( String employee_ID ) {
+      
+     public List<Employer.myissuesEmployer> GetmyissuesEmployer( String employee_ID ) {
         try {
 
-            List<Employer.AllissuesEmployer> AllissuesEmployer = new ArrayList<Employer.AllissuesEmployer>();
+            List<Employer.myissuesEmployer> myissuesEmployer = new ArrayList<Employer.myissuesEmployer>();
 
             
           String query = " SELECT  ncallissuesid,issuetype,inquiry_type,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,"
@@ -242,7 +242,7 @@ public class EmployerAccessLogic {
             ResultSet result = singleConn.ExecuteQueryResultSet(query);
 
             while (result.next()) {
-                Employer.AllissuesEmployer emp = objamployer.new AllissuesEmployer(
+                Employer.myissuesEmployer emp = objamployer.new myissuesEmployer(
                         result.getString("ncallissuesid"),
                         result.getString("issuetype"),
                         result.getString("inquiry_type"),
@@ -269,18 +269,39 @@ public class EmployerAccessLogic {
                         
                 );
 
-                AllissuesEmployer.add(emp);
+                myissuesEmployer.add(emp);
             }
 
-            return AllissuesEmployer;
+            return myissuesEmployer;
 
         } catch (Exception ex) {
             return null;
         }
-    
-    
-    
+
      }
+     
+      public boolean updatmyAllissuesEmployerTODB(Employer.myissuesEmployer objMyissues) {
+
+        try {
+
+            String query = "update notcomplitedallissues  set comment = '" + objMyissues.getcomment() + "' where ncallissuesid = '" + objMyissues.getissueid1() + "';";
+
+            //type, name, id, email, password1, phone, password2, address
+            boolean result = singleConn.ExecuteQuery(query);
+            return result;
+        } catch (Exception ex) {
+            return false;
+        }
+
+    }
+      
+
+      
+
+
+
+
+
 }
     
 

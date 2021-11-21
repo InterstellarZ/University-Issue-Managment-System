@@ -2839,7 +2839,7 @@ public class StudentMainView extends javax.swing.JFrame {
 
             String inqiryType = (String) cboxInquirieType.getSelectedItem();
             String name = txtNameERI.getText();
-            String IT = txtsubjectname.getText();
+            String IT = txtITnoERI1.getText();
             String email = textEmailERI.getText();
             String phone = txtPhonenoERI.getText();
             String degreeType = (String) cboxDgreetypeERI.getSelectedItem();

@@ -12,12 +12,15 @@ import java.sql.Statement;
  * @author ruvin
  */
 public class DatabaseConnection {
-    
-    private final String URL ="jdbc:mysql://localhost:3306/studentapp";
+
+    private final String URL = "jdbc:mysql://localhost:3306/studentapp";
     private final String Uname = "root";
     private final String Password = "";
 
-
+//        private final String URL = "jdbc:mysql://204.93.167.23:3306/autolank_javatest_db";
+//    private final String Uname = "autolank_test";
+//    private final String Password = "Admin321@";
+    
     private static DatabaseConnection instance; //create an object for the class of DatabaseConnection
     private Connection con;
 
@@ -61,15 +64,15 @@ public class DatabaseConnection {
             return false;
         }
     }
-    
+
     public ResultSet ExecuteQueryResultSet(String sqlQ) {
         try {
-            
+
             Statement st = con.createStatement();
-            ResultSet result = st.executeQuery(sqlQ); 
-            
-            return result  ;
-            
+            ResultSet result = st.executeQuery(sqlQ);
+
+            return result;
+
         } catch (SQLException ex) {
             System.out.println("Sql error" + ex.getMessage());
             return null;
