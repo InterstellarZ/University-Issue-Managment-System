@@ -1306,7 +1306,10 @@ public class GuestView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIssueprFocusLost
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+     if (txtnamepr.getText().length() <= 0 || txtemailpr.getText().length() <= 0 || tctNICpr.getText().length() <= 0) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Empty Text Field, Please fill all");
+        } else {
         String fullname = txtnamepr.getText();
         String email = txtemailpr.getText();
         String nic = tctNICpr.getText();
@@ -1323,6 +1326,7 @@ public class GuestView extends javax.swing.JFrame {
         } else {
             System.exit(0);
         }
+     }
 
 
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -1380,6 +1384,10 @@ public class GuestView extends javax.swing.JFrame {
     }//GEN-LAST:event_cboxDgreetypeStudentItemStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    if (txtNameStudent.getText().length() <= 0 || txtEmailStudent.getText().length() <= 0 || txtIDStudent.getText().length() <= 0 || txtIssueStudent.getText().length() <= 0 ) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Empty Text Field, Please fill all");
+        } else {
         try {
             String name = txtNameStudent.getText();
             String email = txtEmailStudent.getText();
@@ -1422,6 +1430,7 @@ public class GuestView extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
 
         }
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cboxBatchStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxBatchStudentActionPerformed

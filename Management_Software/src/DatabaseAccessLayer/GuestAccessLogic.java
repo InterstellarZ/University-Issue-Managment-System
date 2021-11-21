@@ -2,29 +2,31 @@
 package DatabaseAccessLayer;
 import DatabaseLayer.DatabaseConnection;
 import Models.Guest;
+import Other.SecondDatabase;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
 public class GuestAccessLogic {
  
-
-
     private final DatabaseConnection singleConn;
     Guest.StudentRegisrationGuest objStudentRegistrationGuest;
     Guest objGuest;
+    SecondDatabase objseconddatabase;
     
 
     public GuestAccessLogic() {
         singleConn = DatabaseConnection.getSingleInstace();
         objGuest = new Guest();
+        objseconddatabase = new SecondDatabase();
     }
     
        public boolean addStudentregistrationGuestTODB(Guest.StudentRegisrationGuest objGuest) {
         try {
 
-            String query = "insert into notcomplitedallissues(ncallissuesid,issuetype,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,semester,batch,allexinquirydetails) values('" + 0 + "','" + "Student Registration Issues" + "','" + objGuest.getName() + "','" + objGuest.getID() + "','" + objGuest.getEmail() + "','" + objGuest.getPhone() + "','"
+            String query = "insert into notcomplitedallissues(ncallissuesid,issuetype,stname,itnumber,email,phoneNo,degree_type,degreename,registerdyear,intake,year,semester,batch,allexinquirydetails,Employee_ID) values('" + 0 + "','" + "Student Registration Issues" + "','" + objGuest.getName() + "','" + objGuest.getID() + "','" + objGuest.getEmail() + "','" + objGuest.getPhone() + "','"
                     + objGuest.getDegreeType() + "','" + objGuest.getDegreeName() + "','" + objGuest.getRegisterYear() + "','" + objGuest.getIntake() + "','" + objGuest.getYear() + "','"
-                    + objGuest.getSemester() + "','" + objGuest.getBatch() + "','" + objGuest.getStudentIssue() + "');";
+                    + objGuest.getSemester() + "','" + objGuest.getBatch() + "','" + objGuest.getStudentIssue() + "','" + objseconddatabase.GetRandomEmployer() + "');";
             boolean result = singleConn.ExecuteQuery(query);
             return result;
         } catch (Exception ex) {

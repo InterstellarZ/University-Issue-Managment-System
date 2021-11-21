@@ -492,6 +492,10 @@ public class Password_resetveiw extends javax.swing.JFrame {
     }//GEN-LAST:event_txtemailprKeyReleased
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    if (txtnamepr.getText().length() <= 0 || txtemailpr.getText().length() <= 0 || tctNICpr.getText().length() <= 0 ) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Empty Text Field, Please fill all");
+        } else {
         String fullname = txtnamepr.getText();
         String email = txtemailpr.getText();
         String nic = tctNICpr.getText();
@@ -508,6 +512,8 @@ public class Password_resetveiw extends javax.swing.JFrame {
         } else {
             System.exit(0);
         }
+        
+    }
 
 
     }//GEN-LAST:event_jButton4ActionPerformed
