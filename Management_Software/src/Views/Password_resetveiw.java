@@ -159,7 +159,7 @@ public class Password_resetveiw extends javax.swing.JFrame {
         });
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel36.setText("Loging Type");
+        jLabel36.setText("Log in Type");
 
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));
         jLabel3.setText(" ");

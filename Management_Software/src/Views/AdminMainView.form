@@ -483,7 +483,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Monthly history of issues"/>
+                    <Property name="text" type="java.lang.String" value="Monthly History Of Issues"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1732,7 +1732,7 @@
                       <Font name="Century Gothic" size="20" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Manage Coureses"/>
+                    <Property name="text" type="java.lang.String" value="Manage Courses"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2219,7 +2219,7 @@
                       <Font name="Tahoma" size="20" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Monthly histry of Issue"/>
+                    <Property name="text" type="java.lang.String" value="Monthly History Of Issues"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane4">
@@ -2637,7 +2637,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Image/back icon 30.png"/>
+              <Image iconType="3" name="/Image/sign out icon 30.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>

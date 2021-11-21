@@ -91,8 +91,8 @@ public class EmployerMainView extends javax.swing.JFrame {
         DefaultTableModel model = new DefaultTableModel();
 
         model.addColumn("Degree Type");
-        model.addColumn("Uni Name");
-        model.addColumn("Cuntry");
+        model.addColumn("University Name");
+        model.addColumn("Country");
         model.addColumn("Degree Name");
         model.addColumn("Degree ID");
         model.addColumn("Faculty");
@@ -1386,7 +1386,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
         jLabel36.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("Manage Coureses");
+        jLabel36.setText("Manage Courses");
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("Next page");
@@ -1568,7 +1568,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
         jLabel22.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("Add Coureses");
+        jLabel22.setText("Add Courses");
 
         txtdgreename.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtdgreename.addActionListener(new java.awt.event.ActionListener() {
@@ -1768,7 +1768,7 @@ public class EmployerMainView extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Monthly histry of Issue");
+        jLabel3.setText("Monthly History of Issues");
 
         TBComAllIssuesEM.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         TBComAllIssuesEM.setModel(new javax.swing.table.DefaultTableModel(
@@ -1897,7 +1897,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         mainpanel.add(tab6);
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/back icon 30.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/sign out icon 30.png"))); // NOI18N
         jLabel14.setToolTipText("");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

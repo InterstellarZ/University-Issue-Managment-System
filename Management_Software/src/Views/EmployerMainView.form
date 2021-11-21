@@ -1613,7 +1613,7 @@
                       <Font name="Century Gothic" size="20" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Manage Coureses"/>
+                    <Property name="text" type="java.lang.String" value="Manage Courses"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton2">
@@ -1919,7 +1919,7 @@
                       <Font name="Century Gothic" size="20" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Add Coureses"/>
+                    <Property name="text" type="java.lang.String" value="Add Courses"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtdgreename">
@@ -2154,7 +2154,7 @@
                       <Font name="Tahoma" size="20" style="1"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Monthly histry of Issue"/>
+                    <Property name="text" type="java.lang.String" value="Monthly History of Issues"/>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane4">
@@ -2297,7 +2297,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Image/back icon 30.png"/>
+              <Image iconType="3" name="/Image/sign out icon 30.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>

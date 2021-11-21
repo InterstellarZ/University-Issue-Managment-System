@@ -779,7 +779,7 @@ public class GuestView extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("NEW PASSWORD REQUEST FORM");
+        jLabel32.setText("New Password Request From");
 
         txtIssuepr.setColumns(20);
         txtIssuepr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -837,7 +837,7 @@ public class GuestView extends javax.swing.JFrame {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Employer" }));
 
         jLabel36.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel36.setText("Loging Type");
+        jLabel36.setText("Log in Type");
 
         txtemailpr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtemailpr.addKeyListener(new java.awt.event.KeyAdapter() {

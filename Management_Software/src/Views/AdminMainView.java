@@ -99,9 +99,9 @@ public class AdminMainView extends javax.swing.JFrame {
         model.addColumn("ID");
         model.addColumn("Name");
         model.addColumn("Phone");
-        model.addColumn("address");
+        model.addColumn("Address");
         model.addColumn("Password");
-        model.addColumn("Reenterpassword");
+        model.addColumn("Re-enter Password");
         model.addColumn("Email");
 
 //        System.out.println(list);
@@ -138,7 +138,7 @@ public class AdminMainView extends javax.swing.JFrame {
 
         model.addColumn("Degree Type");
         model.addColumn("Uni Name");
-        model.addColumn("Cuntry");
+        model.addColumn("Country");
         model.addColumn("Degree Name");
         model.addColumn("Degree ID");
         model.addColumn("Faculty");
@@ -192,7 +192,7 @@ public class AdminMainView extends javax.swing.JFrame {
         model.addColumn("Phone No");
         model.addColumn("Degree Type");
         model.addColumn("Degree Name");
-        model.addColumn("Registerd Year");
+        model.addColumn("Registered Year");
         model.addColumn("Intake");
         model.addColumn("Year");
         model.addColumn("Semester");
@@ -695,7 +695,7 @@ public class AdminMainView extends javax.swing.JFrame {
 
         btn_CD.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btn_CD.setForeground(new java.awt.Color(255, 255, 255));
-        btn_CD.setText("Monthly history of issues");
+        btn_CD.setText("Monthly History Of Issues");
         btn_4.add(btn_CD, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 290, 60));
 
         btn_6.setBackground(new java.awt.Color(36, 47, 65));
@@ -1546,7 +1546,7 @@ public class AdminMainView extends javax.swing.JFrame {
 
         jLabel36.setFont(new java.awt.Font("Century Gothic", 1, 20)); // NOI18N
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("Manage Coureses");
+        jLabel36.setText("Manage Courses");
 
         javax.swing.GroupLayout tab_3_2Layout = new javax.swing.GroupLayout(tab_3_2);
         tab_3_2.setLayout(tab_3_2Layout);
@@ -1861,7 +1861,7 @@ public class AdminMainView extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Monthly histry of Issue");
+        jLabel3.setText("Monthly History Of Issues");
 
         TBComAllIssuesAD.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         TBComAllIssuesAD.setModel(new javax.swing.table.DefaultTableModel(
@@ -2139,7 +2139,7 @@ public class AdminMainView extends javax.swing.JFrame {
         mainpanel.add(tab6);
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/back icon 30.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/sign out icon 30.png"))); // NOI18N
         jLabel14.setToolTipText("");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

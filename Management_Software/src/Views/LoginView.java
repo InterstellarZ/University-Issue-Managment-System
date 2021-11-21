@@ -95,7 +95,7 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("You have any issus log with this");
+        jLabel2.setText("Issue Management Application");
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -150,7 +150,7 @@ public class LoginView extends javax.swing.JFrame {
         txtLoginid.setBackground(new java.awt.Color(36, 47, 65));
         txtLoginid.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
         txtLoginid.setForeground(new java.awt.Color(153, 153, 153));
-        txtLoginid.setText("Enter your user id");
+        txtLoginid.setText("Enter your user ID");
         txtLoginid.setBorder(null);
         txtLoginid.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -228,7 +228,7 @@ public class LoginView extends javax.swing.JFrame {
         btnlogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnlogin.setForeground(new java.awt.Color(255, 255, 255));
         btnlogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnlogin.setText("Sing in");
+        btnlogin.setText("Sign In");
         btnlogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnloginMouseClicked(evt);
