@@ -1868,7 +1868,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         helptEmployer.setColumns(20);
         helptEmployer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         helptEmployer.setRows(5);
-        helptEmployer.setText("Employee Overview\n\n\nMy Issues :\n\nThis button redirects you to the “My Issues” page which is allows the employee to view, edit, comment on \nissues, and submit his/her own list of issues.\nWhen an issue is completed and submitted by the employee, the system will send an email to the relevant \nstudent notifying them that their issues has been solved.\n\nAll Issues :\n\nThis button redirects you to the “All Issues” page which includes all the issues that students have \nsubmitted throughout a month.\nEvery employee has the privilege to view All Issues but they cannot edit and comment.\n\nManage courses :\n\nThis button redirects you the “Manage courses” page, where the employee can add, remove, edit courses and \nrelated details.\n\nMonthly History of Issues :\n\nThis buttons redirects you to the “Monthly History of Issues” page which shows the table of monthly issues \nthat has been submitted and completed throughout the past months (and years).");
+        helptEmployer.setText("My Issues :\n\nThis button redirects you to the “My Issues” page which is allows the employee to view, edit, comment on \nissues, and submit his/her own list of issues.\nWhen an issue is completed and submitted by the employee, the system will send an email to the relevant \nstudent notifying them that their issues has been solved.\n\nAll Issues :\n\nThis button redirects you to the “All Issues” page which includes all the issues that students have \nsubmitted throughout a month.\nEvery employee has the privilege to view All Issues but they cannot edit and comment.\n\nManage courses :\n\nThis button redirects you the “Manage courses” page, where the employee can add, remove, edit courses and \nrelated details.\n\nMonthly History of Issues :\n\nThis buttons redirects you to the “Monthly History of Issues” page which shows the table of monthly issues \nthat has been submitted and completed throughout the past months (and years).");
         jScrollPane10.setViewportView(helptEmployer);
 
         javax.swing.GroupLayout tab6Layout = new javax.swing.GroupLayout(tab6);
@@ -1962,7 +1962,7 @@ public class EmployerMainView extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(mainpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 882, Short.MAX_VALUE))
+                        .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1976,7 +1976,7 @@ public class EmployerMainView extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 798, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 798, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -1987,7 +1987,7 @@ public class EmployerMainView extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mainpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(mainpanel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

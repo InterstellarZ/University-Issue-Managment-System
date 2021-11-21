@@ -1124,10 +1124,8 @@ public class AdminMainView extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(tab1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txterradduser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txterradduser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         tab1Layout.setVerticalGroup(
@@ -2137,7 +2135,7 @@ public class AdminMainView extends javax.swing.JFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Admin overview\n\n\nAdd Users :\n\nThis button redirects you to the “Add Users” form, which allows the admin(s) to add new users \n(students, employees, new admins) to the system database.\n\nAll Issues :\n\nThis button redirects you to the “All Issues” page which includes all the issues that students have \nsubmitted throughout a month.\nEvery employee and admin(s) have the privilege to view All Issues but they cannot edit and comment.\n\nManage courses :\n\nThis button redirects you to the This button redirects you the “Manage courses” page, where the \nemployees or the admin(s) can add, remove, edit courses and related details.\n\nMonthly History of Issues :\n\nThis button redirects you to the “Monthly History of Issues” page which shows the table of monthly \nissues that has been submitted and completed throughout the past months (and years).\n");
+        jTextArea1.setText("Add Users :\n\nThis button redirects you to the “Add Users” form, which allows the admin(s) to add new users \n(students, employees, new admins) to the system database.\n\nAll Issues :\n\nThis button redirects you to the “All Issues” page which includes all the issues that students have \nsubmitted throughout a month.\nEvery employee and admin(s) have the privilege to view All Issues but they cannot edit and comment.\n\nManage courses :\n\nThis button redirects you to the This button redirects you the “Manage courses” page, where the \nemployees or the admin(s) can add, remove, edit courses and related details.\n\nMonthly History of Issues :\n\nThis button redirects you to the “Monthly History of Issues” page which shows the table of monthly \nissues that has been submitted and completed throughout the past months (and years).\n");
         jScrollPane5.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout tab6Layout = new javax.swing.GroupLayout(tab6);
@@ -2243,7 +2241,7 @@ public class AdminMainView extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 798, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 798, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
