@@ -39,4 +39,36 @@ return namex;
         
     }
     
+    
+    
+            public String GetRandomAdmin() 
+    {
+        try {
+
+            // 1. Get a conection to database
+            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentapp", "root", "");
+
+            // 2. Creqate a statement
+            Statement myStmt = myConn.createStatement();
+           
+            //3.Execute sql query
+           // ResultSet myRs = myStmt.executeQuery("select name,count(*)as NoOF from kasuncheck group by name having count(*)>=all(select count(*) from kasuncheck group by name)");
+            ResultSet myRs = myStmt.executeQuery("select email from addusers where ID like 'ad%' order by rand() LIMIT 1 ");
+           
+            //4.process the result set
+            while (myRs.next()) {
+
+                // int count = myRs.getInt("NoOF");
+                //String x = String.valueOf(count);
+                 namex =myRs.getString("email");
+ 
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+return namex;
+        
+    }
+    
 }

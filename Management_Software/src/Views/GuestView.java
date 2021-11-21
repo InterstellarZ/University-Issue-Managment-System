@@ -15,22 +15,30 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import Controler.NotificationController;
+import Controler.NotificationController.IssueNotification;
+import Other.SecondDatabase;
 
 /**
  *
  * @author desha
  */
 public class GuestView extends javax.swing.JFrame {
+
     Guest objGuest;
     Guest[] arrayGuest;
-    
+
     Guest.StudentRegisrationGuest objRegistrationGuest;
     Guest.StudentRegisrationGuest[] arrayRegistrationGuest;
-    
+
     int index;
 
     GuestController objGuestController;
     List<StudentRegisrationGuest> list;
+
+    SecondDatabase objseconddatabase;
+    NotificationController objNotification;
+    IssueNotification objIssueNotification;
 
     /**
      * Creates new form GuestView
@@ -38,11 +46,17 @@ public class GuestView extends javax.swing.JFrame {
     public GuestView() {
         initComponents();
         icon();
+
+        objseconddatabase = new SecondDatabase();
+        objNotification = new NotificationController();
+        objIssueNotification = objNotification.new IssueNotification();
+
         arrayGuest = new Guest[1000];
         arrayRegistrationGuest = new Guest.StudentRegisrationGuest[1000];
-        
+
         objGuestController = new GuestController();
     }
+
     public void PopulateEmployeeList() {
 
         list = objGuestController.updatecombox("");
@@ -56,7 +70,8 @@ public class GuestView extends javax.swing.JFrame {
         }
 
     }
-    private void icon(){
+
+    private void icon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Image/Tutora logo.png")));
     }
 
@@ -1211,15 +1226,15 @@ public class GuestView extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to sign out ?","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to sign out ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-        if(response==JOptionPane.YES_OPTION){
+        if (response == JOptionPane.YES_OPTION) {
             dispose();
             LoginView info = new LoginView();
             info.setVisible(true);
-        }else if(response==JOptionPane.NO_OPTION){
+        } else if (response == JOptionPane.NO_OPTION) {
 
-        }else if(response==JOptionPane.CLOSED_OPTION){
+        } else if (response == JOptionPane.CLOSED_OPTION) {
 
         }
     }//GEN-LAST:event_jLabel14MouseClicked
@@ -1239,13 +1254,13 @@ public class GuestView extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-        if(response==JOptionPane.YES_OPTION){
+        if (response == JOptionPane.YES_OPTION) {
             System.exit(0);
-        }else if(response==JOptionPane.NO_OPTION){
+        } else if (response == JOptionPane.NO_OPTION) {
 
-        }else if(response==JOptionPane.CLOSED_OPTION){
+        } else if (response == JOptionPane.CLOSED_OPTION) {
 
         }
 
@@ -1291,7 +1306,25 @@ public class GuestView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIssueprFocusLost
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+
+        String fullname = txtnamepr.getText();
+        String email = txtemailpr.getText();
+        String nic = tctNICpr.getText();
+        String id = txtuseridpr.getText();
+        String type = (String) jComboBox2.getSelectedItem();
+        String admin = objseconddatabase.GetRandomAdmin();
+        String comment = txtIssuepr.getText();
+
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to submit your requete?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.YES_OPTION) {
+            objIssueNotification.PasswordResetNotification(fullname, email, nic, id, type, admin, comment);
+
+        } else {
+            System.exit(0);
+        }
+
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void txtuseridprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuseridprActionPerformed
@@ -1304,20 +1337,20 @@ public class GuestView extends javax.swing.JFrame {
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         // TODO add your handling code here:
-   
+
     }//GEN-LAST:event_formMousePressed
-    private int xMouse,yMouse;
+    private int xMouse, yMouse;
     private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
         // TODO add your handling code here:
-        xMouse=evt.getX();
-        yMouse=evt.getY();
+        xMouse = evt.getX();
+        yMouse = evt.getY();
     }//GEN-LAST:event_jPanel4MousePressed
 
     private void jPanel4MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseDragged
         // TODO add your handling code here:
-       int x=evt.getXOnScreen();
-       int y=evt.getYOnScreen();
-       setLocation(x-xMouse,y-yMouse);
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jPanel4MouseDragged
 
     private void cboxDgreetypeStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxDgreetypeStudentActionPerformed
@@ -1483,11 +1516,11 @@ public class GuestView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailStudentKeyReleased
 
     private void txtPhonenoStudentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhonenoStudentKeyReleased
-        
+
     }//GEN-LAST:event_txtPhonenoStudentKeyReleased
 
     private void txtuseridprKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtuseridprKeyReleased
-        String PATTERN1 = "^[s,e,a][t,m,d][0-9]{5}$"; //only for student id number stxxxxx
+      /*  String PATTERN1 = "^[s,e,a][t,m,d][0-9]{5}$"; //only for student id number stxxxxx
         Pattern patt = Pattern.compile(PATTERN1);
         Matcher match = patt.matcher(txtuseridpr.getText());
         if (!match.matches()) {
@@ -1496,7 +1529,7 @@ public class GuestView extends javax.swing.JFrame {
         } else {
             lblError.setText(null);
         }
-
+*/
     }//GEN-LAST:event_txtuseridprKeyReleased
 
     private void txtnameprKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameprKeyReleased
@@ -1523,7 +1556,7 @@ public class GuestView extends javax.swing.JFrame {
 
     private void Btsearch2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btsearch2MouseClicked
         txtuseridpr.setText("");
-        tctNICpr.setText(""); 
+        tctNICpr.setText("");
         txtnamepr.setText("");
         txtemailpr.setText("");
         txtIssuepr.setText("");
@@ -1532,15 +1565,14 @@ public class GuestView extends javax.swing.JFrame {
     private void Btsearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btsearch2ActionPerformed
 
     }//GEN-LAST:event_Btsearch2ActionPerformed
-    void setColor(JPanel panel)
-    {
-        panel.setBackground(new Color(58,70,90));
+    void setColor(JPanel panel) {
+        panel.setBackground(new Color(58, 70, 90));
     }
-    
-    void resetColor(JPanel panel)
-    {
-        panel.setBackground(new Color(36,47,65));
+
+    void resetColor(JPanel panel) {
+        panel.setBackground(new Color(36, 47, 65));
     }
+
     /**
      * @param args the command line arguments
      */

@@ -2618,6 +2618,10 @@ public class StudentMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameStudentActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (txtNameStudent.getText().length() <= 0 || txtEmailStudent.getText().length() <= 0 || txtIDStudent.getText().length() <= 0 || txtIssueStudent.getText().length() <= 0 ) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Empty Text Field, Please fill all");
+        } else {
         try {
             String name = txtNameStudent.getText();
             String email = txtEmailStudent.getText();
@@ -2658,6 +2662,7 @@ public class StudentMainView extends javax.swing.JFrame {
             }
         } catch (Throwable ex) {
             System.out.println(ex.getMessage());
+        }
         }
 
 
@@ -2843,6 +2848,10 @@ public class StudentMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIssueGEIFocusLost
 
     private void btnSubmitGEIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitGEIActionPerformed
+    if (txtNameGEI.getText().length() <= 0 || txtITGEI.getText().length() <= 0 || txtEmailGEI.getText().length() <= 0 || txtPhonenoGEI.getText().length() <= 0 || txtsubjectGEI.getText().length() <= 0 || txtIssueGEI.getText().length() <= 0 ) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Empty Text Field, Please fill all");
+    } else {
         try {
             String name = txtNameGEI.getText();
             String IT = txtITGEI.getText();
@@ -2890,6 +2899,7 @@ public class StudentMainView extends javax.swing.JFrame {
         } catch (Throwable ex) {
             System.out.println(ex.getMessage());
         }
+    }
 
     }//GEN-LAST:event_btnSubmitGEIActionPerformed
 
@@ -3042,7 +3052,7 @@ public class StudentMainView extends javax.swing.JFrame {
         Pattern patt = Pattern.compile(PATTERN);
         Matcher match = patt.matcher(txtNameStudent.getText());
         if (!match.matches()) {
-            lblError.setText("Naming is incorrect!");
+            lblError.setText("Username cannot include numbers or symbols!");
         } else {
             lblError.setText(null);
         }
@@ -3246,6 +3256,11 @@ public class StudentMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_cboxExamTypeERIActionPerformed
 
     private void btnSubmitERIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitERIActionPerformed
+    if (txtNameERI.getText().length() <= 0 || txtITnoERI1.getText().length() <= 0 || textEmailERI.getText().length() <= 0 || txtPhonenoERI.getText().length() <= 0 || txtsubjectname.getText().length() <= 0 ||
+            DTCexdate.getText().length() <= 0 || txtTimeEX.getText().length() <= 0 || txtIssueERI.getText().length() <= 0) {
+            getToolkit().beep();
+            JOptionPane.showMessageDialog(null, "Empty Text Field, Please fill all");
+    } else {
         try {
 
             String inqiryType = (String) cboxInquirieType.getSelectedItem();
@@ -3289,6 +3304,7 @@ public class StudentMainView extends javax.swing.JFrame {
         } catch (Throwable ex) {
             System.out.println(ex.getMessage());
         }
+    }
     }//GEN-LAST:event_btnSubmitERIActionPerformed
 
     private void txtIssueERIFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtIssueERIFocusLost

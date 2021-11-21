@@ -9,6 +9,9 @@ import java.awt.Toolkit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
+import Controler.NotificationController;
+import Controler.NotificationController.IssueNotification;
+import Other.SecondDatabase;
 
 /**
  *
@@ -16,14 +19,21 @@ import javax.swing.JOptionPane;
  */
 public class Password_resetveiw extends javax.swing.JFrame {
 
-    /*
-     * Creates new form Password_resetveiw
-     */
+    SecondDatabase objseconddatabase;
+    NotificationController objNotification;
+    IssueNotification objIssueNotification;
+
     public Password_resetveiw() {
         initComponents();
         icon();
+
+        objseconddatabase = new SecondDatabase();
+        objNotification = new NotificationController();
+        objIssueNotification = objNotification.new IssueNotification();
+
     }
-    private void icon(){
+
+    private void icon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Image/Tutora logo.png")));
     }
 
@@ -250,6 +260,11 @@ public class Password_resetveiw extends javax.swing.JFrame {
         jLabel34.setText("User ID (Not essential)");
 
         tctNICpr.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tctNICpr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tctNICprActionPerformed(evt);
+            }
+        });
 
         jLabel35.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel35.setText("NIC number");
@@ -388,15 +403,15 @@ public class Password_resetveiw extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         // TODO add your handling code here:
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-        if(response==JOptionPane.YES_OPTION){
+        if (response == JOptionPane.YES_OPTION) {
             dispose();
             LoginView info = new LoginView();
             info.setVisible(true);
-        }else if(response==JOptionPane.NO_OPTION){
+        } else if (response == JOptionPane.NO_OPTION) {
 
-        }else if(response==JOptionPane.CLOSED_OPTION){
+        } else if (response == JOptionPane.CLOSED_OPTION) {
 
         }
     }//GEN-LAST:event_jLabel14MouseClicked
@@ -416,13 +431,13 @@ public class Password_resetveiw extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?","Confirm",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to continue this action ?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-        if(response==JOptionPane.YES_OPTION){
+        if (response == JOptionPane.YES_OPTION) {
             System.exit(0);
-        }else if(response==JOptionPane.NO_OPTION){
+        } else if (response == JOptionPane.NO_OPTION) {
 
-        }else if(response==JOptionPane.CLOSED_OPTION){
+        } else if (response == JOptionPane.CLOSED_OPTION) {
 
         }
 
@@ -431,18 +446,18 @@ public class Password_resetveiw extends javax.swing.JFrame {
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MousePressed
-    private int xMouse,yMouse;
+    private int xMouse, yMouse;
     private void jPanel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MousePressed
         // TODO add your handling code here:
-        xMouse=evt.getX();
-        yMouse=evt.getY();
+        xMouse = evt.getX();
+        yMouse = evt.getY();
     }//GEN-LAST:event_jPanel1MousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
         // TODO add your handling code here:
-       int x=evt.getXOnScreen();
-       int y=evt.getYOnScreen();
-       setLocation(x-xMouse,y-yMouse);
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void Btsearch2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Btsearch2MouseClicked
@@ -477,7 +492,24 @@ public class Password_resetveiw extends javax.swing.JFrame {
     }//GEN-LAST:event_txtemailprKeyReleased
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        String fullname = txtnamepr.getText();
+        String email = txtemailpr.getText();
+        String nic = tctNICpr.getText();
+        String id = txtuseridpr.getText();
+        String type = (String) jComboBox2.getSelectedItem();
+        String admin = objseconddatabase.GetRandomAdmin();
+        String comment = txtIssuepr.getText();
+
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to submit your requete?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if (response == JOptionPane.YES_OPTION) {
+            objIssueNotification.PasswordResetNotification(fullname, email, nic, id, type, admin, comment);
+
+        } else {
+            System.exit(0);
+        }
+
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void txtnameprKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameprKeyReleased
@@ -498,6 +530,10 @@ public class Password_resetveiw extends javax.swing.JFrame {
     private void txtuseridprKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtuseridprKeyReleased
 
     }//GEN-LAST:event_txtuseridprKeyReleased
+
+    private void tctNICprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tctNICprActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tctNICprActionPerformed
 
     /**
      * @param args the command line arguments
