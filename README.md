@@ -1,5 +1,11 @@
 # University Issue Management System
 
+## Downloading the Release Version
+
+1. Go to the [Releases](../../releases) section of this repository.
+2. Download the latest release named **TUTORA_Student_management_system_V1.2** (it will download as a zip file).
+3. Extract the zip file to your desired location before proceeding with the setup steps below.
+
 ## Getting Started
 
 ### 1. Open the Project in NetBeans
