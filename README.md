@@ -1,39 +1,29 @@
-Read Me
+# University Issue Management System
 
-1.
+## Getting Started
 
-  1.1 Open Netbeans
+### 1. Open the Project in NetBeans
 
-  1.2 Select the relevant "Management System" file and click "Open Project"
+1. Open **NetBeans**.
+2. Select the **Management System** project folder and click **Open Project**.
 
-2. Resolving the driver issues.
+### 2. Resolving Driver Issues
 
-  2.1 A pop will open up as "Project Problems",
+1. If a "Project Problems" popup appears, click **Resolve Problems...**  
+   - If the popup does not appear, right-click the **Management System** project and select **Resolve Project Problems**.
+2. The required driver files are located in the project folder.
+3. For each problem listed, click **Resolve**, select the corresponding driver file, and click **Open**.
 
-  2.2 click "Resolve problems.."
+### 3. Connecting to the Database
 
-  2.3 If a pop didn't appear, right click on the "Management System"
+1. Open the **XAMPP** application.
+2. Click **Start** for both **MySQL** and **Apache**.
+3. Click **Admin** next to MySQL to open phpMyAdmin in your browser.
+4. Click **New** and create a database named `studentapp`.
+5. Select the `studentapp` database.
+6. Click **Import** from the toolbar and choose the `studentapp.sql` file from your project folder.
 
-  2.4 Select "Resolve Project Problems"
+---
 
-  2.5 The driver files are in the same Management System folder
-
-  2.6 Select each problem and click resolve, select the driver file with the same name as the problem and click "Open".
-
-3. connecting to the database
-
-  3.1 Open the XAMPP application.
-
-  3.2 click "Start" on MySQL and Apache.
-
-  3.3 click "Admin" on MySQL, it will open the local host(the database) on your internet browser
-
-  3.4 click "new" and create a database named as "studentapp"
-
-  3.5 click the icon beside the "studentapp" database
-
-  3.6 click "import" from the toolbar and choose the "studentapp.sql" file.
-  
-
-
-You're set to go
+You’re all set! The University Issue Management System should now be ready to use.  
+If you encounter any issues, please refer to the troubleshooting section or contact the project maintainer.
